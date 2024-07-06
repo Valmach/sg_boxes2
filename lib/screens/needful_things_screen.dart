@@ -11,6 +11,8 @@ class NeedfulThingsScreen extends StatelessWidget {
       {'name': 'Box Accessories', 'image': 'assets/images/accessories.png'},
       {'name': 'Bits and Bobs', 'image': 'assets/images/bits_bobs.png'},
       {'name': 'Tools', 'image': 'assets/images/tools.png'},
+      {'name': 'Network', 'image': 'assets/images/espressif_logo.png'},
+      
 
     ];
 

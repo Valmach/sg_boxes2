@@ -1,6 +1,6 @@
 // lib/screens/data/dummy_data.dart
-import 'package:flutter/material.dart';
-import 'package:sg_boxes/models/box_model.dart';
+
+import 'package:sg_boxes/common%20theme/common_theme.dart';
 import 'package:sg_boxes/models/user_status.dart';
 import 'package:sg_boxes/screens/box_model.dart';
 
@@ -11,14 +11,14 @@ final List<BoxModel> availableBoxes = [
     model: "AIR-MAX",
     price: 130.00,
     imgAddress: "assets/images/nike_kids_multcolour-120_box1.png",
-    modelColor: const Color(0xffDE0106),
+    modelColor: CommonTheme.accentColor,
   ),
   BoxModel(
     name: "ADIDAS",
     model: "SAMBA",
     price: 190.00,
     imgAddress: "assets/images/adidas_box1.jpg",
-    modelColor: const Color(0xff3F7943),
+    modelColor: CommonTheme.secondaryColor,
   ),
   // Add more box models here
 ];
@@ -28,8 +28,8 @@ final List<UserStatus> userStatus = [
   UserStatus(
     emoji: '😴',
     txt: "Away",
-    selectColor: const Color(0xff121212),
-    unSelectColor: const Color(0xffbfbfbf),
+    selectColor: CommonTheme.primaryColor,
+    unSelectColor: CommonTheme.accentColor.withOpacity(0.6),
   ),
   // Add more user statuses here
 ];

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import 'package:sg_boxes/screens/common_theme.dart';
 import 'package:sg_boxes/screens/data/dummy_data.dart';
 import 'package:sg_boxes/screens/box_detail_screen.dart';
-import 'common_theme.dart';
 
 class ShoppingPage extends StatelessWidget {
   final String title;

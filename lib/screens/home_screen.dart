@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../common theme/common_theme.dart';
-import '../common_theme/common_theme.dart'; // Import the common theme
+// Import the common theme
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 _buildCircularButton(
                   context,
-                  'Fashion Advisor',
+                  'Fash Advisor',
                   '/chat',
                   Icons.chat,
                 ),

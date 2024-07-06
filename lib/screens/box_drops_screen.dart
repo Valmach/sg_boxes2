@@ -21,6 +21,11 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
       'description': 'A timeless classic shoebox.',
       'imagePath': 'assets/images/shoebox2.png',
     },
+     {
+      'name': 'Sophisticated Shoebox',
+      'description': 'A perfect sophisticated shoebox.',
+      'imagePath': 'assets/images/lilac_posh.391.png',
+    },
     // Add more shoeboxes as needed
   ];
 

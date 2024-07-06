@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'box_model.dart'; // Import the BoxModel
+import 'package:sg_boxes/common%20theme/common_theme.dart';
+// Import the BoxModel
+import 'package:sg_boxes/screens/box_model.dart'; // Import the common theme
 
 class BoxDetailScreen extends StatelessWidget {
   final BoxModel box;
@@ -22,26 +23,14 @@ class BoxDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           box.name,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 176, 219, 47), // Gold color
-          ),
+          style: CommonTheme.appBarTheme.titleTextStyle,
         ),
-        backgroundColor: const Color.fromARGB(232, 114, 107, 122),
+        backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
-        iconTheme: const IconThemeData(
-          color: Color.fromARGB(255, 176, 219, 47), // Bright gold color for back button
-        ),
+        iconTheme: CommonTheme.appBarTheme.iconTheme,
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFF1f4037), Color(0xFF99f2c8)], // Dark green to light green gradient matching HomeScreen
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        decoration: CommonTheme.backgroundDecoration,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -55,6 +44,7 @@ class BoxDetailScreen extends StatelessWidget {
                         imagePath,
                         fit: BoxFit.cover,
                         width: double.infinity,
+                        height: 200.0, // Reduced height for smaller images
                         errorBuilder: (context, error, stackTrace) {
                           return const Icon(Icons.error, color: Colors.red);
                         },
@@ -64,7 +54,7 @@ class BoxDetailScreen extends StatelessWidget {
                 );
               }).toList(),
               options: CarouselOptions(
-                height: 400.0,
+                height: 200.0, // Reduced height for smaller images
                 enlargeCenterPage: true,
                 autoPlay: true,
                 aspectRatio: 16 / 9,
@@ -79,11 +69,7 @@ class BoxDetailScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 box.name,
-                style: const TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 176, 219, 47), // Matching title color to HomeScreen
-                ),
+                style: CommonTheme.headingTextStyle,
               ),
             ),
             Padding(
