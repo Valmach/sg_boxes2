@@ -21,7 +21,7 @@ class SandalsDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: const SandalsBody(),
-      drawer: const SandalsDrawer(),
+      endDrawer: const SandalsDrawer(), // Add the end drawer
     );
   }
 }
@@ -48,7 +48,7 @@ class SandalsBody extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFFFFFFFF),
+                color: Color(0xFFFFFFFF), // White color
                 shadows: [
                   Shadow(
                     blurRadius: 10.0,
@@ -62,8 +62,8 @@ class SandalsBody extends StatelessWidget {
             _buildCircularButton(
               context,
               'Recently Worn',
-                  () {
-                Scaffold.of(context).openDrawer();
+              () {
+                Scaffold.of(context).openEndDrawer();
               },
               const Color(0xFF000000), // Black
               Icons.access_time,
@@ -72,8 +72,8 @@ class SandalsBody extends StatelessWidget {
             _buildCircularButton(
               context,
               'Return to Categories',
-                  () {
-                Navigator.pushNamed(context, '/shoe_type_categories'); // Corrected route name
+              () {
+                Navigator.pushNamed(context, '/shoe_category');
               },
               const Color(0xFF000000), // Black
               Icons.arrow_back,
@@ -136,20 +136,20 @@ class SandalsDrawer extends StatelessWidget {
     Sandal(
       name: 'Birkenstock Arizona',
       imagePath: 'assets/images/birkenstock_arizona.png',
-      lastWorn: '2024-05-15',
+      lastWorn: '2024-05-18',
       wornWith: 'Shorts, T-shirt',
       season: 'Summer',
       purchaseDate: '2023-06-10',
-      occasion: 'Casual',
+      occasion: 'Beach',
     ),
     Sandal(
-      name: 'Teva Hurricane',
-      imagePath: 'assets/images/teva_hurricane.png',
-      lastWorn: '2024-04-20',
-      wornWith: 'Jeans, Polo Shirt',
+      name: 'Teva Original Universal',
+      imagePath: 'assets/images/teva_original_universal.png',
+      lastWorn: '2024-04-22',
+      wornWith: 'Jeans, Blouse',
       season: 'Spring',
-      purchaseDate: '2023-03-22',
-      occasion: 'Outdoor',
+      purchaseDate: '2022-04-15',
+      occasion: 'Casual',
     ),
     // Add more sandals as needed
   ];
@@ -177,10 +177,6 @@ class SandalsDrawer extends StatelessWidget {
                 sandal.imagePath,
                 width: 50,
                 height: 50,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) {
-                  return const Icon(Icons.image_not_supported, color: Colors.red);
-                },
               ),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -209,6 +205,7 @@ class SandalsDrawer extends StatelessWidget {
               ),
               trailing: const Icon(Icons.arrow_forward_ios, color: Color(0xFFFFFFFF)), // White color for icon
               onTap: () {
+                // Handle tap on sandal item
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Selected: ${sandal.name}')),
                 );

@@ -5,7 +5,7 @@ import 'package:sg_boxes/screens/box_drops_screen.dart';
 import 'package:sg_boxes/screens/customization_paint_screen.dart';
 import 'package:sg_boxes/screens/image_screen.dart';
 import 'package:sg_boxes/screens/omg_page.dart';
-import 'package:sg_boxes/screens/shoe_type_categories.dart';
+import 'package:sg_boxes/screens/shoe_category.dart'; // Correct import
 import 'package:sg_boxes/screens/shopping/shopping_page.dart';
 import 'package:sg_boxes/screens/sneakers_details_screen.dart';
 import 'package:sg_boxes/screens/splash/splash_screen.dart';
@@ -15,6 +15,8 @@ import 'package:sg_boxes/screens/home_screen.dart'; // Correct import for HomeSc
 import 'package:sg_boxes/widget/chat_widget.dart';
 import 'package:sg_boxes/screens/needful_things_screen.dart';
 import 'package:sg_boxes/screens/earth_screen.dart'; // Import for EarthScreen
+import 'package:sg_boxes/screens/bluetooth_connection_screen.dart'; // Import for BluetoothConnectionScreen
+import 'package:sg_boxes/screens/account_screen.dart'; // Import for AccountScreen
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (context) => const SplashScreen(title: 'Splash Screen'),
         '/home': (context) => const HomeScreen(title: 'Home Screen'),
-        '/shoe_type_categories': (context) => const ShoeTypeCategories(title: 'Shoe Type Categories'),
+        '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
         '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
         '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
         '/heels_details': (context) => const HeelsDetailsScreen(title: 'Heels Details'),
@@ -59,6 +61,8 @@ class MyApp extends StatelessWidget {
         '/trending': (context) => const TrendingPage(title: 'Trending Page'),
         '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
         '/earth': (context) => const EarthScreen(title: 'Earth Screen'), // Define route for EarthScreen
+        '/bluetooth_connection': (context) => const BluetoothConnectionScreen(), // Define route for BluetoothConnectionScreen
+        '/account': (context) => const AccountScreen(), // Define route for AccountScreen
       },
     );
   }

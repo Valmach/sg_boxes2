@@ -62,7 +62,7 @@ class BootsBody extends StatelessWidget {
             _buildCircularButton(
               context,
               'Recently Worn',
-                  () {
+              () {
                 Scaffold.of(context).openEndDrawer();
               },
               const Color(0xFF000000), // Black
@@ -72,8 +72,8 @@ class BootsBody extends StatelessWidget {
             _buildCircularButton(
               context,
               'Return to Categories',
-                  () {
-                Navigator.pushNamed(context, '/shoe_type_categories');
+              () {
+                Navigator.pushNamed(context, '/shoe_category');
               },
               const Color(0xFF000000), // Black
               Icons.arrow_back,

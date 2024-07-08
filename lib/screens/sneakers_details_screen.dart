@@ -20,13 +20,15 @@ class SneakersDetailsScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF000000), // Black color
         elevation: 0,
       ),
-      body: SneakersBody(),
-      endDrawer: SneakersDrawer(), // Add the end drawer
+      body: const SneakersBody(),
+      endDrawer: const SneakersDrawer(), // Add the end drawer
     );
   }
 }
 
 class SneakersBody extends StatelessWidget {
+  const SneakersBody({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,7 +73,7 @@ class SneakersBody extends StatelessWidget {
               context,
               'Return to Categories',
               () {
-                Navigator.pushNamed(context, '/shoe_type_categories'); // Corrected route name
+                Navigator.pushNamed(context, '/shoe_category'); // Corrected route name
               },
               const Color(0xFF000000), // Black
               Icons.arrow_back,
@@ -128,7 +130,9 @@ class SneakersBody extends StatelessWidget {
 }
 
 class SneakersDrawer extends StatelessWidget {
-  final List<Sneaker> sneakers = [
+  const SneakersDrawer({super.key});
+
+  final List<Sneaker> sneakers = const [
     Sneaker(
       name: 'Air Jordan 1',
       imagePath: 'assets/images/air_jordan_1.png',
@@ -223,7 +227,7 @@ class Sneaker {
   final String purchaseDate;
   final String occasion;
 
-  Sneaker({
+  const Sneaker({
     required this.name,
     required this.imagePath,
     required this.lastWorn,

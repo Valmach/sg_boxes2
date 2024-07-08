@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../common theme/common_theme.dart';
-// Import the common theme
+import 'package:sg_boxes/common%20theme/common_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -35,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                 _buildCircularButton(
                   context,
                   'Shoe Categories',
-                  '/shoe_type_categories',
+                  '/shoe_category',
                   Icons.category,
                 ),
                 _buildCircularButton(
@@ -110,11 +109,15 @@ class HomeScreen extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
+            label: 'Bluetooth',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.local_shipping, size: 28),
             label: 'Box Drops',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag, size: 28), // Changed to shopping bag icon
+            icon: Icon(Icons.shopping_bag, size: 28),
             label: 'Shop',
           ),
           BottomNavigationBarItem(
@@ -128,13 +131,16 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, '/home');
               break;
             case 1:
-              Navigator.pushNamed(context, '/box_drops');
+              Navigator.pushNamed(context, '/bluetooth_connection');
               break;
             case 2:
-              Navigator.pushNamed(context, '/shopping');
+              Navigator.pushNamed(context, '/box_drops');
               break;
             case 3:
-            // Handle Account navigation
+              Navigator.pushNamed(context, '/shopping');
+              break;
+            case 4:
+              Navigator.pushNamed(context, '/account');
               break;
           }
         },

@@ -21,7 +21,7 @@ class HeelsDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: const HeelsBody(),
-      endDrawer: HeelsDrawer(), // Add the end drawer
+      endDrawer: const HeelsDrawer(), // Add the end drawer
     );
   }
 }
@@ -73,7 +73,7 @@ class HeelsBody extends StatelessWidget {
               context,
               'Return to Categories',
               () {
-                Navigator.pushNamed(context, '/shoe_type_categories');
+                Navigator.pushNamed(context, '/shoe_category');
               },
               const Color(0xFF000000), // Black
               Icons.arrow_back,
@@ -130,7 +130,9 @@ class HeelsBody extends StatelessWidget {
 }
 
 class HeelsDrawer extends StatelessWidget {
-  final List<Heel> heels = [
+  const HeelsDrawer({super.key});
+
+  final List<Heel> heels = const [
     Heel(
       name: 'Stiletto Heels',
       imagePath: 'assets/images/stiletto_heels.png',
@@ -225,7 +227,7 @@ class Heel {
   final String purchaseDate;
   final String occasion;
 
-  Heel({
+  const Heel({
     required this.name,
     required this.imagePath,
     required this.lastWorn,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../common theme/common_theme.dart';
+import 'package:sg_boxes/common%20theme/common_theme.dart';
+import '../common_theme/common_theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EarthScreen extends StatefulWidget {
   final String title;
@@ -73,6 +75,18 @@ class _EarthScreenState extends State<EarthScreen> {
                   color: CommonTheme.secondaryColor,
                 ),
               ),
+              const SizedBox(height: 20),
+              const Text(
+                'Designed, Created, Built and Developed by Valentino Massimo & B.J. Holmes',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFFB0B0B0), // Silver-grey color
+                  fontStyle: FontStyle.italic, // Cursive font style
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              _buildSocialMediaSection(context),
             ],
           ),
         ),
@@ -112,12 +126,90 @@ class _EarthScreenState extends State<EarthScreen> {
                 icon: const Icon(Icons.account_circle),
                 color: CommonTheme.secondaryColor,
                 onPressed: () {
-                  // Handle Account navigation
+                  Navigator.pushNamed(context, '/account');
                 },
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildSocialMediaSection(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Follow Us',
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Wrap(
+          spacing: 20.0,
+          runSpacing: 20.0,
+          alignment: WrapAlignment.center,
+          children: [
+            _buildSocialMediaButton(
+              context,
+              'Meta',
+              'assets/images/meta.png',
+              'https://www.facebook.com',
+            ),
+            _buildSocialMediaButton(
+              context,
+              'TikTok',
+              'assets/images/tiktok.png',
+              'https://www.tiktok.com',
+            ),
+            _buildSocialMediaButton(
+              context,
+              'Instagram',
+              'assets/images/instagram.png',
+              'https://www.instagram.com',
+            ),
+            _buildSocialMediaButton(
+              context,
+              'LinkedIn',
+              'assets/images/linkedin.png',
+              'https://www.linkedin.com',
+            ),
+            _buildSocialMediaButton(
+              context,
+              'Twitter',
+              'assets/images/twitter.png',
+              'https://www.twitter.com',
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSocialMediaButton(BuildContext context, String name, String assetPath, String url) {
+    return GestureDetector(
+      onTap: () async {
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Could not launch $url')),
+          );
+        }
+      },
+      child: Column(
+        children: [
+          Image.asset(assetPath, width: 40, height: 40),
+          const SizedBox(height: 5),
+          Text(
+            name,
+            style: const TextStyle(color: Colors.white),
+          ),
+        ],
       ),
     );
   }

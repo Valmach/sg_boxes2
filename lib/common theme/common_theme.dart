@@ -5,10 +5,8 @@ class CommonTheme {
   static const Color secondaryColor = Color(0xFFFFFFFF);
   static const Color accentColor = Color(0xFF8B0000);
   static const Color bottomNavBarBackgroundColor = Color(0xFF1F1B24);
-  static const Color bottomNavBarSelectedColor =
-      Color(0xFF5A0202); // Bright gold color
-  static const Color bottomNavBarUnselectedColor =
-      Color(0xFFA41919); // Grey color
+  static const Color bottomNavBarSelectedColor = Color(0xFF5A0202); // Bright gold color
+  static const Color bottomNavBarUnselectedColor = Color(0xFFA41919); // Grey color
 
   static const BoxDecoration backgroundDecoration = BoxDecoration(
     gradient: LinearGradient(
@@ -47,6 +45,12 @@ class CommonTheme {
     ],
   );
 
+  static const TextStyle appBarTitleTextStyle = TextStyle(
+    color: secondaryColor,
+    fontSize: 24,
+    fontWeight: FontWeight.normal,
+  );
+
   static const TextStyle buttonTextStyle = TextStyle(
     fontSize: 12,
     color: secondaryColor,
@@ -59,14 +63,11 @@ class CommonTheme {
     color: secondaryColor,
   );
 
-  static const BottomNavigationBarThemeData bottomNavBarTheme =
-      BottomNavigationBarThemeData(
+  static const BottomNavigationBarThemeData bottomNavBarTheme = BottomNavigationBarThemeData(
     backgroundColor: bottomNavBarBackgroundColor,
     selectedItemColor: bottomNavBarSelectedColor,
     unselectedItemColor: bottomNavBarUnselectedColor,
-    selectedLabelStyle: TextStyle(
-        color: bottomNavBarSelectedColor), // Matching selected label color
-    unselectedLabelStyle: TextStyle(
-        color: bottomNavBarUnselectedColor), // Matching unselected label color
+    selectedLabelStyle: TextStyle(color: bottomNavBarSelectedColor), // Matching selected label color
+    unselectedLabelStyle: TextStyle(color: bottomNavBarUnselectedColor), // Matching unselected label color
   );
 }

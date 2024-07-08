@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../common theme/common_theme.dart'; // Import the common theme
+import 'package:sg_boxes/common%20theme/common_theme.dart';
 
-class ShoeTypeCategories extends StatelessWidget {
+class ShoeCategory extends StatelessWidget {
   final String title;
 
-  const ShoeTypeCategories({super.key, required this.title});
+  const ShoeCategory({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ShoeTypeCategories extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: CommonTheme.appBarTheme.titleTextStyle,
+          style: CommonTheme.appBarTitleTextStyle,
         ),
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
@@ -72,6 +72,10 @@ class ShoeTypeCategories extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
+            label: 'Bluetooth',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.local_shipping, size: 28),
             label: 'Box Drops',
           ),
@@ -90,13 +94,16 @@ class ShoeTypeCategories extends StatelessWidget {
               Navigator.pushNamed(context, '/home');
               break;
             case 1:
-              Navigator.pushNamed(context, '/box_drops');
+              Navigator.pushNamed(context, '/bluetooth_connection');
               break;
             case 2:
-              Navigator.pushNamed(context, '/shopping');
+              Navigator.pushNamed(context, '/box_drops');
               break;
             case 3:
-            // Handle Account navigation
+              Navigator.pushNamed(context, '/shopping');
+              break;
+            case 4:
+              Navigator.pushNamed(context, '/account');
               break;
           }
         },
