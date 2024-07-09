@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/detailed_paint_screen.dart';
+import 'package:sg_boxes/common%20theme/common_theme.dart';
 
 class CustomizablePaintScreen extends StatelessWidget {
   final String title;
@@ -40,10 +41,20 @@ class CustomizablePaintScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 const Text(
-                  'Choose Exterior Color:',
+                  'Customize Your Shoebox',
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
+                    color: Color(0xFF8A2BE2), // Rich violet color
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Choose Exterior Color:',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
                     color: Colors.white,
                     shadows: [
                       Shadow(
@@ -59,7 +70,6 @@ class CustomizablePaintScreen extends StatelessWidget {
                 ColorSwatchGrid(
                   colors: exteriorColors,
                   onSelectColor: (Color color) {
-                    // Navigate to DetailedPaintScreen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -78,7 +88,7 @@ class CustomizablePaintScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.normal,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 255, 255, 255),
                     shadows: [
                       Shadow(
                         blurRadius: 10.0,
@@ -93,7 +103,6 @@ class CustomizablePaintScreen extends StatelessWidget {
                 ColorSwatchGrid(
                   colors: interiorColors,
                   onSelectColor: (Color color) {
-                    // Navigate to DetailedPaintScreen
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -163,7 +172,6 @@ class ColorSwatchGrid extends StatelessWidget {
   }
 }
 
-// Example colors and metadata for exterior and interior
 List<Color> exteriorColors = [
   const Color(0xFFFF0000), // Vibrant Red
   const Color(0xFF00FF00), // Bright Green

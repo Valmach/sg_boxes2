@@ -72,7 +72,7 @@ class ShoeCategory extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
+            icon: Icon(Icons.bluetooth, size: 28),
             label: 'Bluetooth',
           ),
           BottomNavigationBarItem(

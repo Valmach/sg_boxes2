@@ -57,12 +57,16 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
           children: [
             const Text(
               'Customize Your Shoebox',
-              style: CommonTheme.headingTextStyle,
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.normal,
+                color: Color(0xFF8A2BE2), // Rich violet color
+              ),
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             CarouselSlider(
               options: CarouselOptions(
-                height: 150.0, // Reduced height for smaller images
+                height: 200.0, // Increased height for larger images
                 enlargeCenterPage: true,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
@@ -88,12 +92,16 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
             const SizedBox(height: 10), // Reduced height for smaller spacing
             const Text(
               'Recommended Colors and Patterns',
-              style: CommonTheme.headingTextStyle,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             Expanded(
               child: GridView.count(
-                crossAxisCount: 6, // Increased number of columns for smaller swatches
+                crossAxisCount: 6, // Adjusted number of columns for smaller swatches
                 children: recommendedColors.map((color) {
                   return _buildColorPatternBox(context, color, 'Recommended Pattern', 'Use: AI Recommendation');
                 }).toList(),
@@ -102,12 +110,16 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
             const SizedBox(height: 10), // Reduced height for smaller spacing
             const Text(
               'Available Colors and Patterns',
-              style: CommonTheme.headingTextStyle,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             Expanded(
               child: GridView.count(
-                crossAxisCount: 6, // Increased number of columns for smaller swatches
+                crossAxisCount: 6, // Adjusted number of columns for smaller swatches
                 children: [
                   _buildColorPatternBox(context, Colors.red, 'Red Pattern', 'Hex: #FF0000\nUse: Passion, Energy'),
                   _buildColorPatternBox(context, Colors.blue, 'Blue Pattern', 'Hex: #0000FF\nUse: Calm, Stability'),
@@ -171,16 +183,16 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
               Navigator.pop(context);
               break;
             case 1:
-            // Handle Customize navigation
+              // Handle Customize navigation
               break;
             case 2:
-            // Handle Shop navigation
+              // Handle Shop navigation
               break;
             case 3:
-            // Handle Search navigation
+              // Handle Search navigation
               break;
             case 4:
-            // Handle Account navigation
+              // Handle Account navigation
               break;
           }
         },
@@ -209,8 +221,8 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
             ],
           ),
           margin: const EdgeInsets.all(4.0), // Reduced margin for smaller swatches
-          width: 40,
-          height: 40,
+          width: 30, // Smaller width for swatches
+          height: 30, // Smaller height for swatches
         ),
       ),
     );
@@ -342,8 +354,8 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
 
   Widget _buildVariationBox(Color color) {
     return Container(
-      width: 30, // Reduced width for smaller swatches
-      height: 30, // Reduced height for smaller swatches
+      width: 25, // Smaller width for swatches
+      height: 25, // Smaller height for swatches
       color: color,
     );
   }

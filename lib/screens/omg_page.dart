@@ -11,7 +11,7 @@ class OMGPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final customMadeBoxes = availableBoxes.take(5).toList();
+    final customMadeBoxes = availableBoxes.take(8).toList(); // Increase the number to show more boxes
 
     return Scaffold(
       backgroundColor: CommonTheme.primaryColor,

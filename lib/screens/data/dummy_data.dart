@@ -20,7 +20,28 @@ final List<BoxModel> availableBoxes = [
     imgAddress: "assets/images/adidas_box1.jpg",
     modelColor: CommonTheme.secondaryColor,
   ),
-  // Add more box models here
+  // New box models added
+  BoxModel(
+    name: "PUMA",
+    model: "SUEDE CLASSIC",
+    price: 80.00,
+    imgAddress: "assets/images/puma_suede_classic.png",
+    modelColor: CommonTheme.primaryColor,
+  ),
+  BoxModel(
+    name: "SOPHIA",
+    model: "SOPHIA WEBSTER 1",
+    price: 150.00,
+    imgAddress: "assets/images/sophia_webster_1.png",
+    modelColor: CommonTheme.accentColor,
+  ),
+  BoxModel(
+    name: "GUCCI",
+    model: "ACE SNEAKER",
+    price: 600.00,
+    imgAddress: "assets/images/gucci_ace_sneaker.png",
+    modelColor: CommonTheme.secondaryColor,
+  ),
 ];
 
 // List of user statuses
