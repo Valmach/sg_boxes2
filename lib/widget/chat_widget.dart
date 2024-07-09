@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   child: _chat.history.isEmpty
                       ? const Center(
                           child: Text(
-                            'Start a conversation!',
+                            'Lets get you dressed!',
                             style: TextStyle(
                               color: Color(0xFFFFFFFF),
                               fontSize: 20,
