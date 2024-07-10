@@ -19,7 +19,8 @@ class _EarthScreenState extends State<EarthScreen> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: CommonTheme.appBarTheme.titleTextStyle?.copyWith(fontSize: 28), // Larger font size
+          style: CommonTheme.appBarTheme.titleTextStyle
+              ?.copyWith(fontSize: 28), // Larger font size
         ),
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
@@ -33,13 +34,14 @@ class _EarthScreenState extends State<EarthScreen> {
             children: [
               Text(
                 'Our Commitment to the Planet',
-                style: CommonTheme.headingTextStyle?.copyWith(fontSize: 22), // Larger font size
+                style: CommonTheme.headingTextStyle
+                    ?.copyWith(fontSize: 22), // Larger font size
               ),
               const SizedBox(height: 20),
               const Text(
                 'At SkoMiDora, we are committed to creating products and services that help save the planet. '
-                    'Our efforts include using sustainable materials, reducing waste, and minimizing our carbon footprint. '
-                    'We believe that every step counts, and we strive to make a positive impact on the environment through our actions.',
+                'Our efforts include using sustainable materials, reducing waste, and minimizing our carbon footprint. '
+                'We believe that every step counts, and we strive to make a positive impact on the environment through our actions.',
                 style: TextStyle(
                   fontSize: 17, // Larger font size
                   color: CommonTheme.secondaryColor,
@@ -48,13 +50,14 @@ class _EarthScreenState extends State<EarthScreen> {
               const SizedBox(height: 20),
               Text(
                 'Philanthropic Endeavors',
-                style: CommonTheme.headingTextStyle?.copyWith(fontSize: 22), // Larger font size
+                style: CommonTheme.headingTextStyle
+                    ?.copyWith(fontSize: 22), // Larger font size
               ),
               const SizedBox(height: 17),
               const Text(
                 'We are deeply committed to helping the poor, displaced, and homeless people around the world. '
-                    'Our philanthropic efforts include providing financial support, resources, and opportunities to those in need. '
-                    'We partner with various organizations to ensure that our contributions make a meaningful difference.',
+                'Our philanthropic efforts include providing financial support, resources, and opportunities to those in need. '
+                'We partner with various organizations to ensure that our contributions make a meaningful difference.',
                 style: TextStyle(
                   fontSize: 17, // Larger font size
                   color: CommonTheme.secondaryColor,
@@ -63,13 +66,14 @@ class _EarthScreenState extends State<EarthScreen> {
               const SizedBox(height: 20),
               Text(
                 'Join Us in Making a Difference',
-                style: CommonTheme.headingTextStyle?.copyWith(fontSize: 22), // Larger font size
+                style: CommonTheme.headingTextStyle
+                    ?.copyWith(fontSize: 22), // Larger font size
               ),
               const SizedBox(height: 20),
               const Text(
                 'We invite you to join us in our mission to make the world a better place. '
-                    'Whether through supporting our products, participating in our initiatives, or spreading awareness, '
-                    'your involvement can help create a positive impact on the planet and those in need.',
+                'Whether through supporting our products, participating in our initiatives, or spreading awareness, '
+                'your involvement can help create a positive impact on the planet and those in need.',
                 style: TextStyle(
                   fontSize: 17, // Larger font size
                   color: CommonTheme.secondaryColor,
@@ -77,7 +81,7 @@ class _EarthScreenState extends State<EarthScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Designed, Developed Created, and Built by Valentino Massimo & B.J. Holmes',
+                'Designed, Developed, Built, and by Valentino Massimo muse, B.J. Holmes',
                 style: TextStyle(
                   fontSize: 16,
                   color: Color(0xFFB0B0B0), // Silver-grey color
@@ -184,13 +188,20 @@ class _EarthScreenState extends State<EarthScreen> {
               'assets/images/twitter.png',
               'https://www.twitter.com',
             ),
+            _buildSocialMediaButton(
+              context,
+              'YouTube',
+              'assets/images/youtube.png',
+              'https://www.youtube.com',
+            ),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildSocialMediaButton(BuildContext context, String name, String assetPath, String url) {
+  Widget _buildSocialMediaButton(
+      BuildContext context, String name, String assetPath, String url) {
     return GestureDetector(
       onTap: () async {
         if (await canLaunch(url)) {

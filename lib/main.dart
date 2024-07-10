@@ -11,7 +11,9 @@ import 'package:sg_boxes/screens/sneakers_details_screen.dart';
 import 'package:sg_boxes/screens/splash/splash_screen.dart';
 import 'package:sg_boxes/screens/heels_details_screen.dart';
 import 'package:sg_boxes/screens/trending_page.dart';
-import 'package:sg_boxes/screens/home_screen.dart'; // Correct import for HomeScreen
+import 'package:sg_boxes/screens/home_screen.dart' as home; // Prefix the import
+import 'package:sg_boxes/screens/welcome_screen.dart';
+import 'package:sg_boxes/screens/login_page.dart';
 import 'package:sg_boxes/widget/chat_widget.dart';
 import 'package:sg_boxes/screens/needful_things_screen.dart';
 import 'package:sg_boxes/screens/earth_screen.dart'; // Import for EarthScreen
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => const SplashScreen(title: 'Splash Screen'),
-        '/home': (context) => const HomeScreen(title: 'Home Screen'),
+        '/home': (context) => const home.HomeScreen(title: 'Home Screen'),
         '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
         '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
         '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
@@ -62,7 +64,9 @@ class MyApp extends StatelessWidget {
         '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
         '/earth': (context) => const EarthScreen(title: 'Earth Screen'), // Define route for EarthScreen
         '/bluetooth_connection': (context) => const BluetoothConnectionScreen(), // Define route for BluetoothConnectionScreen
-        '/account': (context) => const AccountScreen(), // Define route for AccountScreen
+        '/account': (context) => const AccountScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+        '/login': (context) => const LoginPage(), // Define route for LoginPage
       },
     );
   }

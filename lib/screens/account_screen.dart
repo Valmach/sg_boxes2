@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
+import 'package:sg_boxes/screens/welcome_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -58,6 +59,21 @@ class AccountScreen extends StatelessWidget {
               Colors.grey,
               () {
                 // Handle Settings navigation
+              },
+            ),
+            const SizedBox(height: 10),
+            _buildAccountCard(
+              context,
+              'Login',
+              Icons.login,
+              Colors.purple,
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen(),
+                  ),
+                );
               },
             ),
           ],
@@ -133,7 +149,7 @@ class AccountScreen extends StatelessWidget {
               const SizedBox(width: 20),
               Text(
                 title,
-                style: CommonTheme.headingTextStyle.copyWith(fontSize: 20),
+                style: CommonTheme.headingTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.normal),
               ),
             ],
           ),
@@ -188,6 +204,12 @@ class AccountScreen extends StatelessWidget {
             'Twitter',
             'assets/images/twitter.png',
             'https://www.twitter.com',
+          ),
+          _buildSocialMediaButton(
+            context,
+            'YouTube',
+            'assets/images/youtube.png',
+            'https://www.youtube.com',
           ),
         ],
       ),

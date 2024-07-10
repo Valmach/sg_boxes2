@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
 
-
 class HomeScreen extends StatelessWidget {
   final String title;
 
@@ -106,8 +105,8 @@ class HomeScreen extends StatelessWidget {
         showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 28),
-            label: 'Home',
+            icon: Icon(Icons.inventory, size: 28), // Changed to shoebox icon
+            label: 'Boxies',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
@@ -129,7 +128,7 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/welcome');
               break;
             case 1:
               Navigator.pushNamed(context, '/bluetooth_connection');

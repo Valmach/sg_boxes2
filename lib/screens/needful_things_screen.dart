@@ -49,6 +49,7 @@ class NeedfulThingsScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
             return Card(
+              color: const Color(0xFFF5F5F5), // Off-white color for cards
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16.0),
@@ -63,7 +64,7 @@ class NeedfulThingsScreen extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
-                    color: Color(0xFF000000),
+                    color: Color(0xFF000000), // Darker black text
                   ),
                 ),
                 onTap: () {
@@ -78,7 +79,7 @@ class NeedfulThingsScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => YourSkoBoxesScreen(),
+                        builder: (context) => const YourSkoBoxesScreen(),
                       ),
                     );
                   }
@@ -93,6 +94,8 @@ class NeedfulThingsScreen extends StatelessWidget {
 }
 
 class YourSkoBoxesScreen extends StatelessWidget {
+  const YourSkoBoxesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,12 +112,9 @@ class YourSkoBoxesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            buildBoxieCard(context, 'Nite Furoi',
-                'assets/images/nite_furoi.png', 'Connected'),
-            buildBoxieCard(context, 'Hot Lips', 'assets/images/hot_lips.png',
-                'Not Connected'),
-            buildBoxieCard(context, 'Sugar Candy',
-                'assets/images/sugar_candy.png', 'Connected'),
+            buildBoxieCard(context, 'Nite Furoi', 'assets/images/nite_furoi.png', 'Connected'),
+            buildBoxieCard(context, 'Hot Lips', 'assets/images/hot_lips.png', 'Not Connected'),
+            buildBoxieCard(context, 'Sugar Candy', 'assets/images/sugar_candy.png', 'Connected'),
             const SizedBox(height: 20),
             Center(
               child: GestureDetector(
@@ -125,13 +125,12 @@ class YourSkoBoxesScreen extends StatelessWidget {
                   width: 100,
                   height: 100,
                   decoration: CommonTheme.buttonDecoration,
-                  child: Center(
+                  child: const Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.add,
-                            size: 30, color: CommonTheme.secondaryColor),
-                        const SizedBox(height: 5),
+                        Icon(Icons.add, size: 30, color: CommonTheme.secondaryColor),
+                        SizedBox(height: 5),
                         Text(
                           'Add Boxie',
                           style: CommonTheme.buttonTextStyle,
@@ -149,9 +148,9 @@ class YourSkoBoxesScreen extends StatelessWidget {
     );
   }
 
-  Widget buildBoxieCard(BuildContext context, String boxieName,
-      String imagePath, String connectionStatus) {
+  Widget buildBoxieCard(BuildContext context, String boxieName, String imagePath, String connectionStatus) {
     return Card(
+      color: const Color(0xFFF5F5F5), // Off-white color for cards
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(16.0),
@@ -166,15 +165,15 @@ class YourSkoBoxesScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.normal,
-            color: Color(0xFF000000),
+            color: Color(0xFF000000), // Darker black text
           ),
         ),
         subtitle: Row(
           children: [
-            Icon(Icons.wifi,
-                color: connectionStatus == 'Connected'
-                    ? Colors.green
-                    : Colors.red),
+            Icon(
+              Icons.wifi,
+              color: connectionStatus == 'Connected' ? Colors.green : Colors.red,
+            ),
             const SizedBox(width: 5),
             Text(
               connectionStatus,
