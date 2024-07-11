@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: CommonTheme.bottomNavBarTheme.backgroundColor,
+        backgroundColor: Colors.black, // Set the bottom navigation bar color to black
         selectedItemColor: CommonTheme.bottomNavBarTheme.selectedItemColor,
         unselectedItemColor: CommonTheme.bottomNavBarTheme.unselectedItemColor,
         selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle,
@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(context, '/welcome');
+              Navigator.pushNamed(context, '/welcome'); // Changed to navigate to WelcomeScreen
               break;
             case 1:
               Navigator.pushNamed(context, '/bluetooth_connection');

@@ -24,6 +24,7 @@ class ShoppingPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final box = availableBoxes[index];
             return Card(
+              color: Colors.black,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
               ),
@@ -45,14 +46,14 @@ class ShoppingPage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: CommonTheme.secondaryColor,
+                    color: Colors.white,
                   ),
                 ),
                 subtitle: Text(
                   box.model,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Color.fromARGB(255, 119, 5, 11),
+                    color: Colors.white,
                   ),
                 ),
                 trailing: Text(
@@ -60,7 +61,7 @@ class ShoppingPage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: CommonTheme.secondaryColor,
+                    color: Colors.white,
                   ),
                 ),
                 onTap: () {

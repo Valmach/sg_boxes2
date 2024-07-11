@@ -28,7 +28,11 @@ class ImageScreen extends StatelessWidget {
       'model': 'Varnish Wood Box',
       'description': 'Elegant varnished wood shoebox.',
     },
-    // Add more shoeboxes as needed
+    {
+      'imagePath': 'assets/images/dark_ocean.408.png',
+      'model': 'Jessica Chaistain',
+      'description': 'Jessica Chaistain shoes.',
+    },
   ];
 
   @override
@@ -41,35 +45,48 @@ class ImageScreen extends StatelessWidget {
         itemCount: shoeboxes.length,
         itemBuilder: (BuildContext context, int index) {
           final shoebox = shoeboxes[index];
-          return ListTile(
-            contentPadding: const EdgeInsets.all(8.0),
-            title: Image.asset(
-              shoebox['imagePath']!,
-              width: 300,
-              height: 300,
-              fit: BoxFit.cover,
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  shoebox['model']!,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                Text(shoebox['description']!),
-              ],
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ChatScreen(
-                    title: 'Fashion Chat',
-                    selectedShoe: shoebox['model']!,
+          return Card(
+            color: Colors.black, // Set card color to black
+            margin: const EdgeInsets.all(8.0),
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(8.0),
+              title: Image.asset(
+                shoebox['imagePath']!,
+                width: 300,
+                height: 300,
+                fit: BoxFit.cover,
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    shoebox['model']!,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white, // Change text color to white
+                    ),
                   ),
-                ),
-              );
-            },
+                  Text(
+                    shoebox['description']!,
+                    style: const TextStyle(
+                      color: Colors.white, // Change text color to white
+                    ),
+                  ),
+                ],
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatScreen(
+                      title: 'Fashion Chat',
+                      selectedShoe: shoebox['model']!,
+                    ),
+                  ),
+                );
+              },
+            ),
           );
         },
       ),

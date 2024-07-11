@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../common theme/common_theme.dart';
+import 'package:sg_boxes/common%20theme/common_theme.dart';
+import '../common_theme/common_theme.dart';
 
 class BoxDropsScreen extends StatefulWidget {
   const BoxDropsScreen({super.key});
@@ -21,10 +21,20 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
       'description': 'A timeless classic shoebox.',
       'imagePath': 'assets/images/shoebox2.png',
     },
-     {
+    {
       'name': 'Sophisticated Shoebox',
       'description': 'A perfect sophisticated shoebox.',
       'imagePath': 'assets/images/lilac_posh.391.png',
+    },
+    {
+      'name': 'Bellucci Shoebox',
+      'description': 'A Monica Bellucci shoebox.',
+      'imagePath': 'assets/images/skoMiDora.io.treasure.446.png',
+    },
+     {
+      'name': 'Naiomi Shoebox',
+      'description': 'A Naomi Campbell shoebox.',
+      'imagePath': 'assets/images/skoMiDora.io.terrazo.463.png',
     },
     // Add more shoeboxes as needed
   ];
@@ -45,6 +55,7 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
           itemBuilder: (BuildContext context, int index) {
             final shoebox = shoeboxes[index];
             return Card(
+              color: Colors.black, // Set card color to black
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(8.0),
@@ -62,14 +73,14 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: CommonTheme.primaryColor,
+                        color: Colors.white, // Change text color to white
                       ),
                     ),
                     Text(
                       shoebox['description']!,
                       style: const TextStyle(
                         fontSize: 14,
-                        color: CommonTheme.primaryColor,
+                        color: Colors.white, // Change text color to white
                       ),
                     ),
                   ],

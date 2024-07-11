@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
 import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
-import 'package:sg_boxes/screens/boxie_details_screen.dart';
 import 'package:sg_boxes/widget/boxie_details_screen.dart';
 
 class NeedfulThingsScreen extends StatelessWidget {
@@ -49,7 +48,7 @@ class NeedfulThingsScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
             return Card(
-              color: const Color(0xFFF5F5F5), // Off-white color for cards
+              color: Colors.black, // Black color for cards
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16.0),
@@ -64,7 +63,7 @@ class NeedfulThingsScreen extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.normal,
-                    color: Color(0xFF000000), // Darker black text
+                    color: Colors.white, // White text color
                   ),
                 ),
                 onTap: () {
@@ -150,7 +149,7 @@ class YourSkoBoxesScreen extends StatelessWidget {
 
   Widget buildBoxieCard(BuildContext context, String boxieName, String imagePath, String connectionStatus) {
     return Card(
-      color: const Color(0xFFF5F5F5), // Off-white color for cards
+      color: Colors.black, // Black color for cards
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(16.0),
@@ -165,7 +164,7 @@ class YourSkoBoxesScreen extends StatelessWidget {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.normal,
-            color: Color(0xFF000000), // Darker black text
+            color: Colors.white, // White text color
           ),
         ),
         subtitle: Row(
@@ -179,7 +178,7 @@ class YourSkoBoxesScreen extends StatelessWidget {
               connectionStatus,
               style: const TextStyle(
                 fontSize: 14,
-                color: Colors.black54,
+                color: Colors.white54,
               ),
             ),
           ],

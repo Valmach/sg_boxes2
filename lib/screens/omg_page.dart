@@ -26,6 +26,7 @@ class OMGPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final box = customMadeBoxes[index];
             return Card(
+              color: Colors.black,
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(16.0),
@@ -37,15 +38,26 @@ class OMGPage extends StatelessWidget {
                 ),
                 title: Text(
                   box.name,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
                 subtitle: Text(
                   box.model,
-                  style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 119, 5, 11)),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
                 ),
                 trailing: Text(
                   '\$${box.price.toStringAsFixed(2)}',
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                  ),
                 ),
                 onTap: () {
                   Navigator.push(
