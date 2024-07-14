@@ -13,10 +13,10 @@ class NeedfulThingsScreen extends StatelessWidget {
     final List<Map<String, String>> items = [
       {'name': 'Box Accessories', 'image': 'assets/images/accessories.png'},
       {'name': 'Bits and Bobs', 'image': 'assets/images/bits_bobs.png'},
-      {'name': 'Tools', 'image': 'assets/images/tools.png'},
-      {'name': 'Network', 'image': 'assets/images/espressif_logo.png'},
+      {'name': 'SkoRack Charge Station', 'image': 'assets/images/tools.png'},
+      {'name': 'Wi-Fi', 'image': 'assets/images/espressif_logo.png'},
       {'name': 'Bluetooth', 'image': 'assets/images/bluetooth.png'},
-      {'name': 'Your SkoBoxes', 'image': 'assets/images/manolo_sangue.png'},
+      {'name': 'Your SkoBoxes', 'image': 'assets/images/louboutin_box1.png'},
     ];
 
     return Scaffold(

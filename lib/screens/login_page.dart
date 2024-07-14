@@ -18,123 +18,132 @@ class LoginPage extends StatelessWidget {
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
       ),
-      body: Container(
-        decoration: CommonTheme.backgroundDecoration,
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Welcome Back!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Please login with your preferred method',
-              style: TextStyle(fontSize: 18, color: Colors.white),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            decoration: CommonTheme.backgroundDecoration,
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildLoginIcon(
-                  context,
-                  Icons.account_circle,
-                  Colors.blueAccent,
-                  () {
-                    // Handle SkoMiDora ID Login
-                  },
+                const Text(
+                  'Welcome Back!',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.normal, color: Colors.white),
                 ),
-                _buildLoginIconWithImage(
-                  context,
-                  'assets/images/email.png',
-                  Colors.red,
-                  () {
-                    _launchURL('https://accounts.google.com/signup');
-                  },
+                const SizedBox(height: 20),
+                const Text(
+                  'Please login with your preferred method',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
-                _buildLoginIconWithImage(
-                  context,
-                  'assets/images/google.png',
-                  Colors.white,
-                  () {
-                    _launchURL('https://accounts.google.com/signup');
-                  },
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _buildLoginIcon(
+                      context,
+                      Icons.account_circle,
+                      Colors.blueAccent,
+                      () {
+                        // Handle SkoMiDora ID Login
+                      },
+                    ),
+                    _buildLoginIconWithImage(
+                      context,
+                      'assets/images/apple.png', // Replace with Apple icon image
+                      null,
+                      () {
+                        // Handle Apple login
+                      },
+                    ),
+                    _buildLoginIconWithImage(
+                      context,
+                      'assets/images/google.png',
+                      null,
+                      () {
+                        _launchURL('https://accounts.google.com/signup');
+                      },
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildLoginIconWithImage(
-                  context,
-                  'assets/images/meta.png',
-                  Colors.blueAccent,
-                  () {
-                    _launchURL('https://www.facebook.com/r.php');
-                  },
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _buildLoginIconWithImage(
+                      context,
+                      'assets/images/meta.png',
+                      Colors.blueAccent,
+                      () {
+                        _launchURL('https://www.facebook.com/r.php');
+                      },
+                    ),
+                    _buildLoginIcon(
+                      context,
+                      Icons.fingerprint,
+                      Colors.green,
+                      () {
+                        // Handle Biometric Login
+                      },
+                    ),
+                    _buildLoginIcon(
+                      context,
+                      Icons.security,
+                      Colors.orange,
+                      () {
+                        // Handle 2-Factor Authentication
+                      },
+                    ),
+                  ],
                 ),
-                _buildLoginIcon(
-                  context,
-                  Icons.fingerprint,
-                  Colors.green,
-                  () {
-                    // Handle Biometric Login
-                  },
+                const SizedBox(height: 30),
+                const Text(
+                  'Contact and help',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
-                _buildLoginIcon(
-                  context,
-                  Icons.security,
-                  Colors.orange,
-                  () {
-                    // Handle 2-Factor Authentication
-                  },
+                const SizedBox(height: 10),
+                const SizedBox(height: 10), // Add spacing
+                const Row(
+                  children: [
+                    Icon(Icons.help, color: Colors.white),
+                    SizedBox(width: 5),
+                    Text(
+                      'Privacy notice',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            const SizedBox(height: 30),
-            const Text(
-              'Contact and help',
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-            const SizedBox(height: 10),
-            const Row(
-              children: [
-                Icon(Icons.help, color: Colors.white),
-                SizedBox(width: 5),
-                Text(
-                  'Privacy notice',
+                const SizedBox(height: 20),
+                const SizedBox(height: 10), // Add spacing
+                GestureDetector(
+                  onTap: () {
+                    // Handle link tap
+                  },
+                  child: const Text(
+                    'Do not sell or share my personal information',
+                    style: TextStyle(fontSize: 16, color: Colors.blue),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const SizedBox(height: 10), // Add spacing
+                const Text(
+                  'California Privacy',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+                const SizedBox(height: 20),
+                const SizedBox(height: 10), // Add spacing
+                const Text(
+                  'Legal',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+                const SizedBox(height: 20),
+                const SizedBox(height: 10), // Add spacing
+                const Text(
+                  'License rights',
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                // Handle link tap
-              },
-              child: const Text(
-                'Do not sell or share my personal information',
-                style: TextStyle(fontSize: 16, color: Colors.blue),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'California Privacy',
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Legal',
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'License rights',
-              style: TextStyle(fontSize: 16, color: Colors.white),
-            ),
-          ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -207,7 +216,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildLoginIconWithImage(BuildContext context, String imagePath, Color color, VoidCallback onTap) {
+  Widget _buildLoginIconWithImage(BuildContext context, String imagePath, Color? color, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Container(

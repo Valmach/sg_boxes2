@@ -81,7 +81,7 @@ class _EarthScreenState extends State<EarthScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Designed, Developed, Built, and by Valentino Massimo muse, B.J. Holmes',
+                'Designed, Developed & Built, by Valentino Massimo, Muse, B.J. Holmes',
                 style: TextStyle(
                   fontSize: 16,
                   color: Color(0xFFB0B0B0), // Silver-grey color
