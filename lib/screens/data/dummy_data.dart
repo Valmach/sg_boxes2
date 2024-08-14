@@ -42,7 +42,15 @@ final List<BoxModel> availableBoxes = [
     imgAddress: "assets/images/gucci_ace_sneaker.png",
     modelColor: CommonTheme.secondaryColor,
   ),
+   BoxModel(
+    name: "PRADA",
+    model: "SLIPPER_HOMME",
+    price: 600.00,
+    imgAddress: "assets/images/prada_homme_slippers",
+    modelColor: CommonTheme.secondaryColor,
+   ),
 ];
+
 
 // List of user statuses
 final List<UserStatus> userStatus = [

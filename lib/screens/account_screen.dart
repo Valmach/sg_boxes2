@@ -44,11 +44,11 @@ class AccountScreen extends StatelessWidget {
             const SizedBox(height: 10),
             _buildAccountCard(
               context,
-              'Send Feedback',
-              Icons.feedback,
+              'Community',
+              Icons.group,
               Colors.orange,
               () {
-                // Handle Send Feedback navigation
+                _launchCommunityPage(context);
               },
             ),
             const SizedBox(height: 10),
@@ -205,11 +205,12 @@ class AccountScreen extends StatelessWidget {
             'assets/images/twitter.png',
             'https://www.twitter.com',
           ),
+         
           _buildSocialMediaButton(
             context,
-            'YouTube',
-            'assets/images/youtube.png',
-            'https://www.youtube.com',
+            'Pinterest',
+            'assets/images/pinterest.png', // Make sure you have the Pinterest image in your assets
+            'https://www.pinterest.com',
           ),
         ],
       ),
@@ -241,5 +242,16 @@ class AccountScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _launchCommunityPage(BuildContext context) async {
+    const url = 'https://www.skomidora.com/community'; // Replace with actual community URL
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not launch $url')),
+      );
+    }
   }
 }

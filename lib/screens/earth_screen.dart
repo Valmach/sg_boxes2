@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import '../common_theme/common_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EarthScreen extends StatefulWidget {
@@ -193,6 +192,12 @@ class _EarthScreenState extends State<EarthScreen> {
               'YouTube',
               'assets/images/youtube.png',
               'https://www.youtube.com',
+            ),
+            _buildSocialMediaButton(
+              context,
+              'Pinterest',
+              'assets/images/pinterest.png', // Make sure you have the Pinterest image in your assets
+              'https://www.pinterest.com',
             ),
           ],
         ),
