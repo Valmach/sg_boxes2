@@ -2,7 +2,10 @@
     "java.configuration.updateBuildConfiguration": "interactive",
     "cSpell.words": [
         "Boxie",
+        "firestore",
         "Massimo",
-        "Shoeboxes"
-    ]
+        "Shoeboxes",
+        "uiux"
+    ],
+    "cmake.sourceDirectory": "C:/Users/valma/Desktop/sg_boxes2-profiles-rest-api/linux"
 }

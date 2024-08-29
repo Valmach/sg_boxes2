@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import '../common_theme/common_theme.dart';
+import 'package:sg_boxes/screens/webview_page.dart'; // Import the WebViewPage
 
 class BoxDropsScreen extends StatefulWidget {
   const BoxDropsScreen({super.key});
@@ -15,26 +15,31 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
       'name': 'Elegant Shoebox',
       'description': 'A beautifully crafted shoebox.',
       'imagePath': 'assets/images/shoebox1.png',
+      'url': 'https://your-gemini-api-url.com/elegant',
     },
     {
       'name': 'Classic Shoebox',
       'description': 'A timeless classic shoebox.',
       'imagePath': 'assets/images/shoebox2.png',
+      'url': 'https://your-gemini-api-url.com/classic',
     },
     {
       'name': 'Sophisticated Shoebox',
       'description': 'A perfect sophisticated shoebox.',
       'imagePath': 'assets/images/lilac_posh.391.png',
+      'url': 'https://your-gemini-api-url.com/sophisticated',
     },
     {
       'name': 'Bellucci Shoebox',
       'description': 'A Monica Bellucci shoebox.',
       'imagePath': 'assets/images/skoMiDora.io.treasure.446.png',
+      'url': 'https://your-gemini-api-url.com/bellucci',
     },
-     {
+    {
       'name': 'Naiomi Shoebox',
       'description': 'A Naomi Campbell shoebox.',
       'imagePath': 'assets/images/skoMiDora.io.terrazo.463.png',
+      'url': 'https://your-gemini-api-url.com/naiomi',
     },
     // Add more shoeboxes as needed
   ];
@@ -86,7 +91,15 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
                   ],
                 ),
                 onTap: () {
-                  // Handle navigation to purchase options
+                  // Navigate to the WebView page with the appropriate URL
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WebViewPage(
+                        url: shoebox['url']!, // Pass the URL to the WebViewPage
+                      ),
+                    ),
+                  );
                 },
               ),
             );

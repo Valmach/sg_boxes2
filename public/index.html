@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SkoMiDora - Your Next Luxury Experience</title>
+    
+    <link rel="stylesheet" href="assets/styles.css">
+    <script defer src="assets/script.js"></script>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Firebase SDKs -->
+    <script defer src="/__/firebase/10.13.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.13.0/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1F1B24;
+            color: #FFF;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+        }
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .grid-item {
+            background: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+        }
+        footer {
+            background: #1F1B24;
+            color: #FFF;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>SkoMiDora</header>
+    <div class="content">
+        <div class="grid">
+            <!-- Example grid items -->
+            <div class="grid-item">Elegant Shoebox</div>
+            <div class="grid-item">Classic Shoebox</div>
+            <div class="grid-item">Sophisticated Shoebox</div>
+        </div>
+    </div>
+    <footer>&copy; 2024 SkoMiDora. All rights reserved.</footer>
+</body>
+</html>
