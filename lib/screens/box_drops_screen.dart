@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import 'package:sg_boxes/screens/webview_page.dart'; // Import the WebViewPage
+// Import the WebViewPage
 
 class BoxDropsScreen extends StatefulWidget {
   const BoxDropsScreen({super.key});
@@ -14,32 +14,37 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
     {
       'name': 'Elegant Shoebox',
       'description': 'A beautifully crafted shoebox.',
-      'imagePath': 'assets/images/shoebox1.png',
-      'url': 'https://your-gemini-api-url.com/elegant',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox1.png?alt=media',
     },
     {
       'name': 'Classic Shoebox',
       'description': 'A timeless classic shoebox.',
-      'imagePath': 'assets/images/shoebox2.png',
-      'url': 'https://your-gemini-api-url.com/classic',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox2.png?alt=media',
     },
     {
       'name': 'Sophisticated Shoebox',
       'description': 'A perfect sophisticated shoebox.',
-      'imagePath': 'assets/images/lilac_posh.391.png',
-      'url': 'https://your-gemini-api-url.com/sophisticated',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox3.png?alt=media',
     },
     {
       'name': 'Bellucci Shoebox',
       'description': 'A Monica Bellucci shoebox.',
-      'imagePath': 'assets/images/skoMiDora.io.treasure.446.png',
-      'url': 'https://your-gemini-api-url.com/bellucci',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox4.png?alt=media',
     },
     {
-      'name': 'Naiomi Shoebox',
+      'name': 'Naomi Shoebox',
       'description': 'A Naomi Campbell shoebox.',
-      'imagePath': 'assets/images/skoMiDora.io.terrazo.463.png',
-      'url': 'https://your-gemini-api-url.com/naiomi',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox5.png?alt=media',
+    },
+     {
+      'name': 'Simone Biles Shoebox',
+      'description': 'A Simone Biles shoebox.',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox6.png?alt=media',
+    },
+     {
+      'name': 'Katie Ledecky Shoebox',
+      'description': 'A Katie Ledecky.',
+      'imageUrl': 'https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/shoebox7.png?alt=media',
     },
     // Add more shoeboxes as needed
   ];
@@ -55,52 +60,64 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
       ),
       body: Container(
         decoration: CommonTheme.backgroundDecoration,
-        child: ListView.builder(
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Number of boxes per row
+            childAspectRatio: 0.7, // Aspect ratio to make the boxes smaller
+            crossAxisSpacing: 8.0,
+            mainAxisSpacing: 8.0,
+          ),
           itemCount: shoeboxes.length,
           itemBuilder: (BuildContext context, int index) {
             final shoebox = shoeboxes[index];
             return Card(
               color: Colors.black, // Set card color to black
-              margin: const EdgeInsets.all(8.0),
-              child: ListTile(
-                contentPadding: const EdgeInsets.all(8.0),
-                title: Image.asset(
-                  shoebox['imagePath']!,
-                  width: 300,
-                  height: 300,
-                  fit: BoxFit.cover,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  color: CommonTheme.accentColor,
+                  width: 2, // Increase border weight
                 ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      shoebox['name']!,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white, // Change text color to white
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.network(
+                        shoebox['imageUrl']!,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    Text(
-                      shoebox['description']!,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.white, // Change text color to white
-                      ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          shoebox['name']!,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white, // Change text color to white
+                          ),
+                        ),
+                        const SizedBox(height: 4), // Spacing between name and description
+                        Text(
+                          shoebox['description']!,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white70, // Slightly lighter color for the description
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                onTap: () {
-                  // Navigate to the WebView page with the appropriate URL
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => WebViewPage(
-                        url: shoebox['url']!, // Pass the URL to the WebViewPage
-                      ),
-                    ),
-                  );
-                },
+                  ),
+                ],
               ),
             );
           },

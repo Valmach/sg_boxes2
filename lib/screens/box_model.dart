@@ -6,7 +6,7 @@ class BoxModel {
   final double price;
   final String imgAddress;
   final String description; // Add this field
-  final List<String>? availableColors; // Optional field if you have color options
+  final List<String>? availableColors; // Optional field for color options
 
   BoxModel({
     required this.name,

@@ -14,11 +14,6 @@ class ImageScreen extends StatelessWidget {
       'description': 'Purple Adidas shoes for men.',
     },
     {
-      'imagePath': 'assets/images/skoMiDora.io_terrazoblue.jpg',
-      'model': 'SkoMiDora Terrazoblue',
-      'description': 'Blue terrazzo pattern shoes.',
-    },
-    {
       'imagePath': 'assets/images/SkoMiDora_Jimmy_Choo.383.jpg',
       'model': 'SkoMiDora Jimmy Choo',
       'description': 'High fashion Jimmy Choo shoes.',
