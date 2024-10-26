@@ -1,7 +1,7 @@
 /* Scroll Buttons */
 .scroll-btn {
   background-color: #1F1B24; /* Matches menu bar color */
-  color: #F4A261; /* Gold color */
+  color: #aaa5a1; /* Gold color */
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -9,125 +9,107 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
 }
 
 .left-scroll {
-  position: absolute;
   left: 0;
 }
 
 .right-scroll {
-  position: absolute;
   right: 0;
 }
 
+/* Navigation Menu */
 .nav-menu {
   display: flex;
-  overflow-x: auto; /* Allows horizontal scrolling */
-  white-space: nowrap; /* Prevents items from wrapping to the next line */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
-  -ms-overflow-style: none;  /* Hide scrollbar in Internet Explorer and Edge */
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar in WebKit-based browsers */
-.nav-menu::-webkit-scrollbar {
-  display: none;
+.nav-menu > * {
+  flex-shrink: 0;
+  padding: 10px;
 }
 
-
-.nav-menu {
-  display: flex;
-  overflow-x: auto; /* Allows horizontal scrolling */
-  white-space: nowrap; /* Prevents items from wrapping to the next line */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 0 15px;
+  display: block;
 }
 
+@media (max-width: 480px) {
+  .nav-menu a {
+    padding: 10px 5px;
+  }
+}
+
+/* General Menu Styles */
 .nav-menu ul {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
-  gap: 20px; /* Space between menu items */
+  gap: 20px;
 }
 
-.nav-menu ul li {
-  flex-shrink: 0; /* Prevent items from shrinking */
+.nav-menu a i {
+  margin-right: 8px;
 }
 
-.nav-menu::-webkit-scrollbar {
-  height: 8px; /* Height of the scrollbar */
+.nav-menu a:hover {
+  color: #d1cecc;
 }
 
-.nav-menu::-webkit-scrollbar-thumb {
-  background-color: #F4A261; /* Gold color for the scrollbar thumb */
-  border-radius: 4px;
+/* Menu Actions */
+.menu-actions a {
+  color: #6e6b6991;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 13px;
 }
 
-.nav-menu::-webkit-scrollbar-track {
-  background: #1F1B24; /* Matches the menu bar color */
+.menu-actions a:hover {
+  color: #FFFFFF;
 }
 
-/* Optional: Hide scrollbar when not scrolling */
-.nav-menu {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #F4A261 #1F1B24; /* Firefox */
-}
-
-.nav-menu:hover::-webkit-scrollbar-thumb {
-  background-color: #E09E5B; /* Lighter shade for scrollbar thumb on hover */
-}
-/* Prevent text from becoming too large on mobile devices */
-
-
-html {
-  -webkit-text-size-adjust: 100%; /* For Safari/Chrome/iOS */
-  text-size-adjust: 100%; /* For other browsers */
-}
-
-/* Reduce text size slightly on smaller screens */
-@media (max-width: 480px) {
-  html {
-      -webkit-text-size-adjust: 95%; /* Safari/Chrome/iOS */
-      text-size-adjust: 95%; /* Other browsers */
-  }
-
-  .grid-item p {
-      font-size: 14px; /* Adjust the font size for small screens */
-  }
-}
-
-/* Further reduce text size on very small screens */
-@media (max-width: 320px) {
-  html {
-      -webkit-text-size-adjust: 90%; /* Safari/Chrome/iOS */
-      text-size-adjust: 90%; /* Other browsers */
-  }
-
-  .grid-item p {
-      font-size: 13px; /* Further adjust font size */
-  }
-}
-
+/* General Content Styles */
 body {
-  background-color: #000000; /* Black background */
-  color: #FFFFFF; /* White text */
+  background-color: #000;
+  color: #FFF;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  box-sizing: border-box;
+  background: linear-gradient(43deg, #130a16 0%, #9457a7 100%);
+  overflow-x: hidden;
 }
 
 header.menu-bar {
-  background: #1F1B24; /* Matches CommonTheme primaryColor */
-  color: #fcfbf8; /* Bright gold */
-  padding: 10px 20px;
+  background: #4e3370;
+  color: #fcfbf8;
+  padding: 10px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add some shadow for depth */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.55);
   width: 100%;
+}
+
+header {
+  background: #1F1B24;
+  color: #fcfbf8;
+  padding: 15px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
 }
 
 .menu-container {
@@ -136,61 +118,26 @@ header.menu-bar {
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; /* Centers the menu on the page */
+  margin: 0 auto;
 }
 
 .logo {
-  color: #F4A261; /* Gold color */
+  color: #b10e44;
   text-decoration: none;
   font-size: 18px;
-  font-weight: normal;
 }
 
-.nav-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-menu a {
-  color: #FFFFFF; /* White text */
-  text-decoration: none;
-  font-size: 13px; /* Slightly smaller for fit */
-  display: flex;
-  align-items: center;
-}
-
-.nav-menu a i {
-  margin-right: 8px;
-}
-
-.nav-menu a:hover {
-  color: #F4A261; /* Gold color */
-}
-
-.menu-actions a {
-  color: #F4A261; /* Gold color */
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 13px;
-}
-
-.menu-actions a:hover {
-  color: #FFFFFF; /* White text */
-}
-
+/* Content Container */
 .content {
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto; /* Centers the content on the page */
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensures grid items take up equal space */
-  gap: 20px; /* Space between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   justify-items: center;
 }
 
@@ -198,94 +145,253 @@ header.menu-bar {
   background: #333;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5); /* Bright gold shadow */
-  border: 2px solid #FFD700; /* Bright gold border */
+  box-shadow: 0 4px 8px rgba(20, 20, 16, 0.5);
+  border: 2px solid #020201;
   text-align: center;
   max-width: 300px;
   width: 100%;
+  transition: box-shadow 0.3s ease, transform 0.2s;
+}
+
+.grid-item:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+  transform: scale(1.03);
 }
 
 .grid-item img {
   max-width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.grid-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
 }
 
 .grid-item p {
-  color: #ffffff; /* Bright gold text */
+  color: #FFF;
   font-size: 13px;
   margin: 0;
 }
 
+/* Footer */
 footer {
-  background: #1F1B24;
+  background: linear-gradient(135deg, #1F1B24, #3c5a72);
   color: #FFF;
   text-align: center;
   padding: 20px;
   font-size: 13px;
   margin-top: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive adjustments for mobile screens */
+/* Shoebox Image Gallery */
+.shoebox-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Shoebox Images */
+.shoebox-images img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5); /* Bright gold shadow */
+}
+
+/* Shoebox Details */
+.shoebox-details {
+  background: #1F1B24;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.shoebox-details p {
+  margin: 10px 0;
+}
+
+.shoebox-details strong {
+  color: #a5a09b; /* Bright gold text for emphasis */
+}
+
+/* Hotspot and Tooltip */
+.hotspot {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.hotspot:hover .tooltip {
+  display: block;
+}
+
+/* Black Banner */
+.black-banner {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Discover Button */
+.discover-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #FFD700;
+  color: #000000;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.discover-button:hover {
+  background-color: #F4A261;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Sidebar Styling */
+.configurator-sidebar {
+  background-color: var(--tw-bg-opacity, #222);
+  color: var(--tw-text-opacity, #fff);
+  padding: clamp(16px, 1.25vw + 12px, 36px);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* Color Options */
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.color-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.color-option:hover {
+  border-color: #f4a261;
+}
+
+/* Canvas Styles */
+#canvas-container, .inner-box {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  max-height: 100%;
+}
+
+/* Thumbnails Scroll Bar */
+nav.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 2px;
+  justify-content: flex-start;
+  margin-top: 4px;
+  padding: 0 5px;
+}
+
+nav.flex .cursor-pointer {
+  flex: 0 0 auto;
+  width: 56px;
+}
+
+nav.flex img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  display: none;
+  transition: height 0.3s ease;
+}
+
 @media (max-width: 768px) {
-  .nav-menu ul {
-      flex-wrap: wrap;
-      gap: 10px;
-  }
-
-  .grid-item {
-      max-width: 100%;
+  .mobile-drawer {
+    display: block;
   }
 }
 
-@media (max-width: 480px) {
-  .grid-item p {
-      font-size: 13px; /* Smaller font size for very small screens */
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .contrast-btn {
+    max-width: 100px;
+  }
+
+  .viewer-container {
+    height: 300px;
   }
 }
 
-/* Additional Media Queries for Fine-Tuning Layouts */
-@media (min-width: 320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-  .grid-item p {
-      font-size: 14px;
+@media only screen and (max-width: 480px) {
+  nav.flex .cursor-pointer {
+    width: 40px;
   }
-}
 
-@media (min-width: 480px) {
-  /* smartphones, Android phones, landscape iPhone */
-  .grid-item p {
-      font-size: 15px;
-  }
-}
-
-@media (min-width: 600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-  .grid-item p {
-      font-size: 16px;
-  }
-}
-
-@media (min-width: 801px) {
-  /* tablet, landscape iPad, lo-res laptops and desktops */
-  .grid-item {
-      max-width: 50%;
-  }
-  .grid-item p {
-      font-size: 16px;
-  }
-}
-
-@media (min-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */
-  .grid-item {
-      max-width: calc(33.33% - 20px); /* Three items per row on large screens */
-  }
-}
-
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
-  .grid-item {
-      max-width: calc(25% - 20px); /* Four items per row on extra-large screens */
+  .viewer-container {
+    height: 200px;
   }
 }

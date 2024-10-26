@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configure your perfect Boxie">
+  <meta name="theme-color" content="#3f51b5">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Configure your perfect Boxie">
+  <meta name="msapplication-TileColor" content="#3f51b5">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="application-name" content="Configure your perfect Boxie">
+  <base href="/">
+  <title>Configurator</title>
+
+  <!-- Preload Fonts -->
+  <link rel="preload" href="/assets/rr/fonts/FontDefinitionIcons.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/assets/rr/fonts/FontDefinitionSansSerifRegular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/assets/rr/fonts/FontDefinitionSansSerifBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <!-- Favicon and Manifest -->
+  <link rel="icon" href="/assets/rr/images/favicon.ico">
+  <link rel="manifest" crossorigin="use-credentials" href="/en_US/manifest.json">
+  <link rel="apple-touch-icon" sizes="48x48" href="/assets/rr/images/manifest/icon-48x48.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/rr/images/manifest/icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/assets/rr/images/manifest/icon-96x96.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/rr/images/manifest/icon-144x144.png">
+
+  <!-- 360 Viewer -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="skobox-360.html">Home</a>
+      <a href="skobox-361.html">Configure</a>
+      <a href="#">Buy Boxies</a>
+      <a href="#">Compare</a>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- Nike Box 3D Viewer -->
+    <div style="max-width: 1447px; max-height: 634px; margin: 20px auto;">
+      <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 43.8148%; overflow: hidden;">
+        <iframe src="Nike_Exterior_vampire.534.html" allowfullscreen
+          style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%;"
+          frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Additional Content Here -->
+
+    <!-- Example Buttons -->
+    <div class="action-buttons">
+      <button id="build-boxie-btn" class="build-boxie-btn" aria-label="Build Boxie">Build Boxie</button>
+    </div>
+  </main>
+
+  <script>
+    // Script to handle button interactions
+    document.getElementById('build-boxie-btn').addEventListener('click', function() {
+      // Logic for building the Boxie, for example, redirect to another configuration page
+      window.location.href = "skobox-360.html";
+    });
+  </script>
+</body>
+
+</html>

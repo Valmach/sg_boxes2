@@ -1,0 +1,305 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <h2>Toggle Dark/Light Mode</h2>
+  <p></p>
+  
+  <button onclick="myFunction()"></button>
+  
+  <script>
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
+  
+  </body>
+  
+  </html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkoMiDora 360 Viewer Sidebar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      display: flex;
+      background-color: #f0f0f0;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-weight: 700;
+      font-size: 16px;
+      margin: 20px 0;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    .sidebar button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .sidebar button:hover {
+      background-color: #444;
+    }
+
+    .sidebar .menu-item {
+      border-top: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .sidebar .menu-item h3 {
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0;
+      cursor: pointer;
+      color: #666;
+      text-transform: uppercase;
+    }
+
+    .submenu {
+      display: none;
+      padding-left: 20px;
+    }
+
+    .submenu li {
+      list-style: none;
+      margin: 5px 0;
+    }
+
+    .submenu li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* Main content styles */
+    .main-content {
+      margin-left: 270px;
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    /* Collapsible section handling */
+    .expandable:hover {
+      color: #000;
+    }
+
+    .expandable.collapsed + .submenu {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <button>Show Inspiration Lounge</button>
+
+    <div class="menu-item">
+      <h2>Packages</h2>
+      <h3 class="expandable">Option Packages</h3>
+      <ul class="submenu">
+        <li><a href="#">Standard Package</a></li>
+        <li><a href="#">Luxury Package</a></li>
+        <li><a href="#">Sport Package</a></li>
+      </ul>
+    </div>
+
+    <div class="menu-item">
+      <h2>Exterior</h2>
+      <h3 class="expandable">Exterior Style</h3>
+      <ul class="submenu">
+        <li><a href="#">Color Options</a></li>
+        <li><a href="#">Wheels & Tires</a></li>
+        <li><a href="#">Accessories</a></li>
+      </ul>
+    </div>
+
+    <div class="menu-item">
+      <h2>Interior</h2>
+      <h3 class="expandable">Interior Style</h3>
+      <ul class="submenu">
+        <li><a href="#">Seating Material</a></li>
+        <li><a href="#">Dashboard Options</a></li>
+        <li><a href="#">Ambient Lighting</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Toggle collapsible sections
+    document.querySelectorAll('.expandable').forEach(function (header) {
+      header.addEventListener('click', function () {
+        header.classList.toggle('collapsed');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkoMiDora 360 Viewer - 361</title>
+  <!-- Cloudimage 360 Viewer -->
+  <script src="https://scaleflex.cloudimg.io/v7/plugins/js-cloudimage-360-view/latest/js-cloudimage-360-view.min.js?func=proxy"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://skoventory.com/index.html">
+  <link rel="alternate" media="only screen and (max-width: 758px)" href="https://m.skoventory.com/index.html">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    .viewer-container {
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .cloudimage-360 {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>SkoMiDora 360° Skobox Viewer</h1>
+
+  <a href="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_0.png?alt=media" target="_blank">Change Model</a>
+
+  <div class="viewer-container">
+    <div class="cloudimage-360" id="skobox-361-view"
+         data-folder="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre/"
+         data-image-list-x="[&quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_0.png?alt=media&quot;, 
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_01.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_02.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_03.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_04.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_05.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_06.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_07.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_08.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_09.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_10.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_11.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_12.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_13.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_14.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_15.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_16.png?alt=media&quot;,
+           &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_17.png?alt=media&quot;]"
+         data-amount="18"
+         data-drag-speed="-0.5"
+         data-speed="0.5"
+         data-autoplay="false"
+         data-hide-360-logo="false"
+         data-bottom-circle="false"
+         draggable="false">
+      <div class="cloudimage-360-inner-box">
+        <div class="cloudimage-360-icons-container"></div>
+        <canvas id="skobox-canvas" width="0" height="0"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const firstImageURL = "https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/nike_int_pan_vampyre%2F0_0.png?alt=media";
+      const canvas = document.getElementById('skobox-canvas');
+      const viewerContainer = document.querySelector('.viewer-container');
+      
+      // Create an invisible image element to get the natural dimensions
+      const img = new Image();
+      img.src = firstImageURL;
+      img.onload = function () {
+        const aspectRatio = img.naturalWidth / img.naturalHeight;
+        const containerWidth = viewerContainer.clientWidth;
+        const containerHeight = viewerContainer.clientHeight;
+
+        // Determine the canvas size based on the container dimensions while maintaining the aspect ratio
+        let canvasWidth, canvasHeight;
+        if (containerWidth / containerHeight > aspectRatio) {
+          // Container is wider than the aspect ratio, adjust based on height
+          canvasHeight = containerHeight;
+          canvasWidth = containerHeight * aspectRatio;
+        } else {
+          // Container is taller than the aspect ratio, adjust based on width
+          canvasWidth = containerWidth;
+          canvasHeight = containerWidth / aspectRatio;
+        }
+
+        // Set the canvas dimensions
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        // Center the canvas within the container
+        canvas.style.position = 'absolute';
+        canvas.style.left = '50%';
+        canvas.style.top = '50%';
+        canvas.style.transform = 'translate(-50%, -50%)';
+
+        // Initialize the 360 viewer
+        CI360.init();
+      };
+    });
+  </script>
+</body>
+
+</html>

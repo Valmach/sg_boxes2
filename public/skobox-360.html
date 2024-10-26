@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Build Your Boxie | Skomidora Custom Box Builder">
+    <meta property="og:image" content="https://skomidora.com/assets/box-preview.jpg">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta name="theme-color" content="#FFF" media="(prefers-color-scheme:light)">
+    <meta name="theme-color" content="#0E1418" media="(prefers-color-scheme:dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Skomidora Boxie Builder">
+    <title>SkoMiDora 360 Box Viewer and Builder</title>
+
+    <!-- Include Cloudimage 360 Viewer Library -->
+    <script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.1/js-cloudimage-360-view.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
+
+
+
+    <!-- Google Tag Manager -->
+    <script defer src="https://www.googletagmanager.com/gtm.js?id=GTM-W2NKNJZ&amp;l=oneGa"></script>
+    <link rel="stylesheet" href="your-style.css">
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://skomidora.com/styles/font-face.css" crossorigin>
+    <link rel="stylesheet" href="/public/root-B7CIUjhy.css">
+    <link rel="stylesheet" href="/public/route-CusXihuA.css">
+    <link rel="stylesheet" href="/public/price-De8ro1TI.css">
+    <div class="pb-2xl pds-grid mt-sm landscape:md:mt-md landscape:md:mx-md col-[full-start/full-end] landscape:md:col-[full-start/full-end]"
+        style="max-width: 979px; max-height: 550px; margin: auto;">
+        <div class="mx-md portrait:mx-sm col-[full-start/full-end] md:hidden">
+            <div class="gap-sm flex items-center portrait:flex-col">
+                <h2 class="text-h-lg" dir="ltr"></h2>
+            </div>
+        </div>
+        <div </div>
+            <!-- Inline Styles -->
+            <style>
+                /* General Styles */
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Roboto', sans-serif;
+                    background-color: #000000;
+                    color: #FFFFFF;
+                    overflow-x: hidden;
+                    /* Prevent horizontal scrolling */
+                    box-sizing: border-box;
+                    /* Include padding and border in the element's width */
+                }
+
+
+                h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: #ffffff;
+                }
+
+                h1 {
+                    display: block;
+                    font-size: 1.5em;
+                    margin-block-start: 0.67em;
+                    margin-block-end: 0.67em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    font-weight: normal;
+                    unicode-bidi: isolate;
+                }
+
+
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 8px;
+                }
+
+                .viewer-container {
+                    width: 80%;
+                    margin: 0 auto;
+                    padding-top: 10px;
+                }
+
+                /* Cloudimage 360 Viewer */
+                .cloudimage-360 {
+                    width: 100%;
+                    height: 891px;
+                    margin: 0 auto;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .cloudimage-360 img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    transition: opacity 0.3s ease-in-out;
+                    opacity: 0;
+                }
+
+                .cloudimage-360 img.loaded {
+                    opacity: 1;
+                }
+
+                /* Buttons */
+                .buttons-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+
+                .buttons-container button {
+                    padding: 15px 30px;
+                    font-size: 16px;
+                    color: #fff;
+                    background-color: #333;
+                    border: 2px solid #000;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+
+                .buttons-container button:hover {
+                    background-color: #444;
+                }
+
+                /* Hide thumbnail scrollbar on mobile */
+                @media (max-width: 768px) {
+                    .thumbnail-scrollbar {
+                        display: none;
+                    }
+                }
+
+                /* Show sidebar on mobile */
+                @media (max-width: 768px) {
+                    .sidebar-menu {
+                        display: block;
+                        /* Ensure sidebar is visible on mobile */
+                    }
+                }
+
+                .sidebar-menu {
+                    display: none;
+                    /* Hide sidebar on larger screens */
+                }
+
+
+                /* Sidebar Configurator */
+                .configurator-sidebar {
+                    width: 0;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    background-color: #333;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    padding-top: 60px;
+                    z-index: 1000;
+                }
+
+                .configurator-sidebar .close-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 25px;
+                    font-size: 36px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                .configurator-sidebar h3 {
+                    color: white;
+                    margin-bottom: 10px;
+                    padding-left: 20px;
+                }
+
+                h3 {
+                    display: block;
+                    font-size: 1.11em;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    font-weight: bold;
+                    unicode-bidi: isolate;
+                }
+
+                .build-boxie-btn {
+                    background: linear-gradient(135deg, #111, #444);
+                    color: #ffffff;
+                    border: 1px solid #f4a261;
+                    padding: 10px 20px;
+                    font-size: 12px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: background 0.4s, transform 0.2s;
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+                }
+
+                .configurator-sidebar .configurator-content {
+                    padding: 10px;
+                }
+
+                h4 {
+                    display: block;
+                    margin-block-start: 1.16em;
+                    margin-block-end: 1.16em;
+                    margin-inline-start: 0px;
+                    margin-inline-end: 0px;
+                    font-weight: normal;
+                    unicode-bidi: isolate;
+                }
+
+                .configurator-sidebar h3 {
+                    color: white;
+                    margin-bottom: 20px;
+                    padding-left: 30px;
+                }
+
+                .configurator-sidebar button {
+                    display: block;
+                    width: 80%;
+                    margin: 0 auto;
+                    padding: 10px;
+                    margin-bottom: 10px;
+                    border: none;
+                    background-color: #444;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                .configurator-sidebar button:hover {
+                    background-color: #f4a261;
+                }
+
+                /* Build Boxie Button */
+                .build-boxie-btn {
+                    display: block;
+                    margin: 20px auto;
+                    padding: 15px 30px;
+                    background-color: #333;
+                    color: #fff;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                    text-align: center;
+                }
+
+                .build-boxie-btn:hover {
+                    background-color: #444;
+                }
+
+                /* Header Menu */
+                .header-menu {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 0;
+                    border-bottom: 1px solid #ddd;
+                    margin-bottom: 20px;
+                }
+
+                .header-menu .title {
+                    font-size: 13px;
+                    font-weight: normal;
+                }
+
+                .header-menu .menu-options {
+                    display: flex;
+                    gap: 20px;
+                }
+
+                .menu-options a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 13px;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                }
+
+                .menu-options a:hover {
+                    color: #ff385c;
+                }
+
+                /* Menu Bar */
+                .menu-bar {
+                    background-color: #333;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 50px;
+                }
+
+                .menu-bar a {
+                    color: #fff;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    background-color: #444;
+                }
+
+                .menu-bar a:hover {
+                    background-color: #f4a261;
+                }
+
+                /* Build Your Boxie Section */
+                .content-container {
+                    text-align: center;
+                    padding: 50px 20px;
+                }
+
+                .build-options {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 20px;
+                }
+
+                .build-option {
+                    border: 2px solid #333;
+                    padding: 20px;
+                    border-radius: 10px;
+                    max-width: 300px;
+                    text-align: center;
+                }
+
+                .build-option:hover {
+                    background-color: #f4a261;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                /* Hotspot Modal */
+                .hotspot-modal {
+                    display: none;
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0.95);
+                    border: 2px solid #333;
+                    border-radius: 10px;
+                    padding: 20px;
+                    width: 250px;
+                    z-index: 100;
+                }
+
+                .modal-close {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                /* General Body Styling */
+                body {
+                    font-family: 'Roboto', sans-serif;
+                    background: linear-gradient(135deg, #0e1418, #1c1f24);
+                    /* Sleek dark gradient */
+                    color: #ffffff;
+                    /* White text for contrast */
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                    /* Prevent horizontal scroll on mobile */
+                }
+
+                /* Header Menu */
+
+
+                .header-menu .menu-options a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 16px;
+                    transition: color 0.3s ease;
+                }
+
+                .header-menu .menu-options a:hover {
+                    color: #f4a261;
+                    /* Gold on hover */
+                }
+
+                /* Glossy Buttons */
+                button,
+                .discover-button,
+                .build-boxie-btn {
+                    background: linear-gradient(135deg, #111, #444);
+                    /* Glossy gradient */
+                    color: #ffffff;
+                    border: 1px solid #f4a261;
+                    /* Gold border */
+                    padding: 10px 18px;
+                    font-size: 12px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    transition: background 0.4s, transform 0.2s;
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+                    /* Glossy button shadow */
+                }
+
+                button:hover,
+                .discover-button:hover,
+                .build-boxie-btn:hover {
+                    background: linear-gradient(135deg, #222, #666);
+                    /* Slight lightening effect */
+                    transform: scale(1.05);
+                    /* Slight hover lift */
+                    box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.6);
+                }
+
+                button:active,
+                .discover-button:active,
+                .build-boxie-btn:active {
+                    background: linear-gradient(135deg, #000, #333);
+                }
+
+                search-bar:hover,
+                .search-bar:focus-within {
+                    width: 30px;
+                }
+
+                .search-bar {
+                    display: flex;
+                    align-items: center;
+                    background-color: #FFFFFF;
+                    border-radius: 40px;
+                    padding: 5px 10px;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                    width: 18px;
+                    transition: width 0.4s ease;
+                    overflow: hidden;
+
+
+                }
+
+                user agent stylesheet div {
+                    display: block;
+                    unicode-bidi: isolate;
+                }
+
+                header {
+                    background: #1F1B24;
+                    color: #fcfbf8;
+                    padding: 15px;
+                    text-align: center;
+                    font-family: 'Playfair Display', serif;
+                    font-size: 13px;
+                    font-weight: normal;
+                }
+
+                body {
+                    background-color: #000000;
+                    color: #FFFFFF;
+                    font-family: 'Roboto', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                body {
+                    background-color: #000000;
+                    color: #FFFFFF;
+                    font-family: 'Roboto', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    background: linear-gradient(43deg, #8d7d95 0%, #a57db1 100%);
+                    overflow-x: hidden;
+                }
+
+                body {
+                    margin: 0;
+                    font-family: 'Roboto', sans-serif;
+                    background-color: #000000;
+                    color: #FFFFFF;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #1F1B24;
+                    color: #DDDDDD;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* Viewer Container */
+                .viewer-container {
+                    background-color: rgba(0, 0, 0, 0.9);
+                    /* Black background for 360 viewer */
+                    padding: 40px 20px;
+                    border-radius: 10px;
+                    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+                    /* Deep shadow for depth */
+                }
+
+                .cloudimage-360 img {
+                    border-radius: 10px;
+                    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+                    /* Add some shine to images */
+                }
+
+                /* Sidebar Configurator */
+                .configurator-sidebar {
+                    background-color: #222;
+                    /* Rich dark background */
+                    color: #fff;
+                    padding-top: 60px;
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+                    /* Sidebar shadow */
+                }
+
+                .configurator-sidebar {
+                    background-color: #222;
+                    /* Rich dark background */
+                    color: #fff;
+                    padding-top: 60px;
+                    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.6);
+                    /* Sidebar shadow */
+                    background: linear-gradient(135deg, #222, #333);
+                    /* Add a subtle gradient to the sidebar */
+                }
+
+                .configurator-sidebar button {
+                    background: linear-gradient(135deg, #444, #666);
+                    /* Enhanced glossy button gradient */
+                    color: #ffffff;
+                    border: 1px solid #f4a261;
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+                    border-radius: 8px;
+                    /* Smooth button edges */
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    transition: background 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .configurator-sidebar button:hover {
+                    background: linear-gradient(135deg, #555, #777);
+                    /* Lighter gradient on hover for shiny effect */
+                    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+                    /* Stronger shadow on hover */
+                    transform: translateY(-2px);
+                    /* Slight lift on hover */
+                }
+
+                /* Menu Bar */
+                .menu-bar {
+                    background: linear-gradient(135deg, #0e1418, #1c1f24);
+                    /* Glossy dark gradient */
+                    padding: 20px;
+                    display: flex;
+                    justify-content: space-around;
+                    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+                    /* Shadow for elegance */
+                }
+
+                .menu-bar a {
+                    background: linear-gradient(135deg, #222, #555);
+                    /* Glossy link button */
+                    color: #ffffff;
+                    padding: 15px 30px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    transition: all 0.3s;
+                }
+
+                .menu-bar a:hover {
+                    background: linear-gradient(135deg, #f4a261, #f4a261);
+                    /* Gold hover */
+                }
+
+                /* Build Option Styling */
+                .build-options {
+                    display: flex;
+                    justify-content: center;
+                    gap: 40px;
+                    padding: 40px 0;
+                }
+
+                .build-option {
+                    background: linear-gradient(135deg, #111, #444);
+                    /* Glossy gradient */
+                    color: #ffffff;
+                    padding: 5px;
+                    border-radius: 20px;
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+                    /* Depth shadow */
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-align: center;
+                }
+
+                .build-option:hover {
+                    transform: translateY(-10px);
+                    /* Lift on hover */
+                    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+                    background: linear-gradient(135deg, #f4a261, #f4a261);
+                    /* Gold background */
+                }
+
+                /* Footer */
+                footer {
+                    background-color: #0e1418;
+                    color: #ffffff;
+                    text-align: center;
+                    padding: 20px 0;
+                    font-size: 14px;
+                }
+
+
+                /* Responsive */
+                @media (min-width: 500px) {
+                    .build-option {
+                        width: calc(50% - 31px);
+                    }
+                }
+
+                #canvas-container,
+                .inner-box {
+                    max-height: 100%;
+                    height: auto;
+                    /* Allow the height to adjust based on content */
+                }
+
+                canvas {
+                    display: block;
+                    margin: 0 auto;
+                    /* Center the canvas */
+                    height: auto;
+                    /* Adjust canvas height to fit the content */
+                }
+
+                .c {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                nav.flex {
+                    margin-top: 8px;
+                    /* Adjust this value to reduce the gap further if needed */
+                    padding: 0;
+                }
+
+                nav.flex .cursor-pointer {
+                    margin-bottom: 0;
+                    /* Ensure there is no margin below the thumbnails */
+                }
+
+                #canvas-container,
+                .inner-box {
+                    max-height: 100%;
+                    height: auto;
+                    /* Allow the height to adjust based on content */
+                }
+
+                canvas {
+                    display: block;
+                    margin: 0 auto;
+                    /* Center the canvas */
+                    height: auto;
+                    /* Adjust canvas height to fit the content */
+                }
+
+                @media only screen and (max-width: 768px) {
+
+                    #canvas-container,
+                    .inner-box {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    nav.flex {
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+
+                    nav.flex .cursor-pointer {
+                        width: 45%;
+                        /* Adjust based on your design needs */
+                        margin-bottom: 8px;
+                        /* Add a little space between rows */
+                    }
+                }
+
+                .thumbnail {
+                    overflow-y: scroll;
+                    -webkit-overflow-scrolling: touch;
+                    /* for smooth scrolling on iOS */
+                    scrollbar-width: none;
+                    /* Firefox */
+                    -ms-overflow-style: none;
+                    /* Internet Explorer 10+ */
+                }
+
+
+                /* Styling the scrollbar thumb */
+
+
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Roboto', sans-serif;
+                    background: linear-gradient(135deg, #0e1418, #1c1f24);
+                    color: #ffffff;
+                    overflow-x: hidden;
+                }
+
+                /* Wrapper element for inner content */
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    overflow: auto;
+                    scrollbar-gutter: stable;
+                    /* Keeps scrollbar from pushing content */
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .container {
+                    overflow: auto;
+                    scrollbar-width: thin;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                /* For grid layouts with gutters */
+                .grid-container {
+                    display: grid;
+                    scrollbar-gutter: stable;
+                }
+
+                /* Ensure no extra gap between the canvas and thumbnails */
+                .cloudimage-360-wrapper {
+                    margin-bottom: 0;
+                    scrollbar-gutter: stable both-edges;
+                }
+
+                @media (max-width: 600px) {
+                    .cloudimage-360-wrapper {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .cloudimage-360-inner-box {
+                    margin-bottom: 0;
+                }
+
+                .thumbnail-nav {
+                    margin-top: -5px;
+                    /* Adjust this to reduce the gap */
+                    padding: 0;
+                }
+
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .cloudimage-360-inner-box {
+                    margin-bottom: 0;
+                }
+
+                .thumbnail-nav {
+                    margin-top: -5px;
+                    /* Adjust this value as needed */
+                }
+
+                .thumbnail-nav {
+                    scrollbar-gutter: stable;
+                }
+            </style>
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <h1>SkoMiDora 360° Skobox Viewer</h1 <!-- Header Menu -->
+    <div class="header-menu">
+        <div class="title"></div>
+        <div class="menu-options">
+            <a href="#">Change model</a>
+            <a href="#">Configure</a>
+            <a href="#">Buy Boxies</a>
+            <a href="#">Compare</a>
+        </div>
+        <button id="build-boxie-btn" class="build-boxie-btn" aira-label="Build Boxie>">Build Boxie</button>
+
+          <button onclick="window.open('skobox-361.html', '_blank')">Change Model</button>
+          <button onclick="window.open('skobox-362.html', '_blank')">Change Model</button>
+
+    
+        
+        <div class="contrast-btn" data-color="#4e5458" onclick="handleColorChange(event)">
+        </div>
+        
+        
+    </div>
+    </div>
+    <script>
+        document.querySelectorAll('.color-option').forEach(item => {
+            item.addEventListener('click', event => {
+                const selectedColor = event.target.getAttribute('data-color');
+                document.getElementById('target-box').style.backgroundColor = selectedColor;
+            });
+        });
+    </script>
+    <div id="configurator-sidebar" class="configurator-sidebar">
+                <span class="close-btn" id="close-sidebar">&times;</span>
+        <h3>Exterior Colors</h3>
+
+
+        <div class="contrasts-section">
+            <h4 style="margin-block-start: 0.5em; margin-block-end: 0.5em;">Contrasts</h4>
+            <div class="contrast-buttons" style="display: flex; justify-content: space-between;">
+                <div class="contrast-btn"
+                    style="background-color: #ffffff; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#ffffff')">
+                    <div style="background-color: #efefef; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; font-weight: normal; font-size: 12px;">White</p>
+                </div>
+                <div class="contrast-btn"
+                    style="background-color: #000000; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#000000')">
+                    <div style="background-color: #000000; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Black</p>
+                </div>
+            </div>
+            <!-- Additional Buttons -->
+            <div class="additional-buttons" style="margin-top: 8px;">
+                <div class="contrast-buttons" style="display: flex; justify-content: space-between;">
+                    <div class="contrast-btn"
+                        style="background-color: #4e5458; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                        onclick="changeSkoboxColor('#4e5458')">
+                        <div style="background-color: #4e5458; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Volcano Grey</p>
+                        <p style="margin: 0; color: white; font-weight: normal; font-size: 12px;">Metallic</p>
+                    </div>
+                    <div class="contrast-btn"
+                        style="background-color: #c9d2d5; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                        onclick="changeSkoboxColor('#c9d2d5')">
+                        <div style="background-color: #c9d2d5; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: black; font-weight: normal; font-size: 12px;">Dolomite Silver
+                        </p>
+                        <p style="margin: 0; color: black; font-weight: normal; font-size: 12px;">Metallic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shades-section" style="margin-top: 15px;">
+            <h4 style="margin-block-start: 0.5em; margin-block-end: 0.5em;">Shades</h4>
+            <div class="shade-buttons" style="display: flex; justify-content: space-between;">
+                <div class="shade-btn"
+                    style="background-color: #000000; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#000000')">
+                    <div style="background-color: #000000; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Jet Black Metallic
+                    </p>
+                </div>
+                <div class="shade-btn"
+                    style="background-color: #d4d9de; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#d4d9de')">
+                    <div style="background-color: #d4d9de; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; color: black; font-weight: normal; font-size: 12px;">Ice Grey Metallic
+                    </p>
+                </div>
+            </div>
+
+            <!-- New Buttons -->
+            <div class="new-buttons" style="margin-top: 8px;">
+                <div class="shade-buttons" style="display: flex; justify-content: space-between;">
+                    <div class="shade-btn" style="background-color: #001f4d; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer; 
+                        background-image: linear-gradient(to bottom, #003366, #001f4d); 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);" onclick="changeSkoboxColor('#001f4d')">
+                        <div style="background-color: #001f4d; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Gentian Blue
+                            Metallic</p>
+                    </div>
+                    <div class="shade-btn" style="background-color: #004080; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer; 
+                        background-image: linear-gradient(to bottom, #0059b3, #004080); 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);" onclick="changeSkoboxColor('#004080')">
+                        <div style="background-color: #004080; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Neptune Blue</p>
+                    </div>
+                </div>
+                <div class="shade-buttons" style="display: flex; justify-content: space-between; margin-top: 8px;">
+                    <div class="shade-btn" style="background-color: #7ea5b5; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer; 
+                        background-image: linear-gradient(to bottom, #a6c4cf, #7ea5b5); 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);" onclick="changeSkoboxColor('#7ea5b5')">
+                        <div style="background-color: #7ea5b5; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: black; font-weight: normal; font-size: 12px;">Frozen Blue
+                            Metallic</p>
+                    </div>
+                    <div class="shade-btn" style="background-color: #bc92a1; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer; 
+                        background-image: linear-gradient(to bottom, #d1aab5, #bc92a1); 
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);" onclick="changeSkoboxColor('#bc92a1')">
+                        <div style="background-color: #bc92a1; width: 100%; height: 25px;"></div>
+                        <p style="margin: 5px 0 0; color: black; font-weight: normal; font-size: 12px;">Frozen Berry
+                            Metallic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dreams-section" style="margin-top: 15px;">
+            <h4 style="margin-block-start: 0.5em; margin-block-end: 0.5em;">Dreams</h4>
+            <div class="dream-buttons" style="display: flex; justify-content: space-between;">
+                <div class="dream-btn"
+                    style="background-color: #9C1B36; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#9C1B36')">
+                    <div style="background-color: #9C1B36; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Carmine Red</p>
+                </div>
+                <div class="dream-btn"
+                    style="background-color: #8E8394; border: 2px solid black; width: 45%; padding: 8px; text-align: center; cursor: pointer;"
+                    onclick="changeSkoboxColor('#8E8394')">
+                    <div style="background-color: #8E8394; width: 100%; height: 25px;"></div>
+                    <p style="margin: 5px 0 0; color: white; font-weight: normal; font-size: 12px;">Provence</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Paint to Sample Section -->
+        <div class="paint-to-sample-section" style="margin-top: 15px;">
+            <h4 style="margin-block-start: 0.5em; margin-block-end: 0.5em;">Paint to Sample</h4>
+
+
+
+            <div class="paint-to-sample-btn"
+                style="background-color: #ffffff; border: 2px solid black; width: 90%; padding: 8px; text-align: center; cursor: pointer;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/studio_0UB.jpg?alt=media&amp;token=be8dd89b-8760-4dbc-a70d-8bc3d9156e81"
+                        alt="Paint to Sample" style="width: 50%; border-radius: 5px;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+                        <p style="margin: 0; font-weight: normal; font-size: 9px;">Preparation for Paint to Sample</p>
+                        <p style="margin: 0; font-weight: normal; font-size: 9px; color: grey;">Exclusive Manufaktur</p>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const boxData = {
+                    "catalog": {
+                        "cnr": "C16",
+                        "designRecommendations": [],
+                        "MaterialType": "secret",
+                        "modelName": "Manolo",
+                        "modelYear": 2025,
+                        "orderType": "Y1AAI1",
+                        "modelFamily": "Manolo",
+                        "hasTop": false
+                    },
+                    "mainStage": {
+                        "stage": [
+                            {
+                                "url": "https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/boxie_configurator%2Fgeneric_boot_boxie.webp?alt=media&token=5507b812-fb0e-4100-8a55-cbbf7c20143e",
+                                "view": "exterior-front-south_west",
+                                "alt": "Exterior view of Manolo",
+                                "width": 1920,
+                                "height": 1080,
+                                "type": "image/webp"
+                            },
+                            {
+                                "url": "https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/boxie_configurator%2Fgeneric_boot_boxie.webp?alt=media&token=5507b812-fb0e-4100-8a55-cbbf7c20143e",
+                                "view": "exterior-side-west",
+                                "alt": "Exterior view of Manolo",
+                                "width": 1920,
+                                "height": 1080,
+                                "type": "image/webp"
+                            },
+                            {
+                                "url": "https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/boxie_configurator%2Fgeneric_boot_boxie.webp?alt=media&token=5507b812-fb0e-4100-8a55-cbbf7c20143e",
+                                "view": "exterior-rear-north_west",
+                                "alt": "Exterior view of Manolo",
+                                "width": 1920,
+                                "height": 1080,
+                                "type": "image/webp"
+                            }
+                            // Add more stage data as necessary
+                        ]
+                    }
+                };
+                <div style="max-width: 777px; max-height: 298px;">
+    <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 38.3526%; overflow: hidden;">
+        <iframe src="Adidas_trainers_noir_arbe.399.html"
+                allowfullscreen
+                style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; width: 100%;"
+                frameborder="0"
+                scrolling="no">
+        </iframe>
+    </div>
+    <a href="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/Adidas_trainers_noir_arbe.399%2F0_0.png?alt=media&token=fa0350cb-b8ec-4c0a-81cf-6a44494f5930" target="_blank">Configure</a>
+</div>
+
+
+
+
+                function changeSkoboxColor(color) {
+                    const boxCanvas = document.getElementById('box-canvas'); // Assuming the canvas element exists
+                    boxCanvas.style.backgroundColor = color; // Change the inner box color
+
+                    // Optionally update the image source based on the stage view
+                    const currentView = boxData.mainStage.stage[0]; // Modify as needed for specific views
+                    const boxImage = document.getElementById('box-image'); // Assuming the image element exists
+                    boxImage.src = currentView.url;
+                    boxImage.alt = currentView.alt;
+                }
+            </script>
+
+        </div>
+
+    </div>
+    <div id="configurator-sidebar" class="configurator-sidebar" style="display: block;">
+        <span class="close-btn" id="close-sidebar"
+            onclick="document.getElementById('configurator-sidebar').style.display='none'">&times;</span>
+        <h3 style="font-size: 16px;">Exterior Colors</h3>
+
+        <div class="contrasts-section">
+            <h4>Contrasts</h4>
+            <div class="contrast-buttons">
+                <div class="contrast-btn" style="background-color: #ffffff;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/white_box.png?alt=media')">
+                    <div style="background-color: #efefef; width: 100%; height: 20px;"></div>
+                    <p>White</p>
+                    <div id="main-stage"></div>
+
+                </div>
+                <div class="contrast-btn" style="background-color: #000000;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/black_box.png?alt=media')">
+                    <div style="background-color: #000000; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Black</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="shades-section">
+            <h4>Shades</h4>
+            <div class="shade-buttons">
+                <div class="shade-btn" style="background-color: #000000;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/jet_black_metallic_box.png?alt=media')">
+                    <div style="background-color: #000000; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Jet Black Metallic</p>
+                </div>
+                <div class="shade-btn" style="background-color: #d4d9de;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/ice_grey_metallic_box.png?alt=media')">
+                    <div style="background-color: #d4d9de; width: 100%; height: 20px;"></div>
+                    <p style="color: black;">Ice Grey Metallic</p>
+                </div>
+            </div>
+
+            <!-- New Buttons -->
+            <div class="shade-buttons">
+                <div class="shade-btn" style="background-color: #001f4d;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/gentian_blue_box.png?alt=media')">
+                    <div style="background-color: #001f4d; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Gentian Blue Metallic</p>
+                </div>
+                <div class="shade-btn" style="background-color: #004080;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/neptune_blue_box.png?alt=media')">
+                    <div style="background-color: #004080; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Neptune Blue</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dreams-section">
+            <h4>Dreams</h4>
+            <div class="dream-buttons">
+                <div class="dream-btn" style="background-color: #9C1B36;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/carmine_red_box.png?alt=media')">
+                    <div style="background-color: #9C1B36; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Carmine Red</p>
+                </div>
+                <div class="dream-btn" style="background-color: #8E8394;"
+                    onclick="changeSkoboxColor('https://firebasestorage.googleapis.com/v0/b/your-bucket/o/provence_box.png?alt=media')">
+                    <div style="background-color: #8E8394; width: 100%; height: 20px;"></div>
+                    <p style="color: white;">Provence</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="configurator-sidebar" class="configurator-sidebar">
+        <span class="close-btn" id="close-sidebar">&times;</span>
+        <h3>Exterior Colors</h3>
+
+        <button id="shade" class="sidebar-button" onclick="changeColor('shade')">Shades</button>
+        <button id="dream" class="sidebar-button" onclick="changeColor('dream')">Dreams</button>
+        <button id="legend" class="sidebar-button" onclick="changeColor('legend')">Legends</button>
+        <button id="paint-sample" class="sidebar-button" onclick="changeColor('paint-sample')">Paint to
+            Sample</button>
+        <button id="paint-sample-plus" class="sidebar-button" onclick="changeColor('paint-sample-plus')">Paint to
+            Sample Plus</button>
+    </div>
+
+    </div>
+    
+
+    <!-- 360 Viewer -->
+    <div class="viewer-container">
+        <div class="cloudimage-360" id="skobox-360-view"
+            data-folder="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360/" ,
+            data-image-list-x="[&quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe1.png?alt=media&quot;, &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe2.png?alt=media&quot;, &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe15.jpg?alt=media&quot;,
+&quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe3.png?alt=media&quot;, &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe12.png?alt=media&quot;, &quot;https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe4.png?alt=media&quot;]"
+            data-amount="36" data-drag-speed="-0.5" data-speed="1" data-autoplay="false" data-hide-360-logo="false"
+            data-bottom-circle="false">
+        </div>
+
+
+
+        <!-- Thumbnail Scrollable Navigation Bar -->
+        <div
+            class="thumbnail-nav py-sm group relative landscape:md:flex overflow-x-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-gray-700">
+            <nav class="flex gap-4 items-center">
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6zpx] border-2 p-0.5 border-primary"
+                    aria-label="Show image 1">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit1.png?alt=media"
+                        alt="Skobox Thumbnail 1">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 2">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit2.png?alt=media"
+                        alt="Skobox Thumbnail 2">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 3">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit3.png?alt=media"
+                        alt="Skobox Thumbnail 3">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 4">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit4.png?alt=media"
+                        alt="Skobox Thumbnail 4">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 5">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit5.png?alt=media"
+                        alt="Skobox Thumbnail 5">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 6">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit6.png?alt=media"
+                        alt="Skobox Thumbnail 6">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 7">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit7.png?alt=media"
+                        alt="Skobox Thumbnail 7">
+                </button>
+                <button type="button"
+                    class="hover:border-primary flex-none cursor-pointer rounded-[6px] border-2 p-0.5 border-transparent"
+                    aria-label="Show image 8">
+                    <img loading="lazy" class="aspect-video w-[96px] rounded landscape:md:w-[142px]"
+                        src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_dogit8.png?alt=media"
+                        alt="Skobox Thumbnail 8">
+                </button>
+            </nav>
+        </div>
+        <style>
+            /* Adjust the container that holds the inner box image */
+            #inner-box-container {
+                width: 80%;
+                /* Adjust this percentage to your desired width */
+                max-width: 300px;
+                /* Adjust the max-width to your desired pixel value */
+                margin: 0 auto;
+                display: block;
+                position: relative;
+            }
+
+            /* Style the inner box image */
+            #inner-box-image {
+                width: 100%;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+
+        <!-- Styling for Scroll Bar -->
+        <style>
+            @media only screen and (max-width: 767px) {
+                .thumbnail-scrollbar {
+                    display: none;
+                    /* Hide thumbnail scrollbar */
+                }
+            }
+
+            @media only screen and (max-width: 767px) {
+                .sidebar-menu {
+                    display: block !important;
+                    /* Ensure sidebar is visible */
+                    position: fixed;
+                    /* Fix the sidebar position for easier navigation */
+                    width: 100%;
+                    /* Optional: Adjust width to take up full screen or according to your design */
+                    top: 0;
+                    /* Stick to the top of the screen */
+                }
+            }
+
+            .sidebar-menu {
+                width: 80%;
+                /* Adjust width for mobile */
+                z-index: 1000;
+                /* Ensure it's on top of other elements */
+            }
+
+
+
+            /* Thumbnail Scroll Bar */
+            .thumbnail-nav {
+                padding-top: initial;
+                /* Reset to original padding */
+                padding-bottom: initial;
+                /* Reset to original padding */
+                margin-top: initial;
+                /* Reset to original margin */
+                margin-bottom: initial;
+                /* Reset to original margin */
+            }
+
+            /* Thumbnails themselves */
+            .thumbnail-nav img {
+                width: initial;
+                /* Reset thumbnail size */
+                height: auto;
+                /* Maintain aspect ratio */
+                border-radius: initial;
+                /* Reset border radius */
+                box-shadow: initial;
+                /* Reset shadow to default */
+            }
+
+            @media (max-width: 768px) {
+                .thumbnail-nav {
+                    margin-top: initial;
+                    /* Reset to original margin for mobile */
+                    margin-bottom: initial;
+                    /* Reset to original margin for mobile */
+                }
+
+                .thumbnail-nav nav {
+                    gap: initial;
+                    /* Reset gap between thumbnails */
+                }
+
+                .thumbnail-nav img {
+                    width: initial;
+                    /* Reset thumbnail size for mobile */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .thumbnail-nav {
+                    margin-top: initial;
+                    /* Reset to original margin for very small screens */
+                }
+            }
+
+            .thumbnail-nav {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 10px;
+            }
+
+
+            /* Adjust the scrollbar track (the background) */
+
+            /* Adjust the gap between the scrollbar and the content */
+            .thumbnail-nav {
+                padding-bottom: 10px;
+                /* Reducing the gap between thumbnails and scrollbar 
+
+                .thumbnail-nav {
+                    padding-bottom: 0;
+                    /* Moves it closer to the inner box */
+            }
+        </style>
+
+    </div>
+    <style>
+        .sidebar-button {
+            background-color: #f4f4f4;
+            /* Default background color */
+            color: #000;
+            /* Default text color */
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 8px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .sidebar-button:hover {
+            background-color: #e0e0e0;
+            /* Slightly darker on hover */
+            color: #000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-bar {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            flex-shrink: 0;
+            transition: background-color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            background-color: #555;
+        }
+
+        /* Optional: Add smooth scrolling */
+        .menu-bar {
+            scroll-behavior: smooth;
+        }
+
+        /* Hide scrollbar for Webkit browsers */
+        .menu-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* For IE, Edge, and Firefox */
+        .menu-bar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+
+    <body>
+        <div class="menu-bar">
+            <a href="index.html">Home</a>
+            <a href="skoboxes.html">Skoboxes</a>
+            <a href="buildboxie.html">Build Boxie</a>
+            <a href="compare.html">Compare</a>
+            <a href="inventory.html">Collectors Row</a>
+        </div>
+        <style>
+            .menu-bar {
+                display: flex;
+                overflow-x: auto;
+                /* Enable horizontal scrolling */
+                white-space: nowrap;
+                /* Prevent wrapping of menu items */
+                padding: 8px;
+                background-color: #1F1B24;
+                /* Menu background color */
+                scrollbar-width: thin;
+                /* Firefox scrollbar width */
+                -ms-overflow-style: none;
+                /* Internet Explorer 10+ scrollbar */
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on iOS */
+            }
+
+
+            .menu-bar a {
+                text-decoration: none;
+                color: #FFFFFF;
+                padding: 8px 10px;
+                /* Reduced padding to bring buttons closer together */
+                margin-right: 5px;
+                /* Reduced margin between buttons */
+                font-size: 14px;
+                /* Adjust font size */
+                display: block;
+                border-radius: 5px;
+                /* Optional: add some rounding to the buttons */
+                background-color: #333;
+                /* Optional: button background color */
+                transition: background-color 0.3s ease;
+            }
+
+            .menu-bar a:hover {
+                background-color: #444;
+                /* Optional: change color on hover */
+            }
+
+            .menu-bar a:last-child {
+                margin-right: 0;
+                /* Remove right margin on the last item */
+            }
+
+            .build-options .build-option {
+                padding: 10px 20px;
+                /* Smaller padding */
+                border-radius: 8px;
+                /* Rounded corners */
+                background: linear-gradient(135deg, #444, #777);
+                /* Shiny gradient */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                /* Subtle shadow */
+                color: #fff;
+                text-align: center;
+                transition: background 0.3s ease, transform 0.2s ease;
+                font-size: 14px;
+                /* Smaller text */
+            }
+
+            .build-options .build-option:hover {
+                background: linear-gradient(135deg, #555, #888);
+                /* Lighter gradient on hover */
+                transform: translateY(-2px);
+                /* Slight lift effect */
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+                /* Deeper shadow on hover */
+            }
+
+            /* Default styling for desktop */
+            .thumbnail-nav {
+                overflow-x: auto;
+                scrollbar-width: thin;
+                /* Firefox */
+                -webkit-overflow-scrolling: touch;
+                /* Smooth scrolling on mobile */
+            }
+
+
+            /* Default styling for desktop */
+            .thumbnail-nav nav {
+                display: flex;
+                gap: 5px;
+                /* Space between thumbnails */
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            /* Mobile-specific styling */
+
+            @media (max-width: 600px) {
+                .thumbnail-nav nav {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 4px;
+                    /* Smaller space between thumbnails on mobile */
+                }
+
+                .thumbnail-nav img {
+                    width: 90px;
+                    /* Smaller thumbnails on mobile */
+                    height: auto;
+                    /* Maintain aspect ratio */
+                }
+            }
+
+            /* Adjust margin between canvas and thumbnails */
+            .cloudimage-360-inner-box {
+                margin-bottom: 0;
+                /* Remove or reduce the bottom margin */
+            }
+
+            /* Mobile-specific adjustment */
+            @media (max-width: 600px) {
+                .thumbnail-nav {
+                    margin-top: 0;
+                    /* Reduce the space above the thumbnails */
+                    padding-top: 0;
+                    /* Ensure there's no padding */
+                }
+            }
+
+            /* Reduce sidebar width and height */
+            .sidebar-menu {
+                width: 200px;
+                /* Set desired width */
+                height: 100vh;
+                /* Set desired height, here it's full viewport height */
+                overflow-y: auto;
+                /* Allow scrolling if content exceeds the height */
+            }
+
+            /* Optional: Adjust sidebar padding or margin */
+            .sidebar-menu {
+                padding: 10px;
+                margin: 0;
+            }
+        </style>
+
+        </div>
+
+</html>
+</div>
+
+<!-- Build Your Boxie Section -->
+<div class="content-container">
+    <h1>Build Your Custom Boxie</h1>
+    <p>Select from a variety of options to customize your very own box.</p>
+
+    <div class="build-options">
+        <div class="build-option" id="customize-colors-btn">
+            <h3>Customize Colors</h3>
+            <p>Choose from a range of color options for your boxie.</p>
+        </div>
+        <div class="build-option">
+            <h3>Add Patterns</h3>
+            <p>Customize your box with exclusive patterns and designs.</p>
+        </div>
+        <div class="build-option">
+            <h3>Tech Upgrades</h3>
+            <p>Add smart features such as temperature control and smart locks.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Discover Boxies Button -->
+<a aria-label="Discover Boxies" class="discover-button"
+    href="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe3.png?alt=media"
+    target="_blank">Discover Boxies</a>
+
+<!-- Hotspot Modal -->
+<div class="hotspot-modal" id="hotspot-modal">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <h3 id="modal-title">Feature Title</h3>
+    <p id="modal-description">This is the detailed information about the feature.</p>
+</div>
+
+<!-- Scripts -->
+<script>
+    // Initialize Cloudimage 360 viewer
+    window.CI360.init();
+
+    // Hotspot modal functionality
+    const hotspotData = {
+        "temp-control": {
+            title: "Temperature Control",
+            description: "Maintain optimal temperature inside your smart Skobox to preserve your footwear."
+        },
+        "lock-system": {
+            title: "Smart Lock System",
+            description: "Advanced biometric and remote locking system for ultimate security."
+        },
+        "custom-colors": {
+            title: "Custom Colors & Patterns",
+            description: "Choose and customize your Skobox with a wide range of colors and patterns."
+        },
+        "smart-storage": {
+            title: "Smart Storage",
+            description: "AI-powered storage management for organizing your shoe collection efficiently."
+        }
+    };
+    window.addEventListener('resize', function () {
+        let width = window.innerWidth;
+
+        if (width <= 768) {
+            document.querySelector('.thumbnail-scrollbar').style.display = 'none';
+            document.querySelector('.sidebar-menu').style.display = 'block';
+        } else {
+            document.querySelector('.thumbnail-scrollbar').style.display = 'block';
+            document.querySelector('.sidebar-menu').style.display = 'none';
+        }
+    });
+
+
+    const showModal = (hotspotId) => {
+        const modal = document.getElementById("hotspot-modal");
+        const title = document.getElementById("modal-title");
+        const description = document.getElementById("modal-description");
+
+        const data = hotspotData[hotspotId];
+
+        title.innerText = data.title;
+        description.innerText = data.description;
+
+        modal.style.display = 'block';
+    };
+
+    const closeModal = () => {
+        document.getElementById("hotspot-modal").style.display = 'none';
+    };
+
+    document.getElementById("modal-close").addEventListener("click", closeModal);
+</script>
+
+<script>
+    // Navigation to customize colors page
+    document.getElementById('customize-colors-btn').addEventListener('click', function () {
+        window.location.href = 'customize-colors.html';
+    });
+</script>
+
+<script>
+    // Sidebar toggle
+    const sidebar = document.getElementById("configurator-sidebar");
+    const openBtn = document.getElementById("build-boxie-btn");
+    const closeBtn = document.getElementById("close-sidebar");
+
+    openBtn.addEventListener('click', () => {
+        sidebar.style.width = "300px"; // Open the sidebar
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.style.width = "0"; // Close the sidebanr
+    });
+</script>
+
+
+<!-- Footer -->
+<footer>
+    &copy; 2024 SkoMiDora. A SHOURAiGen.io company by V.M. All rights reserved.
+</footer>
+</body>
+
+</html>
