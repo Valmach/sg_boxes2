@@ -23,7 +23,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   google_generative_ai: ^0.4.0
   flutter_markdown: ^0.7.1
-  carousel_slider: ^4.0.0
+  carousel_slider: ^5.0.0
   font_awesome_flutter: ^10.1.0
   custom_navigation_bar: ^0.8.2
   simple_animations: ^5.0.2
@@ -37,6 +37,13 @@ dependencies:
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.3.0
   video_player: ^2.9.1
+  image_picker: ^1.1.2
+  geolocator: ^13.0.2
+  firebase_database: ^11.3.4
+  google_sign_in_dartio: ^0.3.0
+  googleapis_auth: ^1.6.0
+  typed_data: ^1.4.0
+  google_sign_in: ^6.2.2
 
 dev_dependencies:
   flutter_test:
@@ -47,7 +54,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
