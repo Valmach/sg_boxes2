@@ -6,6 +6,9 @@
     |-- package_config.json
     |-- package_config_subset
     |-- version
+|-- .firebase
+    |-- hosting.cHVibGlj.cache
+|-- .firebaserc
 |-- .flutter-plugins
 |-- .flutter-plugins-dependencies
 |-- .gitignore
@@ -90,6 +93,7 @@
     |-- local.properties
     |-- settings.gradle
 |-- assets
+    |-- config.json
     |-- fonts
         |-- AUTHORS
         |-- BUGS
@@ -115,8 +119,11 @@
         |-- addidas_homme_blanc_hvite.274.jpg
         |-- addidas_homme_violet.277.jpg
         |-- adidas_box1.jpg
+        |-- adidas_sporty_arbe4.svg
         |-- adidas_ultraboost.png
         |-- air_jordan_1.png
+        |-- AmminaMuaddi_pyschopath.png
+        |-- apple.png
         |-- birkenstock_arizona.png
         |-- bits_bobs.png
         |-- Black-Monolith-Brushed-Leather-And-Re-nylon-Boots-With-Pouch-PRADA.png
@@ -146,8 +153,10 @@
         |-- gucci_ace_sneaker.png
         |-- heels.png
         |-- hot_lips.png
+        |-- icons8-apple-100.png
         |-- instagram.png
         |-- intro.mp4
+        |-- jacqumus-rose.png
         |-- jimmy_choo_box1.png
         |-- lilac_posh.391.png
         |-- lilac_posh.392.png
@@ -158,7 +167,7 @@
         |-- lilac_posh.398.png
         |-- lilac_posh.399.png
         |-- linkedin.png
-        |-- louboutin_box1.png.png
+        |-- louboutin_box1.png
         |-- manolo_blahnik_box1.png
         |-- manolo_blahnik_golden_years.386.png
         |-- manolo_blahnik_golden_years.387.png
@@ -176,18 +185,35 @@
         |-- nike_kids_multcolour-120_box1.png
         |-- Nike_Shoe_PNG.png
         |-- nite_furoi.png
+        |-- OUD 2024-09-23 185136.png
+        |-- pinterest.png
         |-- plus_sign.png
+        |-- prada_homme_slippers.png
         |-- puma_suede_classic.png
         |-- sandals.png
         |-- sg_boxes.svg
         |-- shoebox1.png
+        |-- shoebox10.png
+        |-- shoebox11.png
+        |-- shoebox12.png
+        |-- shoebox13.png
+        |-- shoebox14.png
+        |-- shoebox15.png
         |-- shoebox2.png
         |-- shoebox3.png
+        |-- shoebox33.png
         |-- shoebox4.png
+        |-- shoebox5.png
+        |-- shoebox6.png
+        |-- shoebox7.png
+        |-- shoebox8.png
+        |-- shoebox9.jpg
+        |-- shoebox9.png
+        |-- SHOURAiGen_Embblem.svg
         |-- SHOURAiGen_Emblem
             |-- SHOURAiGen_Emblem.png
         |-- SHOURAiGen_Emblem.png
-        |-- SHOURAiGen_Emblem.png.png
+        |-- SHOURAiGen_Emblem1.png
         |-- skoMiDora.io.oilslick.459.png
         |-- skoMiDora.io.puffsalt&pepper.447.png
         |-- skoMiDora.io.redpearl.456.png
@@ -210,16 +236,37 @@
         |-- sports.png
         |-- stewart_weizman_box1.png
         |-- stiletto_heels.png
+        |-- studio_0UB.jpg
+        |-- studio_0UD.jpg
         |-- sugar_candy.png
+        |-- taft-The_Troy_Boot_in_Navy.jpg
+        |-- Taft_Erde - Copy.png
+        |-- taft_interplanatary.png
+        |-- taft_pokadot.png
+        |-- tate_pokadot(1).png
         |-- teva_hurricane.png
+        |-- thumbnails
+            |-- gucci_swan.png
+            |-- gucci_swan2.png
+            |-- gucci_swan3.png
+            |-- gucci_swan4.png
+            |-- gucci_swan5.png
+            |-- gucci_swan6.png
         |-- tiktok.png
         |-- timberland_classic.png
         |-- tools.png
         |-- twitter.png
         |-- varnish_wood_box.jpg
+        |-- Webp.net-resizeimage (5).png
         |-- youtube.png
     |-- S.G. Logo
-        |-- SHOURAiGen_Emblem.png.png
+        |-- SHOURAiGen_Emblem
+        |-- SHOURAiGen_Emblem (2).png
+        |-- SHOURAiGen_Emblem.png
+        |-- Webp.net-resizeimage (4).png
+    |-- script.js
+    |-- styles.css
+|-- cors.json
 |-- Desktop.ini
 |-- en-WW
     |-- model
@@ -227,10 +274,34 @@
     |-- ajax
         |-- libs
             |-- 6.71
+            |-- features
+                |-- common.js
+                |-- depcache.js
+                |-- err-msg.js
+                |-- fetch-load.js
+                |-- import-maps.js
+                |-- registry.js
+                |-- resolve.js
+                |-- script-load.js
+                |-- skomidora-design-system.v3.17.0.js
+                |-- system-core.js
+                |-- worker-load.js
             |-- src
                 |-- components
                     |-- contextual-drawer
+                |-- extras
+                    |-- common.js
+                    |-- depcache.js
+                    |-- err-msg.js
+                    |-- fetch-load.js
+                    |-- global.js
+                    |-- import-maps.java
+                    |-- module-types.js
+                    |-- system-core.js
+            |-- systemjs
+                |-- system.js
 |-- firebase-debug.log
+|-- firebase.json
 |-- ios
     |-- .gitignore
     |-- Flutter
@@ -290,6 +361,7 @@
     |-- RunnerTests
         |-- RunnerTests.swift
 |-- lib
+    |-- ai_recommendations.dart
     |-- box_drops_screen.dart
     |-- common theme
         |-- common_theme.dart
@@ -306,7 +378,10 @@
         |-- shoe_model.dart
         |-- user_status.dart
     |-- screens
+        |-- 360_viewer_screen.dart
         |-- account_screen.dart
+        |-- ai_recommendations.dart
+        |-- ai_recommendations_screen.dart
         |-- bluetooth_connection_screen.dart
         |-- boots_details_screen.dart
         |-- boxie_details_screen.dart
@@ -316,6 +391,7 @@
         |-- chat_screen.dart
         |-- common_theme.dart
         |-- customization_paint_screen.dart
+        |-- customization_screen.dart
         |-- customize_paint_screen.dart
         |-- data
             |-- dummy_data.dart
@@ -329,19 +405,26 @@
         |-- needful_things_screen.dart
         |-- omg.dart
         |-- omg_page.dart
+        |-- product_detail_screen.dart
         |-- sandals_details_screen.dart
         |-- services
             |-- chat_gpt_service.dart
         |-- shoe_category.dart
         |-- shopping
             |-- common_theme.dart
+            |-- enhanced_shopping_screen.dart
             |-- shopping_page.dart
+        |-- skoMiDora_experience_screen.dart
+        |-- skomidora_style_screen.dart
         |-- sneakers_details_screen.dart
         |-- splash
             |-- intro_screen.dart
             |-- splash_screen.dart
         |-- splash_screen.dart
         |-- trending_page.dart
+        |-- uiux_enhancements.dart
+        |-- vr_customization_screen.dart
+        |-- webview_page.dart
         |-- webview_screen.dart
         |-- welcome_screen.dart
     |-- services
@@ -349,9 +432,28 @@
     |-- shop.html
         |-- shoebox_shopping.html
     |-- theme.dart
+    |-- uiux_enhancements.dart
     |-- utils
         |-- app_methods.dart
         |-- constants.dart
+    |-- web
+        |-- assets
+            |-- images
+                |-- gucci_swan.png
+                |-- gucci_swan2.png
+                |-- gucci_swan3.png
+                |-- gucci_swan4.png
+                |-- gucci_swan5.png
+                |-- gucci_swan6.png
+        |-- favicon.png
+        |-- firebase-init.js
+        |-- icons
+            |-- Icon-192.png
+            |-- Icon-512.png
+            |-- Icon-maskable-192.png
+            |-- Icon-maskable-512.png
+        |-- manifest.json
+    |-- webview_page.dart
     |-- widget
         |-- boxie_details_screen.dart
         |-- boxlist_widget.dart
@@ -500,18 +602,101 @@
             |-- IDEWorkspaceChecks.plist
     |-- RunnerTests
         |-- RunnerTests.swift
+|-- Nike_Exterior_vampire.534.html
 |-- public
+    |-- 360-test.html
+    |-- adidas-training-skobox.html
     |-- ajaxlibssystemjs
         |-- global.js
+    |-- analytics-tracking-DWTr_3jg.js
+    |-- api.js
+    |-- auth0-react.esm-Deohc1Uf.js
+    |-- backblue.gif
+    |-- buildboxie.html
+    |-- button-group.js
+    |-- button-group.wrapper-1pwZhjUP.js
+    |-- button-group.wrapper-KS5pUrf_.js
+    |-- button.wrapper-CYhPKpmU.js
+    |-- button.wrapper-DXhQlUZ-.js
+    |-- checkbox-wrapper.js
+    |-- checkbox-wrapper.wrapper-D0tBCd6V.js
+    |-- classic-skobox-detail.html
+    |-- client-DJd2QVv9.js
+    |-- color-tile-CeXWxPLI.js
+    |-- color-tile-DDchTvzp.js
+    |-- color-tile-DS2W67jR.js
+    |-- color-tile-TlTeLzCD.js
+    |-- components-BQ94cas1.js
+    |-- compose-tracking-data-DA6cia8Y.js
+    |-- crest.wrapper-CDvhUWM0.js
+    |-- crest.wrapper-Cf3f3v-S.js
+    |-- cross-selling-S4uK5JyK.js
+    |-- customize-colors.html
+    |-- divider.js
+    |-- divider.wrapper-DKm-Ua17.js
+    |-- energy-efficiency-DKT5LNk9.js
+    |-- energy-efficiency-DWGOuA_D.js
+    |-- entry.js
+    |-- error-boundary-C4hDlPYl.js
+    |-- fade.gif
+    |-- firebase.json
+    |-- fonts
+        |-- cn
+            |-- simhei.ttf
+        |-- GillAltOneMT.woff
+        |-- GillSansAlt1-Light.woff
+        |-- jp
+            |-- PorscheNextJPTP-Bold.ttf
+            |-- PorscheNextJPTP-Regular.ttf
+            |-- PorscheNextJPTP-Thin.ttf
+        |-- porsche-next-w-la-semi-bold.min.b5f6fca7225aa73578f65320bcf79b45.woff2
+        |-- RivieraNights-Light.woff
+        |-- RivieraNights-Regular.woff
+    |-- get-selected-twikit-codes-BiDOPbrM.js
+    |-- handle-image-error-JuubN3aP.js
+    |-- heading.wrapper-BLE267IA.js
+    |-- hooks-B1p9ZFDx.js
+    |-- hooks-CHVtQAHS.js
+    |-- html-content-ePjUke2N.js
+    |-- icon.js
+    |-- index.html
+    |-- package.json
+    |-- script.js
+    |-- shoebox-detail.html
+    |-- shoebox4-detail.html
+    |-- sko360.js
+    |-- skobox-360.html
+    |-- skobox-361.html
+    |-- skobox-362.html
+    |-- skobox-kid.html
+    |-- skobox7-detail.html
+    |-- sophisticated-skobox.html
+    |-- styles.css
+    |-- taft-skobox-details.html
+    |-- three.js
+    |-- use-translation-VEMTQy0Z.js
+    |-- wordmark.js
+    |-- wordmark.wrapper-DCC8Cbtc.js
+    |-- _sentry-release-injection-file-BRO_tjfx.js
 |-- pubspec.lock
 |-- pubspec.yaml
 |-- README.md
+|-- RF03102024103835038909540.ico
 |-- RF04072024173038562912089.ico
 |-- RF06072024113319056360717.ico
 |-- test
     |-- widget_test.dart
 |-- web
+    |-- assets
+        |-- images
+            |-- gucci_swan.png
+            |-- gucci_swan2.png
+            |-- gucci_swan3.png
+            |-- gucci_swan4.png
+            |-- gucci_swan5.png
+            |-- gucci_swan6.png
     |-- favicon.png
+    |-- firebase-init.js
     |-- icons
         |-- Icon-192.png
         |-- Icon-512.png
@@ -695,3 +880,19 @@
         |-- utils.h
         |-- win32_window.cpp
         |-- win32_window.h
+|-- y
+    |-- index.html
+|-- __
+    |-- firebase
+        |-- 10.13.0
+            |-- firebase-analytics-compat.js
+            |-- firebase-app-compat.js
+            |-- firebase-auth-compat.js
+            |-- firebase-database-compat.js
+            |-- firebase-firestore-compat.js
+            |-- firebase-functions-compat.js
+            |-- firebase-messaging-compat.js
+            |-- firebase-performance-compat.js
+            |-- firebase-remote-config-compat.js
+            |-- firebase-storage-compat.js
+        |-- init.js

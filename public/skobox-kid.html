@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kid Boxies - SkoMiDora</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+
+    <!-- Updated Colors for Kid Boxies to align with the design structure -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #8A2BE2, #20B2AA); /* Fun purple and teal gradient */
+            color: #FFFFFF; /* White text */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            background-color: #1C1C1C; /* Rich black */
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .menu-container .logo {
+            color: #FFD700; /* Bright gold */
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        .content {
+            padding: 2px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FF69B4; /* Hot Pink */
+            font-size: 23px;
+            border: 3px solid #f2f8f8; /* Dark Turquoise */
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #6A5ACD; /* Slate Blue */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+            width: fit-content;
+            margin: 30px auto;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Shoebox images and details */
+        .shoebox-images img {
+            border: 4px solid #FFFFFF;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .shoebox-photo-container img {
+            margin: 5px;
+            border-radius: 10px;
+            border: 3px solid #FFD700; /* Gold border */
+            max-width: 180px; /* Adjusting the size to make medium images smaller */
+            width: 100%;
+            height: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .shoebox-details p {
+            color: #F8F8FF; /* Soft white */
+            font-size: 14px; /* Slightly smaller for elegance */
+            margin: 10px 0;
+        }
+
+        .shoebox-details strong {
+            color: #FFD700; /* Gold for highlights */
+        }
+
+        /* Button styling */
+        a.button, .show-all-btn {
+            background-color: #32CD32; /* Lime Green */
+            color: #FFFFFF;
+            padding: 10px 20px; /* Smaller button size */
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s ease;
+            font-size: 14px; /* Smaller font size for button */
+            margin-top: 20px;
+        }
+
+        a.button:hover, .show-all-btn:hover {
+            background-color: #FF69B4; /* Hot Pink hover effect */
+            transform: scale(1.1); /* Slightly enlarges on hover */
+        }
+
+        footer {
+            background-color: #1C1C1C; /* Dark grey footer background */
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Hover Zoom Effect */
+        .hover-zoom {
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .hover-zoom:hover {
+            transform: scale(1.5); /* Zoom effect */
+        }
+
+        /* Large images initially hidden */
+        .large-image {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        .contrast-btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header class="menu-bar">
+        <div class="menu-container">
+            <a href="index.html" class="logo">SkoMiDora</a>
+        </div>
+    </header>
+
+    <!-- Shoebox Details Content -->
+    <main>
+        <div class="content">
+            <h1 class="skobox-header">Kid Boxies</h1>
+    
+            <!-- Updated Image Section -->
+            <div class="shoebox-images">
+                <img class="shoebox-image" 
+                     aria-hidden="true" 
+                     alt="Kid Shoebox - View 1" 
+                     src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid-shoebox1.png?alt=media" 
+                     style="object-fit: cover; width: 100%; height: auto; max-width: 500px; margin: 0 auto; display: block;">
+            </div>
+        </div>
+    </main>
+    
+    <!-- Shoebox Photo Gallery with Hover Zoom -->
+    <div id="image-container" class="shoebox-photo-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin: 30px auto;">
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid-skobox1a.png?alt=media" 
+             alt="Kid Shoebox - View 1" class="photo-large hover-zoom" 
+             style="width: 100%; max-width: 280px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+        
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_1.png?alt=media" 
+             alt="Kid Shoebox - View 2" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+        
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_2.png?alt=media" 
+             alt="Kid Shoebox - View 3" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+        
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_3.png?alt=media" 
+             alt="Kid Shoebox - View 4" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+    </div>
+    
+        <!-- Larger hidden images to be revealed when "Show All Photos" is clicked -->
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid-skobox1a.png?alt=media" 
+             alt="Kid Shoebox - Large View 1" class="large-image">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_1.png?alt=media" 
+             alt="Kid Shoebox - Large View 2" class="large-image">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_2.png?alt=media" 
+             alt="Kid Shoebox - Large View 3" class="large-image">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/kid_skobox1_3.png?alt=media" 
+             alt="Kid Shoebox - Large View 4" class="large-image">
+    </div>
+
+    <!-- Show All Photos Button -->
+    <div class="content">
+        <button class="show-all-btn" id="show-all-photos">
+            Show All Photos
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false">
+                <path fill-rule="evenodd" d="M3 11.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm-10-5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm5 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Shoebox Details -->
+    <div class="shoebox-details">
+        <p><strong>Paint:</strong> Vibrant Colors for Kids</p>
+        <p><strong>Cost:</strong> $120</p>
+        <p><strong>Customization Possibilities:</strong> Choose from a variety of fun, colorful designs.</p>
+        <p><strong>Turnaround Time for Custom Design:</strong> 1-2 weeks</p>
+        <p><strong>Description:</strong> These playful shoeboxes are designed to bring excitement to kids' rooms while keeping their shoes neatly organized.</p>
+        <p><strong>Technology:</strong> Built with safety and durability in mind, these boxes can withstand everyday kid activities.</p>
+    </div>
+
+    <a href="order.html" class="button">Order Now</a>
+
+    <script>
+        const showAllPhotosButton = document.getElementById('show-all-photos');
+        const images = document.querySelectorAll('.large-image');
+
+        showAllPhotosButton.addEventListener('click', () => {
+            images.forEach((image) => {
+                if (image.style.display === 'none' || image.style.display === '') {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+
+            // Toggle the button text between "Show All Photos" and "Hide Photos"
+            showAllPhotosButton.textContent = showAllPhotosButton.textContent === "Show All Photos" 
+                ? "Hide Photos" 
+                : "Show All Photos";
+        });
+    </script>
+</body>
+</html>
+
+<!-- New Container Section below Footer -->
+<div class="extended-section" style="background-color: #1C1C1C; color: #FFFFFF; padding: 50px; text-align: center;">
+    <h2>Explore More</h2>
+    <p>Discover more boxes, accessories, and customizations for kids!</p>
+
+    
+
+    <!-- New content or images can be added here -->
+    <div class="explore-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
+        <div class="explore-item" style="background-color: #333333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <img src="https://example.com/explore1.png" alt="Explore Item 1" style="width: 100%; max-width: 200px; border-radius: 10px;">
+            <p style="color: #F4A261;">Kids Custom Box</p>
+        </div>
+
+        <div class="explore-item" style="background-color: #333333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <img src="https://example.com/explore2.png" alt="Explore Item 2" style="width: 100%; max-width: 200px; border-radius: 10px;">
+            <p style="color: #F4A261;">Accessories for Kids</p>
+        </div>
+
+        <div class="explore-item" style="background-color: #333333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <img src="https://example.com/explore3.png" alt="Explore Item 3" style="width: 100%; max-width: 200px; border-radius: 10px;">
+            <p style="color: #F4A261;">Customize Your Box</p>
+        </div>
+    </div>
+</div>
+<footer>
+    &copy; 2024 SkoMiDora. A SHOURAiGen.io company by V.M. All rights reserved.
+</footer>

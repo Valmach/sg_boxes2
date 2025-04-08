@@ -3,6 +3,10 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< HEAD
+=======
+  firebase_core
+>>>>>>> 194e7cd86a1789e683cd620aefc6b4b97d9b5756
   flutter_secure_storage_windows
   url_launcher_windows
 )

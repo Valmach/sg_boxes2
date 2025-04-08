@@ -13,7 +13,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: CommonTheme.appBarTheme.titleTextStyle,
+          style: CommonTheme.appBarTheme.titleTextStyle?.copyWith(
+            fontWeight: FontWeight.normal,
+            fontSize: 28, // Sharper text by increasing the font size
+          ),
         ),
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
@@ -33,59 +36,68 @@ class HomeScreen extends StatelessWidget {
               children: [
                 _buildCircularButton(
                   context,
-                  'Shoe Categories',
+                  'Shoe\nCategory',
                   '/shoe_category',
                   Icons.category,
+                  Colors.teal, // New color for Shoe Category icon
                 ),
                 _buildCircularButton(
                   context,
                   'SkoDrobe',
                   '/image',
                   Icons.image,
+                  Colors.green, // Green icon color
                 ),
                 _buildCircularButton(
                   context,
-                  'Fash Advisor',
+                  'Fash\nAdvisor',
                   '/chat',
                   Icons.chat,
+                  Colors.blue, // Blue icon color
                 ),
                 _buildCircularButton(
                   context,
-                  'Custom Paint',
+                  'Custom\nPaint',
                   '/customize_paint',
                   Icons.brush,
+                  Colors.orange, // Orange icon color
                 ),
                 _buildCircularButton(
                   context,
                   'Shop',
                   '/shopping',
                   Icons.shopping_bag,
+                  Colors.purple, // Purple icon color
                 ),
                 _buildCircularButton(
                   context,
                   'Trending',
                   '/trending',
                   Icons.trending_up,
+                  Colors.cyan, // Cyan icon color
                 ),
                 _buildCircularButton(
                   context,
                   'OMG!',
                   '/omg',
                   Icons.star,
+                  Colors.pink, // Pink icon color
                 ),
                 _buildCircularButton(
                   context,
-                  'AIoT Things',
+                  'AIoT\nThings',
                   '/needful_things',
                   Icons.build,
+                  Colors.yellow, // Yellow icon color
                 ),
                 _buildCircularButton(
                   context,
                   'Earth',
                   '/earth',
                   Icons.public,
+                  Colors.lime, // Lime icon color
                   textStyle: const TextStyle(
-                    fontSize: 12,
+                    fontSize: 16, // Increased font size
                     color: Color(0xFF32CD32), // Vibrant earth green color
                     fontWeight: FontWeight.bold,
                   ),
@@ -99,8 +111,14 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.black, // Set the bottom navigation bar color to black
         selectedItemColor: CommonTheme.bottomNavBarTheme.selectedItemColor,
         unselectedItemColor: CommonTheme.bottomNavBarTheme.unselectedItemColor,
-        selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle,
-        unselectedLabelStyle: CommonTheme.bottomNavBarTheme.unselectedLabelStyle,
+        selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle?.copyWith(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+        ),
+        unselectedLabelStyle: CommonTheme.bottomNavBarTheme.unselectedLabelStyle?.copyWith(
+          fontWeight: FontWeight.normal,
+          fontSize: 12,
+        ),
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const [
@@ -109,7 +127,7 @@ class HomeScreen extends StatelessWidget {
             label: 'Boxies',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
+            icon: Icon(Icons.bluetooth, size: 28, color: Color.fromARGB(255, 29, 152, 253)),
             label: 'Bluetooth',
           ),
           BottomNavigationBarItem(
@@ -128,7 +146,7 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(context, '/welcome'); // Changed to navigate to WelcomeScreen
+              Navigator.pushNamed(context, '/welcome');
               break;
             case 1:
               Navigator.pushNamed(context, '/bluetooth_connection');
@@ -148,7 +166,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCircularButton(BuildContext context, String text, String route, IconData icon, {TextStyle? textStyle}) {
+  Widget _buildCircularButton(BuildContext context, String text, String route, IconData icon, Color iconColor, {TextStyle? textStyle}) {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, route);
@@ -161,11 +179,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 30, color: CommonTheme.secondaryColor),
+              Icon(icon, size: 30, color: iconColor),
               const SizedBox(height: 5),
               Text(
                 text,
-                style: textStyle ?? CommonTheme.buttonTextStyle,
+                style: textStyle ?? CommonTheme.buttonTextStyle.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
                 textAlign: TextAlign.center,
               ),
             ],
