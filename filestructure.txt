@@ -1,8 +1,6 @@
 |-- .dart_tool
     |-- dartpad
         |-- web_plugin_registrant.dart
-    |-- extension_discovery
-        |-- vs_code.json
     |-- package_config.json
     |-- package_config_subset
     |-- version
