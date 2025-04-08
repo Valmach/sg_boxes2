@@ -1,6 +1,11 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
+import 'package:sg_boxes/screens/customization_paint_screen.dart';
 import '../common_theme/common_theme.dart';
+
+import '../common theme/common_theme.dart';
 
 class BoxDropsScreen extends StatefulWidget {
   const BoxDropsScreen({super.key});
@@ -31,7 +36,7 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
       'description': 'A Monica Bellucci shoebox.',
       'imagePath': 'assets/images/skoMiDora.io.treasure.446.png',
     },
-     {
+    {
       'name': 'Naiomi Shoebox',
       'description': 'A Naomi Campbell shoebox.',
       'imagePath': 'assets/images/skoMiDora.io.terrazo.463.png',
@@ -39,8 +44,7 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
     // Add more shoeboxes as needed
   ];
 
-  @override
-  Widget build(BuildContext context) {
+  @override  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Box Drops'),
@@ -49,13 +53,19 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
         iconTheme: CommonTheme.appBarTheme.iconTheme,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.grey[900]!, Colors.black],
+          ),
+        ),
         child: ListView.builder(
           itemCount: shoeboxes.length,
           itemBuilder: (BuildContext context, int index) {
             final shoebox = shoeboxes[index];
             return Card(
-              color: Colors.black, // Set card color to black
+              color: Colors.black,
               margin: const EdgeInsets.all(8.0),
               child: ListTile(
                 contentPadding: const EdgeInsets.all(8.0),
@@ -70,17 +80,17 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
                   children: [
                     Text(
                       shoebox['name']!,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white, // Change text color to white
+                        color: CommonTheme.primaryColor,
                       ),
                     ),
                     Text(
                       shoebox['description']!,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 14,
-                        color: Colors.white, // Change text color to white
+                        color: CommonTheme.primaryColor,
                       ),
                     ),
                   ],
@@ -94,5 +104,4 @@ class _BoxDropsScreenState extends State<BoxDropsScreen> {
         ),
       ),
     );
-  }
-}
+  }}

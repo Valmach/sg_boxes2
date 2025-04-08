@@ -70,4 +70,8 @@ class CommonTheme {
     selectedLabelStyle: TextStyle(color: bottomNavBarSelectedColor), // Matching selected label color
     unselectedLabelStyle: TextStyle(color: bottomNavBarUnselectedColor), // Matching unselected label color
   );
+
+  static var darkBackgroundDecoration;
+
+  static var lightBackgroundDecoration;
 }

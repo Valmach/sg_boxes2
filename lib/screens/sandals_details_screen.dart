@@ -21,11 +21,10 @@ class SandalsDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: const SandalsBody(),
-      endDrawer: const SandalsDrawer(), // Add the end drawer
+      endDrawer: SandalsDrawer(), // Add the end drawer
     );
   }
 }
-
 class SandalsBody extends StatelessWidget {
   const SandalsBody({super.key});
 
@@ -63,12 +62,11 @@ class SandalsBody extends StatelessWidget {
               context,
               'Recently Worn',
               () {
-                Scaffold.of(context).openEndDrawer();
+                Scaffold.of(context).openEndDrawer(); // Use ScaffoldMessenger if needed
               },
-              const Color(0xFF000000), // Black
+              const Color(0xFF8B0000), // Blood red
               Icons.access_time,
             ),
-            const SizedBox(height: 20),
             _buildCircularButton(
               context,
               'Return to Categories',
@@ -129,95 +127,6 @@ class SandalsBody extends StatelessWidget {
   }
 }
 
-class SandalsDrawer extends StatelessWidget {
-  const SandalsDrawer({super.key});
-
-  final List<Sandal> sandals = const [
-    Sandal(
-      name: 'Birkenstock Arizona',
-      imagePath: 'assets/images/birkenstock_arizona.png',
-      lastWorn: '2024-05-18',
-      wornWith: 'Shorts, T-shirt',
-      season: 'Summer',
-      purchaseDate: '2023-06-10',
-      occasion: 'Beach',
-    ),
-    Sandal(
-      name: 'Teva Original Universal',
-      imagePath: 'assets/images/teva_original_universal.png',
-      lastWorn: '2024-04-22',
-      wornWith: 'Jeans, Blouse',
-      season: 'Spring',
-      purchaseDate: '2022-04-15',
-      occasion: 'Casual',
-    ),
-    // Add more sandals as needed
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Container(
-        color: const Color(0xFF000000), // Black background for Drawer
-        child: ListView.builder(
-          itemCount: sandals.length,
-          itemBuilder: (context, index) {
-            final sandal = sandals[index];
-            return ListTile(
-              contentPadding: const EdgeInsets.all(16.0),
-              title: Text(
-                sandal.name,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFFFFFFF), // White color
-                ),
-              ),
-              leading: Image.asset(
-                sandal.imagePath,
-                width: 50,
-                height: 50,
-              ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Last Worn: ${sandal.lastWorn}',
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                  Text(
-                    'Worn With: ${sandal.wornWith}',
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                  Text(
-                    'Season: ${sandal.season}',
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                  Text(
-                    'Purchase Date: ${sandal.purchaseDate}',
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                  Text(
-                    'Occasion: ${sandal.occasion}',
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                ],
-              ),
-              trailing: const Icon(Icons.arrow_forward_ios, color: Color(0xFFFFFFFF)), // White color for icon
-              onTap: () {
-                // Handle tap on sandal item
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Selected: ${sandal.name}')),
-                );
-              },
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
 class Sandal {
   final String name;
   final String imagePath;
@@ -236,4 +145,33 @@ class Sandal {
     required this.purchaseDate,
     required this.occasion,
   });
+}
+
+class SandalsDrawer extends StatelessWidget {
+  SandalsDrawer({super.key});
+  final List<Sandal> sandals = [
+    const Sandal(
+      name: 'Birkenstock Arizona',
+      imagePath: 'assets/images/birkenstock_arizona.png',
+      lastWorn: '2024-05-18',
+      wornWith: 'Shorts, T-shirt',
+      season: 'Summer',
+      purchaseDate: '2023-06-10',
+      occasion: 'Beach',
+    ),
+    const Sandal(
+      name: 'Teva Original Universal',
+      imagePath: 'assets/images/teva_original_universal.png',
+      lastWorn: '2024-04-22',
+      wornWith: 'Jeans, Blouse',
+      season: 'Spring',
+      purchaseDate: '2022-04-15',
+      occasion: 'Casual',
+    ),
+    // Add more sandals as needed
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Container(); // Implement your drawer UI here
+  }
 }

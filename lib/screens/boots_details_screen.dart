@@ -73,7 +73,7 @@ class BootsBody extends StatelessWidget {
               context,
               'Return to Categories',
               () {
-                Navigator.pushNamed(context, '/shoe_category');
+                Navigator.pushNamed(context, '/shoe_type_categories');
               },
               const Color(0xFF000000), // Black
               Icons.arrow_back,
@@ -83,7 +83,6 @@ class BootsBody extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildCircularButton(BuildContext context, String text, VoidCallback onTap, Color color, IconData icon) {
     return GestureDetector(
       onTap: onTap,
@@ -164,7 +163,6 @@ class BootsDrawer extends StatelessWidget {
           itemBuilder: (context, index) {
             final boot = boots[index];
             return ListTile(
-              contentPadding: const EdgeInsets.all(16.0),
               title: Text(
                 boot.name,
                 style: const TextStyle(

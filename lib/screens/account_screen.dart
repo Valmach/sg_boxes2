@@ -18,7 +18,13 @@ class AccountScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFFFFFFFF), Color(0xFFF0F0F0)],
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
@@ -68,12 +74,7 @@ class AccountScreen extends StatelessWidget {
               Icons.login,
               Colors.purple,
               () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const WelcomeScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/welcome');
               },
             ),
           ],
@@ -134,9 +135,7 @@ class AccountScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Widget _buildAccountCard(BuildContext context, String title, IconData icon, Color iconColor, VoidCallback onTap) {
+  }  Widget _buildAccountCard(BuildContext context, String title, IconData icon, Color iconColor, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Card(

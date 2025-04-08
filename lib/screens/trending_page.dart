@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
 import 'package:sg_boxes/screens/data/dummy_data.dart';
-import 'package:sg_boxes/screens/box_detail_screen.dart';
+import 'package:sg_boxes/screens/box_details_screen.dart';
 
 class TrendingPage extends StatelessWidget {
   final String title;
@@ -20,7 +20,13 @@ class TrendingPage extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF2C3E50), Color(0xFF000000)],
+          ),
+        ),
         child: ListView.builder(
           itemCount: trendingBoxes.length,
           itemBuilder: (context, index) {
@@ -70,7 +76,7 @@ class TrendingPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BoxDetailScreen(box: box),
+                      builder: (context) => BoxieDetailsScreen(boxieName: box.name), // Corrected Line.
                     ),
                   );
                 },

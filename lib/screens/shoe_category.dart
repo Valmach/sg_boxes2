@@ -22,7 +22,12 @@ class ShoeCategory extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Container(
-              decoration: CommonTheme.backgroundDecoration,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/background.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Center(
@@ -110,7 +115,6 @@ class ShoeCategory extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildCircularButton(BuildContext context, String text, String route, String imagePath) {
     return GestureDetector(
       onTap: () {
@@ -133,7 +137,7 @@ class ShoeCategory extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 text,
-                style: CommonTheme.buttonTextStyle,
+                style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
             ],

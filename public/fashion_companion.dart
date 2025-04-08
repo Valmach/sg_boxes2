@@ -8,10 +8,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
 
-
 // Replace with your Firebase and Gemini API keys
 const String firebaseDatabaseUrl = 'https://esp32boxies-default-rtdb.firebaseio.com/';
-const String geminiApiKey = 'AIzaSyAXPOVrC2RqJ_O8_Oraz8UBGEFcXA8EqIg';
+const String geminiApiKey = 'AIzaSyAWNw6aSLe27RRZ8z-1fobtV4ZpRoI3U1U';
 const String accuWeatherApiKey = 'dE5pUmfUeAzQUNKGXVUlI63cjlobZl9s';
 
 void main() {
@@ -21,7 +20,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
+    return MaterialApp(
       title: 'Fashion Companion',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -46,14 +45,12 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       GenerativeModel(model: 'gemini-pro-vision', apiKey: geminiApiKey);
 
   File? _image;
-  // String? _clothingMetadata;
   bool _isLoading = false;
   String _userInput = '';
   String? _geminiResponse;
   Map<String, dynamic>? _weatherData;
 
   static const String noImageSelectedMessage = 'No image selected.';
-  // static const String errorMessagePrefix = 'Error: ';
 
   @override
   void initState() {
@@ -130,7 +127,7 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       if (image != null) {
         setState(() {
           _image = File(image.path);
-                _isLoading = true;
+          _isLoading = true;
         });
 
         await _processImage(await _image!.readAsBytes());
@@ -160,21 +157,10 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       }
 
       final parts = <Part>[];
-      // ... (other code)
-
-      parts.add(TextPart('Your text content here')); // Correct way to create text Part
-
-      // ... (other code)
-
-      // Text Part
       parts.add(TextPart('Shoebox Metadata: ${shoeboxData.toString()}. User input: $_userInput. Weather: ${_weatherData.toString()}. What shoes match this clothing and the user\'s request?'));
 
-     // Content add user
-final content = Content("user", parts);
-
-      // Generate Content
+      final content = Content("user", parts);
       final response = await _model.generateContent([content]);
-
       final text = response.text;
 
       setState(() {
@@ -213,39 +199,43 @@ final content = Content("user", parts);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Fashion Companion')),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: <Widget>[
-            TextField(
-              decoration:
-                  const InputDecoration(labelText: 'Ask your fashion companion'),
-              onChanged: (value) => _userInput = value,
-            ),
-            const SizedBox(height: 20),
-            _image == null
-                ? const Text(noImageSelectedMessage)
-                : Image.file(_image!, height: 200),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _scanClothing,
-              child: const Text('Scan Clothing'),
-            ),
-            Visibility(
-              visible: _isLoading,
-              child: const CircularProgressIndicator(),
-            ),
-            if (_geminiResponse != null)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(_geminiResponse!, textAlign: TextAlign.center),
+      body: SafeArea( // Added SafeArea here.
+        child: SingleChildScrollView(
+
+
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                decoration:
+                    const InputDecoration(labelText: 'Ask your fashion companion'),
+                onChanged: (value) => _userInput = value,
               ),
-            if (_weatherData != null)
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Weather: ${_weatherData.toString()}'),
+              const SizedBox(height: 20),
+              _image == null
+                  ? const Text(noImageSelectedMessage)
+                  : Image.file(_image!, height: 200),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _scanClothing,
+                child: const Text('Scan Clothing'),
               ),
-          ],
+              Visibility(
+                visible: _isLoading,
+                child: const CircularProgressIndicator(),
+              ),
+              if (_geminiResponse != null)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(_geminiResponse!, textAlign: TextAlign.center),
+                ),
+              if (_weatherData != null)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Weather: ${_weatherData.toString()}'),
+                ),
+            ],
+          ),
         ),
       ),
     );

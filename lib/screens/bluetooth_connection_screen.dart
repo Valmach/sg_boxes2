@@ -103,9 +103,8 @@ class _BluetoothConnectionScreenState extends State<BluetoothConnectionScreen> {
         ],
       ),
     );
-  }
 
-  Widget _buildCircularButton(BuildContext context, String text, VoidCallback? onTap, Color color, IconData icon) {
+  }  Widget _buildCircularButton(BuildContext context, String text, VoidCallback? onTap, Color color, IconData icon) {
     return GestureDetector(
       onTap: onTap,
       child: Container(

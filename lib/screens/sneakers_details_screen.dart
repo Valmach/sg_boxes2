@@ -21,11 +21,10 @@ class SneakersDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: const SneakersBody(),
-      endDrawer: const SneakersDrawer(), // Add the end drawer
+      endDrawer: SneakersDrawer(), // Add the end drawer
     );
   }
 }
-
 class SneakersBody extends StatelessWidget {
   const SneakersBody({super.key});
 
@@ -130,9 +129,8 @@ class SneakersBody extends StatelessWidget {
 }
 
 class SneakersDrawer extends StatelessWidget {
-  const SneakersDrawer({super.key});
-
-  final List<Sneaker> sneakers = const [
+  SneakersDrawer({super.key});
+  final List<Sneaker> sneakers = [
     Sneaker(
       name: 'Air Jordan 1',
       imagePath: 'assets/images/air_jordan_1.png',
@@ -153,7 +151,6 @@ class SneakersDrawer extends StatelessWidget {
     ),
     // Add more sneakers as needed
   ];
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -215,12 +212,9 @@ class SneakersDrawer extends StatelessWidget {
         ),
       ),
     );
-  }
-}
 
-class Sneaker {
-  final String name;
-  final String imagePath;
+  }}class Sneaker {
+  final String name;  final String imagePath;
   final String lastWorn;
   final String wornWith;
   final String season;

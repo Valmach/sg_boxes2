@@ -1,3 +1,4 @@
+
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -7,11 +8,9 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
-import 'results_screen.dart'; // Import the ResultsScreen
-import 'package:googleapis_auth/googleapis_auth.dart' as auth;
 
 // Replace with your Firebase and Gemini API keys
-const String firebaseDatabaseUrl ='https://esp32boxies-default-rtdb.firebaseio.com/';
+const String firebaseDatabaseUrl = 'https://esp32boxies-default-rtdb.firebaseio.com/';
 const String geminiApiKey = 'AIzaSyAXPOVrC2RqJ_O8_Oraz8UBGEFcXA8EqIg';
 const String accuWeatherApiKey = 'dE5pUmfUeAzQUNKGXVUlI63cjlobZl9s';
 
@@ -43,8 +42,8 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
   final ImagePicker _picker = ImagePicker();
   final DatabaseReference _database =
       FirebaseDatabase.instance.refFromURL(firebaseDatabaseUrl);
-  final GenerativeModel _model =
-      GenerativeModel(model: 'gemini-pro-vision', apiKey: geminiApiKey);
+ final GenerativeModel _model =
+    GenerativeModel(model: 'gemini-pro-vision', apiKey: geminiApiKey);
 
   File? _image;
   bool _isLoading = false;
@@ -53,8 +52,6 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
   Map<String, dynamic>? _weatherData;
 
   static const String noImageSelectedMessage = 'No image selected.';
-
-  get prompt => null;
 
   @override
   void initState() {
@@ -107,20 +104,25 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
 
     if (locationResponse.statusCode == 200) {
       final locationData = json.decode(locationResponse.body);
-      final locationKey = locationData['Key'];
+      final locationKey = locationData['Key'] as String?;
+
+      if (locationKey == null) throw Exception('Location key not found.');
 
       final weatherUrl = Uri.parse(
           'http://dataservice.accuweather.com/currentconditions/v1/$locationKey?apikey=$accuWeatherApiKey');
       final weatherResponse = await http.get(weatherUrl);
 
       if (weatherResponse.statusCode == 200) {
-        final weatherData = json.decode(weatherResponse.body)[0];
-        return weatherData;
+        final weatherData = json.decode(weatherResponse.body);
+        if (weatherData is List && weatherData.isNotEmpty) {
+          return Map<String, dynamic>.from(weatherData[0]);
+        }
+        throw Exception('Weather data is empty or invalid.');
       } else {
-        throw Exception('Failed to load weather data');
+        throw Exception('Failed to load weather data: ${weatherResponse.statusCode}');
       }
     } else {
-      throw Exception('Failed to load location data');
+      throw Exception('Failed to load location data: ${locationResponse.statusCode}');
     }
   }
 
@@ -161,26 +163,21 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
         throw Exception('Weather data is not available.');
       }
 
-      final parts = <Part>[];
-      // ... (other code)
+      // Define parts for Gemini API
+      final parts = [
+        DataPart('image/jpeg', Uint8List.fromList(imageBytes)), // Add image part
+        TextPart(
+          'Shoebox Metadata: ${shoeboxData.toString()}. User input: $_userInput. Weather: ${_weatherData.toString()}. What shoes match this clothing and the user\'s request?',
+        ),
+      ];
 
-      parts.add(TextPart(
-          'Your text content here')); // Correct way to create text Part
-
-      // ... (other code)
-
-      // Text Part
-      parts.add(TextPart(
-          'Shoebox Metadata: ${shoeboxData.toString()}. User input: $_userInput. Weather: ${_weatherData.toString()}. What shoes match this clothing and the user\'s request?'));
-
-      // Content add user
-      final content = Content("user", parts);
-
-      final response = await _model.generateContent([content]);
-      final text = response.text;
+      // Generate content with the correct model
+      final response = await _model.generateContent([
+        Content.multi(parts), // Use Content.multi for multiple parts
+      ]);
 
       setState(() {
-        _geminiResponse = text;
+        _geminiResponse = response.text ?? 'No response from Gemini.';
       });
     } catch (e) {
       _showError('Error processing image: $e');
@@ -191,11 +188,12 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
     }
   }
 
-  Future<Map<dynamic, dynamic>?> _fetchShoeboxData() async {
+  Future<Map<String, dynamic>?> _fetchShoeboxData() async {
     try {
-      DatabaseEvent shoeboxEvent =
-          await _database.child('shoeboxes/shoe1').once();
-      return shoeboxEvent.snapshot.value as Map<dynamic, dynamic>?;
+      DatabaseEvent shoeboxEvent = await _database.child('shoeboxes/shoe1').once();
+      final value = shoeboxEvent.snapshot.value;
+      if (value == null) return null;
+      return Map<String, dynamic>.from(value as Map);
     } catch (e) {
       _showError('Error fetching shoebox data: $e');
       return null;
@@ -220,32 +218,35 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
         child: Column(
           children: <Widget>[
             TextField(
-              decoration: const InputDecoration(
-                  labelText: 'Ask your fashion companion'),
+              decoration: const InputDecoration(labelText: 'Ask your fashion companion'),
               onChanged: (value) => _userInput = value,
             ),
             const SizedBox(height: 20),
             _image == null
                 ? const Text(noImageSelectedMessage)
-                : Image.file(_image!, height: 200),
+                : Image.file(_image!, height: 200, fit: BoxFit.cover),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: _scanClothing,
+              onPressed: _isLoading ? null : _scanClothing, // Disable button while loading
               child: const Text('Scan Clothing'),
             ),
-            Visibility(
-              visible: _isLoading,
-              child: const CircularProgressIndicator(),
-            ),
+            if (_isLoading) const CircularProgressIndicator(),
             if (_geminiResponse != null)
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(_geminiResponse!, textAlign: TextAlign.center),
+                child: Text(
+                  _geminiResponse!,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 16),
+                ),
               ),
             if (_weatherData != null)
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('Weather: ${_weatherData.toString()}'),
+                child: Text(
+                  'Weather: ${_weatherData!["WeatherText"]} (${_weatherData!["Temperature"]["Metric"]["Value"]}°C)',
+                  style: const TextStyle(fontSize: 14),
+                ),
               ),
           ],
         ),

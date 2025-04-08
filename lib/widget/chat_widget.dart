@@ -180,9 +180,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
       ),
     );
-  }
-
-  Future<void> _sendChatMessage(String message) async {
+  }  Future<void> _sendChatMessage(String message) async {
     if (message.isEmpty) {
       _showError('Message cannot be empty.');
       return;

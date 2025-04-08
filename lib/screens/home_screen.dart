@@ -22,7 +22,13 @@ class HomeScreen extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Container(
-              decoration: CommonTheme.backgroundDecoration,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Colors.transparent, Colors.black12],
+                ),
+              ),
             ),
           ),
           Center(
@@ -96,11 +102,13 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black, // Set the bottom navigation bar color to black
+        backgroundColor:
+            Colors.black, // Set the bottom navigation bar color to black
         selectedItemColor: CommonTheme.bottomNavBarTheme.selectedItemColor,
         unselectedItemColor: CommonTheme.bottomNavBarTheme.unselectedItemColor,
         selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle,
-        unselectedLabelStyle: CommonTheme.bottomNavBarTheme.unselectedLabelStyle,
+        unselectedLabelStyle:
+            CommonTheme.bottomNavBarTheme.unselectedLabelStyle,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const [
@@ -128,7 +136,8 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(context, '/welcome'); // Changed to navigate to WelcomeScreen
+              Navigator.pushNamed(
+                  context, '/welcome'); // Changed to navigate to WelcomeScreen
               break;
             case 1:
               Navigator.pushNamed(context, '/bluetooth_connection');
@@ -148,7 +157,9 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCircularButton(BuildContext context, String text, String route, IconData icon, {TextStyle? textStyle}) {
+  Widget _buildCircularButton(
+      BuildContext context, String text, String route, IconData icon,
+      {TextStyle? textStyle}) {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, route);
@@ -165,7 +176,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 text,
-                style: textStyle ?? CommonTheme.buttonTextStyle,
+                style: textStyle ?? Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
             ],

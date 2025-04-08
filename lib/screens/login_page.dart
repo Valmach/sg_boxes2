@@ -19,7 +19,13 @@ class LoginPage extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF1F1F1F), Color(0xFF121212)],
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,7 +187,6 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildLoginIcon(BuildContext context, IconData icon, Color color, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,

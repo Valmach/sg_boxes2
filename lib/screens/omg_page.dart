@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
 import 'package:sg_boxes/screens/data/dummy_data.dart';
-import 'package:sg_boxes/screens/box_detail_screen.dart';
+import 'package:sg_boxes/screens/box_details_screen.dart';
 import 'common_theme.dart';
 
 class OMGPage extends StatelessWidget {
@@ -20,7 +20,13 @@ class OMGPage extends StatelessWidget {
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF2A2A2A), Color(0xFF1A1A1A)],
+          ),
+        ),
         child: ListView.builder(
           itemCount: customMadeBoxes.length,
           itemBuilder: (context, index) {
@@ -63,7 +69,7 @@ class OMGPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => BoxDetailScreen(box: box),
+                      builder: (context) => BoxieDetailsScreen(boxieName: box.name), // Corrected line.
                     ),
                   );
                 },

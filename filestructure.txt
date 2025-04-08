@@ -2,7 +2,6 @@
     |-- dartpad
         |-- web_plugin_registrant.dart
     |-- extension_discovery
-        |-- devtools.json
         |-- vs_code.json
     |-- package_config.json
     |-- package_config_subset
@@ -126,8 +125,10 @@
         |-- boots.png
         |-- boxes
             |-- adidas_box1.jpg
+        |-- dark_ocean.401.png
         |-- dark_ocean.402.png
         |-- dark_ocean.403.png
+        |-- dark_ocean.404.png
         |-- dark_ocean.405.png
         |-- dark_ocean.406.png
         |-- dark_ocean.408.png
@@ -152,17 +153,21 @@
         |-- jimmy_choo_box1.png
         |-- lilac_posh.391.png
         |-- lilac_posh.392.png
+        |-- lilac_posh.393.png
         |-- lilac_posh.394.png
         |-- lilac_posh.395.png
         |-- lilac_posh.396.png
         |-- lilac_posh.397.png
         |-- lilac_posh.398.png
         |-- lilac_posh.399.png
+        |-- lilac_posh.400.png
         |-- linkedin.png
         |-- louboutin_box1.png.png
         |-- manolo_blahnik_box1.png
+        |-- manolo_blahnik_golden_years.385.png
         |-- manolo_blahnik_golden_years.386.png
         |-- manolo_blahnik_golden_years.387.png
+        |-- manolo_blahnik_golden_years.388.png
         |-- manolo_blahnik_golden_years.389.png
         |-- manolo_sangue.png
         |-- meta.png
@@ -208,6 +213,7 @@
         |-- sneakers (2).png
         |-- sneakers.png
         |-- sophia_webster_1.png
+        |-- sophia_webster_box1.png
         |-- sports.png
         |-- stewart_weizman_box1.png
         |-- stiletto_heels.png
@@ -311,7 +317,7 @@
         |-- bluetooth_connection_screen.dart
         |-- boots_details_screen.dart
         |-- boxie_details_screen.dart
-        |-- box_detail_screen.dart
+        |-- box_details_screen.dart
         |-- box_drops_screen.dart
         |-- box_model.dart
         |-- chat_screen.dart
@@ -334,6 +340,7 @@
         |-- services
             |-- chat_gpt_service.dart
         |-- shoe_category.dart
+        |-- shoe_type_categories.dart
         |-- shopping
             |-- common_theme.dart
             |-- shopping_page.dart
@@ -411,6 +418,300 @@
                     |-- README.md
                     |-- test
                         |-- file_selector_linux_test.dart
+                |-- flutter_js
+                    |-- android
+                        |-- build.gradle
+                        |-- CMakeLists.txt
+                        |-- gradle
+                            |-- wrapper
+                                |-- gradle-wrapper.properties
+                        |-- gradle.properties
+                        |-- settings.gradle
+                        |-- src
+                            |-- main
+                                |-- AndroidManifest.xml
+                                |-- kotlin
+                                    |-- io
+                                        |-- abner
+                                            |-- flutter_js
+                                                |-- FlutterJsPlugin.kt
+                                                |-- flutter_js
+                                                    |-- FlutterJsPlugin.kt
+                                                |-- JSEngine.kt
+                    |-- assets
+                        |-- js
+                            |-- fetch.js
+                    |-- CHANGELOG.md
+                    |-- doc
+                        |-- android_ajv_form.png
+                        |-- android_ajv_result.png
+                        |-- flutter_js.png
+                        |-- ios_ajv_form.png
+                        |-- ios_ajv_result.png
+                        |-- ios_capture.png
+                        |-- ios_source.html
+                        |-- macos-capture.png
+                    |-- example
+                        |-- analysis_options.yaml
+                        |-- android
+                            |-- app
+                                |-- build.gradle
+                                |-- proguard-rules.pro
+                                |-- src
+                                    |-- debug
+                                        |-- AndroidManifest.xml
+                                    |-- main
+                                        |-- AndroidManifest.xml
+                                        |-- java
+                                            |-- io
+                                                |-- flutter
+                                                    |-- plugins
+                                        |-- kotlin
+                                            |-- io
+                                                |-- abner
+                                                    |-- flutter_js_example
+                                                        |-- MainActivity.kt
+                                        |-- res
+                                            |-- drawable
+                                                |-- launch_background.xml
+                                            |-- drawable-v21
+                                                |-- launch_background.xml
+                                            |-- mipmap-hdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-mdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxxhdpi
+                                                |-- ic_launcher.png
+                                            |-- values
+                                                |-- styles.xml
+                                            |-- values-night
+                                                |-- styles.xml
+                                    |-- profile
+                                        |-- AndroidManifest.xml
+                            |-- build.gradle
+                            |-- gradle
+                                |-- wrapper
+                                    |-- gradle-wrapper.properties
+                            |-- gradle.properties
+                            |-- settings.gradle
+                        |-- assets
+                            |-- js
+                                |-- ajv.js
+                            |-- js.ico
+                        |-- ios
+                            |-- Flutter
+                                |-- AppFrameworkInfo.plist
+                                |-- Debug.xcconfig
+                                |-- Release.xcconfig
+                            |-- Podfile
+                            |-- Podfile.lock
+                            |-- Runner
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- Contents.json
+                                        |-- Icon-App-1024x1024@1x.png
+                                        |-- Icon-App-20x20@1x.png
+                                        |-- Icon-App-20x20@2x.png
+                                        |-- Icon-App-20x20@3x.png
+                                        |-- Icon-App-29x29@1x.png
+                                        |-- Icon-App-29x29@2x.png
+                                        |-- Icon-App-29x29@3x.png
+                                        |-- Icon-App-40x40@1x.png
+                                        |-- Icon-App-40x40@2x.png
+                                        |-- Icon-App-40x40@3x.png
+                                        |-- Icon-App-60x60@2x.png
+                                        |-- Icon-App-60x60@3x.png
+                                        |-- Icon-App-76x76@1x.png
+                                        |-- Icon-App-76x76@2x.png
+                                        |-- Icon-App-83.5x83.5@2x.png
+                                    |-- LaunchImage.imageset
+                                        |-- Contents.json
+                                        |-- LaunchImage.png
+                                        |-- LaunchImage@2x.png
+                                        |-- LaunchImage@3x.png
+                                        |-- README.md
+                                |-- Base.lproj
+                                    |-- LaunchScreen.storyboard
+                                    |-- Main.storyboard
+                                |-- Info.plist
+                                |-- Runner-Bridging-Header.h
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- contents.xcworkspacedata
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                        |-- WorkspaceSettings.xcsettings
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                                    |-- WorkspaceSettings.xcsettings
+                        |-- lib
+                            |-- ajv_example.dart
+                            |-- ajv_result_screen.dart
+                            |-- api_call.dart
+                            |-- example.dart
+                            |-- form.dart
+                            |-- json_viewer.dart
+                            |-- main.dart
+                        |-- linux
+                            |-- CMakeLists.txt
+                            |-- flutter
+                                |-- CMakeLists.txt
+                            |-- main.cc
+                            |-- my_application.cc
+                            |-- my_application.h
+                        |-- macos
+                            |-- Flutter
+                                |-- Flutter-Debug.xcconfig
+                                |-- Flutter-Release.xcconfig
+                            |-- Podfile
+                            |-- Podfile.lock
+                            |-- Runner
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- app_icon_1024.png
+                                        |-- app_icon_128.png
+                                        |-- app_icon_16.png
+                                        |-- app_icon_256.png
+                                        |-- app_icon_32.png
+                                        |-- app_icon_512.png
+                                        |-- app_icon_64.png
+                                        |-- Contents.json
+                                |-- Base.lproj
+                                    |-- MainMenu.xib
+                                |-- Configs
+                                    |-- AppInfo.xcconfig
+                                    |-- Debug.xcconfig
+                                    |-- Release.xcconfig
+                                    |-- Warnings.xcconfig
+                                |-- DebugProfile.entitlements
+                                |-- Info.plist
+                                |-- MainFlutterWindow.swift
+                                |-- Release.entitlements
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                        |-- pubspec.yaml
+                        |-- README.md
+                        |-- test
+                            |-- flutter_js_test.dart
+                        |-- windows
+                            |-- CMakeLists.txt
+                            |-- flutter
+                                |-- CMakeLists.txt
+                            |-- runner
+                                |-- CMakeLists.txt
+                                |-- flutter_window.cpp
+                                |-- flutter_window.h
+                                |-- main.cpp
+                                |-- resource.h
+                                |-- resources
+                                    |-- app_icon.ico
+                                |-- runner.exe.manifest
+                                |-- Runner.rc
+                                |-- utils.cpp
+                                |-- utils.h
+                                |-- win32_window.cpp
+                                |-- win32_window.h
+                    |-- FIXED_RESOURCE.txt
+                    |-- ios
+                        |-- Assets
+                        |-- Classes
+                            |-- Console.swift
+                            |-- FlutterJsPlugin.h
+                            |-- FlutterJsPlugin.m
+                            |-- Global.swift
+                            |-- JSContextFoundation.swift
+                            |-- JSInsert.swift
+                            |-- SwiftFlutterJsPlugin.swift
+                        |-- flutter_js.podspec
+                    |-- ios.mp4
+                    |-- lib
+                        |-- extensions
+                            |-- fetch.dart
+                            |-- handle_promises.dart
+                            |-- xhr.dart
+                        |-- flutter_js.dart
+                        |-- javascriptcore
+                            |-- binding
+                                |-- jsc_ffi.dart
+                                |-- js_base.dart
+                                |-- js_context_ref.dart
+                                |-- js_global_context_ref.dart
+                                |-- js_object_ref.dart
+                                |-- js_string_ref.dart
+                                |-- js_typed_array.dart
+                                |-- js_value_ref.dart
+                            |-- flutter_jscore.dart
+                            |-- jscore
+                                |-- js_class.dart
+                                |-- js_context.dart
+                                |-- js_context_group.dart
+                                |-- js_object.dart
+                                |-- js_property_name_accumulator.dart
+                                |-- js_property_name_array.dart
+                                |-- js_string.dart
+                                |-- js_value.dart
+                            |-- jscore_bindings.dart
+                            |-- jscore_runtime.dart
+                        |-- javascript_runtime.dart
+                        |-- js_eval_result.dart
+                        |-- quickjs
+                            |-- ffi.dart
+                            |-- isolate.dart
+                            |-- object.dart
+                            |-- qjs_typedefs.dart
+                            |-- quickjs_runtime.dart
+                            |-- quickjs_runtime2.dart
+                            |-- utf8_null_terminated.dart
+                            |-- wrapper.dart
+                        |-- quickjs-sync-server
+                            |-- quickjs_oasis_jsbridge.dart
+                    |-- LICENSE
+                    |-- linux
+                        |-- CMakeLists.txt
+                        |-- flutter_js_plugin.cc
+                        |-- include
+                            |-- flutter_js
+                                |-- flutter_js_plugin.h
+                        |-- shared
+                            |-- libquickjs_c_bridge_plugin.so
+                    |-- macos
+                        |-- Classes
+                            |-- FlutterJsPlugin.swift
+                        |-- flutter_js.podspec
+                    |-- pubspec.yaml
+                    |-- README.md
+                    |-- test
+                        |-- flutter_js_test.dart
+                    |-- windows
+                        |-- CMakeLists.txt
+                        |-- flutter_js_plugin.cpp
+                        |-- include
+                            |-- flutter_js
+                                |-- flutter_js_plugin.h
+                        |-- shared
+                            |-- quickjs_c_bridge.dll
                 |-- flutter_secure_storage_linux
                     |-- CHANGELOG.md
                     |-- LICENSE
@@ -611,7 +912,7 @@
 |-- public
     |-- ajaxlibssystemjs
         |-- global.js
-    |-- fashion-companion.dart
+    |-- fashion_companion.dart
     |-- fashion_companion_extended.dart
     |-- index.html
     |-- results_screen.dart
@@ -965,6 +1266,300 @@
                         |-- messages.g.cpp
                         |-- messages.g.h
                         |-- plugin_version.h.in
+                |-- flutter_js
+                    |-- android
+                        |-- build.gradle
+                        |-- CMakeLists.txt
+                        |-- gradle
+                            |-- wrapper
+                                |-- gradle-wrapper.properties
+                        |-- gradle.properties
+                        |-- settings.gradle
+                        |-- src
+                            |-- main
+                                |-- AndroidManifest.xml
+                                |-- kotlin
+                                    |-- io
+                                        |-- abner
+                                            |-- flutter_js
+                                                |-- FlutterJsPlugin.kt
+                                                |-- flutter_js
+                                                    |-- FlutterJsPlugin.kt
+                                                |-- JSEngine.kt
+                    |-- assets
+                        |-- js
+                            |-- fetch.js
+                    |-- CHANGELOG.md
+                    |-- doc
+                        |-- android_ajv_form.png
+                        |-- android_ajv_result.png
+                        |-- flutter_js.png
+                        |-- ios_ajv_form.png
+                        |-- ios_ajv_result.png
+                        |-- ios_capture.png
+                        |-- ios_source.html
+                        |-- macos-capture.png
+                    |-- example
+                        |-- analysis_options.yaml
+                        |-- android
+                            |-- app
+                                |-- build.gradle
+                                |-- proguard-rules.pro
+                                |-- src
+                                    |-- debug
+                                        |-- AndroidManifest.xml
+                                    |-- main
+                                        |-- AndroidManifest.xml
+                                        |-- java
+                                            |-- io
+                                                |-- flutter
+                                                    |-- plugins
+                                        |-- kotlin
+                                            |-- io
+                                                |-- abner
+                                                    |-- flutter_js_example
+                                                        |-- MainActivity.kt
+                                        |-- res
+                                            |-- drawable
+                                                |-- launch_background.xml
+                                            |-- drawable-v21
+                                                |-- launch_background.xml
+                                            |-- mipmap-hdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-mdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxxhdpi
+                                                |-- ic_launcher.png
+                                            |-- values
+                                                |-- styles.xml
+                                            |-- values-night
+                                                |-- styles.xml
+                                    |-- profile
+                                        |-- AndroidManifest.xml
+                            |-- build.gradle
+                            |-- gradle
+                                |-- wrapper
+                                    |-- gradle-wrapper.properties
+                            |-- gradle.properties
+                            |-- settings.gradle
+                        |-- assets
+                            |-- js
+                                |-- ajv.js
+                            |-- js.ico
+                        |-- ios
+                            |-- Flutter
+                                |-- AppFrameworkInfo.plist
+                                |-- Debug.xcconfig
+                                |-- Release.xcconfig
+                            |-- Podfile
+                            |-- Podfile.lock
+                            |-- Runner
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- Contents.json
+                                        |-- Icon-App-1024x1024@1x.png
+                                        |-- Icon-App-20x20@1x.png
+                                        |-- Icon-App-20x20@2x.png
+                                        |-- Icon-App-20x20@3x.png
+                                        |-- Icon-App-29x29@1x.png
+                                        |-- Icon-App-29x29@2x.png
+                                        |-- Icon-App-29x29@3x.png
+                                        |-- Icon-App-40x40@1x.png
+                                        |-- Icon-App-40x40@2x.png
+                                        |-- Icon-App-40x40@3x.png
+                                        |-- Icon-App-60x60@2x.png
+                                        |-- Icon-App-60x60@3x.png
+                                        |-- Icon-App-76x76@1x.png
+                                        |-- Icon-App-76x76@2x.png
+                                        |-- Icon-App-83.5x83.5@2x.png
+                                    |-- LaunchImage.imageset
+                                        |-- Contents.json
+                                        |-- LaunchImage.png
+                                        |-- LaunchImage@2x.png
+                                        |-- LaunchImage@3x.png
+                                        |-- README.md
+                                |-- Base.lproj
+                                    |-- LaunchScreen.storyboard
+                                    |-- Main.storyboard
+                                |-- Info.plist
+                                |-- Runner-Bridging-Header.h
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- contents.xcworkspacedata
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                        |-- WorkspaceSettings.xcsettings
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                                    |-- WorkspaceSettings.xcsettings
+                        |-- lib
+                            |-- ajv_example.dart
+                            |-- ajv_result_screen.dart
+                            |-- api_call.dart
+                            |-- example.dart
+                            |-- form.dart
+                            |-- json_viewer.dart
+                            |-- main.dart
+                        |-- linux
+                            |-- CMakeLists.txt
+                            |-- flutter
+                                |-- CMakeLists.txt
+                            |-- main.cc
+                            |-- my_application.cc
+                            |-- my_application.h
+                        |-- macos
+                            |-- Flutter
+                                |-- Flutter-Debug.xcconfig
+                                |-- Flutter-Release.xcconfig
+                            |-- Podfile
+                            |-- Podfile.lock
+                            |-- Runner
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- app_icon_1024.png
+                                        |-- app_icon_128.png
+                                        |-- app_icon_16.png
+                                        |-- app_icon_256.png
+                                        |-- app_icon_32.png
+                                        |-- app_icon_512.png
+                                        |-- app_icon_64.png
+                                        |-- Contents.json
+                                |-- Base.lproj
+                                    |-- MainMenu.xib
+                                |-- Configs
+                                    |-- AppInfo.xcconfig
+                                    |-- Debug.xcconfig
+                                    |-- Release.xcconfig
+                                    |-- Warnings.xcconfig
+                                |-- DebugProfile.entitlements
+                                |-- Info.plist
+                                |-- MainFlutterWindow.swift
+                                |-- Release.entitlements
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                        |-- pubspec.yaml
+                        |-- README.md
+                        |-- test
+                            |-- flutter_js_test.dart
+                        |-- windows
+                            |-- CMakeLists.txt
+                            |-- flutter
+                                |-- CMakeLists.txt
+                            |-- runner
+                                |-- CMakeLists.txt
+                                |-- flutter_window.cpp
+                                |-- flutter_window.h
+                                |-- main.cpp
+                                |-- resource.h
+                                |-- resources
+                                    |-- app_icon.ico
+                                |-- runner.exe.manifest
+                                |-- Runner.rc
+                                |-- utils.cpp
+                                |-- utils.h
+                                |-- win32_window.cpp
+                                |-- win32_window.h
+                    |-- FIXED_RESOURCE.txt
+                    |-- ios
+                        |-- Assets
+                        |-- Classes
+                            |-- Console.swift
+                            |-- FlutterJsPlugin.h
+                            |-- FlutterJsPlugin.m
+                            |-- Global.swift
+                            |-- JSContextFoundation.swift
+                            |-- JSInsert.swift
+                            |-- SwiftFlutterJsPlugin.swift
+                        |-- flutter_js.podspec
+                    |-- ios.mp4
+                    |-- lib
+                        |-- extensions
+                            |-- fetch.dart
+                            |-- handle_promises.dart
+                            |-- xhr.dart
+                        |-- flutter_js.dart
+                        |-- javascriptcore
+                            |-- binding
+                                |-- jsc_ffi.dart
+                                |-- js_base.dart
+                                |-- js_context_ref.dart
+                                |-- js_global_context_ref.dart
+                                |-- js_object_ref.dart
+                                |-- js_string_ref.dart
+                                |-- js_typed_array.dart
+                                |-- js_value_ref.dart
+                            |-- flutter_jscore.dart
+                            |-- jscore
+                                |-- js_class.dart
+                                |-- js_context.dart
+                                |-- js_context_group.dart
+                                |-- js_object.dart
+                                |-- js_property_name_accumulator.dart
+                                |-- js_property_name_array.dart
+                                |-- js_string.dart
+                                |-- js_value.dart
+                            |-- jscore_bindings.dart
+                            |-- jscore_runtime.dart
+                        |-- javascript_runtime.dart
+                        |-- js_eval_result.dart
+                        |-- quickjs
+                            |-- ffi.dart
+                            |-- isolate.dart
+                            |-- object.dart
+                            |-- qjs_typedefs.dart
+                            |-- quickjs_runtime.dart
+                            |-- quickjs_runtime2.dart
+                            |-- utf8_null_terminated.dart
+                            |-- wrapper.dart
+                        |-- quickjs-sync-server
+                            |-- quickjs_oasis_jsbridge.dart
+                    |-- LICENSE
+                    |-- linux
+                        |-- CMakeLists.txt
+                        |-- flutter_js_plugin.cc
+                        |-- include
+                            |-- flutter_js
+                                |-- flutter_js_plugin.h
+                        |-- shared
+                            |-- libquickjs_c_bridge_plugin.so
+                    |-- macos
+                        |-- Classes
+                            |-- FlutterJsPlugin.swift
+                        |-- flutter_js.podspec
+                    |-- pubspec.yaml
+                    |-- README.md
+                    |-- test
+                        |-- flutter_js_test.dart
+                    |-- windows
+                        |-- CMakeLists.txt
+                        |-- flutter_js_plugin.cpp
+                        |-- include
+                            |-- flutter_js
+                                |-- flutter_js_plugin.h
+                        |-- shared
+                            |-- quickjs_c_bridge.dll
                 |-- flutter_secure_storage_windows
                     |-- analysis_options.yaml
                     |-- CHANGELOG.md

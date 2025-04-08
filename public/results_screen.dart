@@ -21,7 +21,8 @@ class ResultsScreen extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+
+        padding: EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,7 +36,8 @@ class ResultsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             Container(
-              padding: const EdgeInsets.all(12),
+
+              padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(8),
@@ -65,10 +67,10 @@ class ResultsScreen extends StatelessWidget {
         ),
       ),
     );
-  }
 
-  Widget _buildWeatherInfo() {
-    return const Column(
+
+  }  
+  Widget _buildWeatherInfo() {    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import '../common_theme/common_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EarthScreen extends StatefulWidget {
@@ -26,7 +25,9 @@ class _EarthScreenState extends State<EarthScreen> {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: Theme.of(context).brightness == Brightness.dark
+            ? CommonTheme.darkBackgroundDecoration
+            : CommonTheme.lightBackgroundDecoration,
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
@@ -66,14 +67,6 @@ class _EarthScreenState extends State<EarthScreen> {
               const SizedBox(height: 20),
               Text(
                 'Join Us in Making a Difference',
-                style: CommonTheme.headingTextStyle
-                    ?.copyWith(fontSize: 22), // Larger font size
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'We invite you to join us in our mission to make the world a better place. '
-                'Whether through supporting our products, participating in our initiatives, or spreading awareness, '
-                'your involvement can help create a positive impact on the planet and those in need.',
                 style: TextStyle(
                   fontSize: 17, // Larger font size
                   color: CommonTheme.secondaryColor,
@@ -138,10 +131,8 @@ class _EarthScreenState extends State<EarthScreen> {
         ),
       ),
     );
-  }
 
-  Widget _buildSocialMediaSection(BuildContext context) {
-    return Column(
+  }  Widget _buildSocialMediaSection(BuildContext context) {    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(

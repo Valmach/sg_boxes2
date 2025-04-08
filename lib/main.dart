@@ -5,20 +5,21 @@ import 'package:sg_boxes/screens/box_drops_screen.dart';
 import 'package:sg_boxes/screens/customization_paint_screen.dart';
 import 'package:sg_boxes/screens/image_screen.dart';
 import 'package:sg_boxes/screens/omg_page.dart';
-import 'package:sg_boxes/screens/shoe_category.dart'; // Correct import
+import 'package:sg_boxes/screens/shoe_category.dart';
 import 'package:sg_boxes/screens/shopping/shopping_page.dart';
 import 'package:sg_boxes/screens/sneakers_details_screen.dart';
 import 'package:sg_boxes/screens/splash/splash_screen.dart';
 import 'package:sg_boxes/screens/heels_details_screen.dart';
 import 'package:sg_boxes/screens/trending_page.dart';
-import 'package:sg_boxes/screens/home_screen.dart' as home; // Prefix the import
-import 'package:sg_boxes/screens/welcome_screen.dart';
+import 'package:sg_boxes/screens/home_screen.dart' as home;
+import 'package:sg_boxes/screens/welcome_screen.dart'; // Correct import
 import 'package:sg_boxes/screens/login_page.dart';
 import 'package:sg_boxes/widget/chat_widget.dart';
 import 'package:sg_boxes/screens/needful_things_screen.dart';
-import 'package:sg_boxes/screens/earth_screen.dart'; // Import for EarthScreen
-import 'package:sg_boxes/screens/bluetooth_connection_screen.dart'; // Import for BluetoothConnectionScreen
-import 'package:sg_boxes/screens/account_screen.dart'; // Import for AccountScreen
+import 'package:sg_boxes/screens/earth_screen.dart';
+import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
+import 'package:sg_boxes/screens/account_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -34,14 +35,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF1F1B24), // Background color of the AppBar
+          backgroundColor: Color(0xFF1F1B24),
           titleTextStyle: TextStyle(
-            color: Color(0xFFFFD700), // Bright gold color for title
+            color: Color(0xFFFFD700),
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
           iconTheme: IconThemeData(
-            color: Color(0xFFFFD700), // Bright gold color for back button
+            color: Color(0xFFFFD700),
           ),
         ),
       ),
@@ -49,25 +50,43 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (context) => const SplashScreen(title: 'Splash Screen'),
         '/home': (context) => const home.HomeScreen(title: 'Home Screen'),
-        '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
-        '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
-        '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
-        '/heels_details': (context) => const HeelsDetailsScreen(title: 'Heels Details'),
-        '/sandals_details': (context) => const SandalsDetailsScreen(title: 'Sandals Details'),
+        '/shoe_category': (context) =>
+            const ShoeCategory(title: 'Shoe Categories'),
+        '/sneakers_details': (context) =>
+            const SneakersDetailsScreen(title: 'Sneakers Details'),
+        '/boots_details': (context) =>
+            const BootsDetailsScreen(title: 'Boots Details'),
+        '/heels_details': (context) =>
+            const HeelsDetailsScreen(title: 'Heels Details'),
+        '/sandals_details': (context) =>
+            const SandalsDetailsScreen(title: 'Sandals Details'),
         '/image': (context) => ImageScreen(),
-        '/chat': (context) => const ChatScreen(title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
-        '/customize_paint': (context) => const CustomizablePaintScreen(title: 'Customize Paint'),
+        '/chat': (context) => const ChatScreen(
+            title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
+        '/customize_paint': (context) =>
+            const CustomizablePaintScreen(title: 'Customize Paint'),
         '/shopping': (context) => const ShoppingPage(title: 'Shopping Page'),
         '/box_drops': (context) => const BoxDropsScreen(),
         '/omg': (context) => const OMGPage(title: 'OMG Page'),
         '/trending': (context) => const TrendingPage(title: 'Trending Page'),
-        '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
-        '/earth': (context) => const EarthScreen(title: 'Earth Screen'), // Define route for EarthScreen
-        '/bluetooth_connection': (context) => const BluetoothConnectionScreen(), // Define route for BluetoothConnectionScreen
+        '/needful_things': (context) =>
+            const NeedfulThingsScreen(title: 'Needful Things'),
+        '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
+        '/bluetooth_connection': (context) => const BluetoothConnectionScreen(),
         '/account': (context) => const AccountScreen(),
-        '/welcome': (context) => const WelcomeScreen(),
-        '/login': (context) => const LoginPage(), // Define route for LoginPage
+        '/welcome': (context) => const WelcomeScreen(title: 'Welcome Screen'), 
+        '/login': (context) => const LoginPage(),
       },
     );
   }
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/detailed_paint_screen.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
@@ -125,8 +127,8 @@ class CustomizablePaintScreen extends StatelessWidget {
 }
 
 class ColorSwatchGrid extends StatelessWidget {
-  final List<Color> colors;
-  final List<String> metadata;
+
+  final List<Color> colors;  final List<String> metadata;
   final Function(Color) onSelectColor;
 
   const ColorSwatchGrid({
@@ -143,7 +145,8 @@ class ColorSwatchGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(16),
-      children: List.generate(colors.length, (index) {
+
+      children: List<Widget>.generate(colors.length, (index) {
         final color = colors[index];
         final data = metadata[index];
         return GestureDetector(
@@ -170,8 +173,8 @@ class ColorSwatchGrid extends StatelessWidget {
       }),
     );
   }
-}
 
+}
 List<Color> exteriorColors = [
   const Color(0xFFFF0000), // Vibrant Red
   const Color(0xFF00FF00), // Bright Green

@@ -54,7 +54,13 @@ class BoxieDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xFF1F1F1F), Color(0xFF3A3A3A)],
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
@@ -111,9 +117,8 @@ class BoxieDetailsScreen extends StatelessWidget {
       ),
     );
   }
-}
 
-class BatteryStatusIndicator extends StatelessWidget {
+}class BatteryStatusIndicator extends StatelessWidget {
   final String boxieName;
 
   const BatteryStatusIndicator({super.key, required this.boxieName});

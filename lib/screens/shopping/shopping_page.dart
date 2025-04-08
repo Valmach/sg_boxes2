@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
 import 'package:sg_boxes/screens/data/dummy_data.dart';
-import 'package:sg_boxes/screens/box_detail_screen.dart';
+import 'package:sg_boxes/screens/box_details_screen.dart';
 
 class ShoppingPage extends StatelessWidget {
   final String title;
@@ -18,7 +18,13 @@ class ShoppingPage extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [CommonTheme.primaryColor, CommonTheme.secondaryColor],
+          ),
+        ),
         child: ListView.builder(
           itemCount: availableBoxes.length,
           itemBuilder: (context, index) {
@@ -46,14 +52,14 @@ class ShoppingPage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: CommonTheme.secondaryColor,
                   ),
                 ),
                 subtitle: Text(
                   box.model,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 119, 5, 11),
                   ),
                 ),
                 trailing: Text(
@@ -61,14 +67,13 @@ class ShoppingPage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: CommonTheme.secondaryColor,
                   ),
                 ),
                 onTap: () {
-                  Navigator.push(
-                    context,
+                  Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => BoxDetailScreen(box: box),
+                      builder: (context) => BoxieDetailsScreen(boxieName: box.name), // Corrected line.
                     ),
                   );
                 },

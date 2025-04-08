@@ -21,11 +21,10 @@ class HeelsDetailsScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: const HeelsBody(),
-      endDrawer: const HeelsDrawer(), // Add the end drawer
+      endDrawer: HeelsDrawer(), // Add the end drawer
     );
   }
 }
-
 class HeelsBody extends StatelessWidget {
   const HeelsBody({super.key});
 
@@ -130,9 +129,8 @@ class HeelsBody extends StatelessWidget {
 }
 
 class HeelsDrawer extends StatelessWidget {
-  const HeelsDrawer({super.key});
-
-  final List<Heel> heels = const [
+  HeelsDrawer({super.key});
+  final List<Heel> heels = [
     Heel(
       name: 'Stiletto Heels',
       imagePath: 'assets/images/stiletto_heels.png',
@@ -152,10 +150,8 @@ class HeelsDrawer extends StatelessWidget {
       occasion: 'Wedding',
     ),
     // Add more heels as needed
-  ];
 
-  @override
-  Widget build(BuildContext context) {
+  ];  @override  Widget build(BuildContext context) {
     return Drawer(
       child: Container(
         color: const Color(0xFF000000), // Black background for Drawer

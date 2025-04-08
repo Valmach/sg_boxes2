@@ -6,7 +6,8 @@ class DetailedPaintScreen extends StatefulWidget {
   final String title;
   final Color baseColor;
 
-  const DetailedPaintScreen({super.key, required this.title, required this.baseColor});
+  const DetailedPaintScreen(
+      {super.key, required this.title, required this.baseColor});
 
   @override
   _DetailedPaintScreenState createState() => _DetailedPaintScreenState();
@@ -18,7 +19,8 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
   @override
   void initState() {
     super.initState();
-    recommendedColors = _getRecommendedColors(); // Initialize with recommended colors
+    recommendedColors =
+        _getRecommendedColors(); // Initialize with recommended colors
   }
 
   List<Color> _getRecommendedColors() {
@@ -57,16 +59,12 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
           children: [
             const Text(
               'Customize Your Shoebox',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.normal,
-                color: Color(0xFF8A2BE2), // Rich violet color
-              ),
+              style: CommonTheme.headingTextStyle,
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             CarouselSlider(
               options: CarouselOptions(
-                height: 200.0, // Increased height for larger images
+                height: 150.0, // Reduced height for smaller images
                 enlargeCenterPage: true,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
@@ -92,57 +90,83 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
             const SizedBox(height: 10), // Reduced height for smaller spacing
             const Text(
               'Recommended Colors and Patterns',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-                color: Colors.white,
-              ),
+              style: CommonTheme.headingTextStyle,
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             Expanded(
               child: GridView.count(
-                crossAxisCount: 6, // Adjusted number of columns for smaller swatches
+                crossAxisCount:
+                    6, // Increased number of columns for smaller swatches
                 children: recommendedColors.map((color) {
-                  return _buildColorPatternBox(context, color, 'Recommended Pattern', 'Use: AI Recommendation');
+                  return _buildColorPatternBox(context, color,
+                      'Recommended Pattern', 'Use: AI Recommendation');
                 }).toList(),
               ),
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             const Text(
               'Available Colors and Patterns',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-                color: Colors.white,
-              ),
+              style: CommonTheme.headingTextStyle,
             ),
             const SizedBox(height: 10), // Reduced height for smaller spacing
             Expanded(
               child: GridView.count(
-                crossAxisCount: 6, // Adjusted number of columns for smaller swatches
+                crossAxisCount:
+                    6, // Increased number of columns for smaller swatches
                 children: [
-                  _buildColorPatternBox(context, Colors.red, 'Red Pattern', 'Hex: #FF0000\nUse: Passion, Energy'),
-                  _buildColorPatternBox(context, Colors.blue, 'Blue Pattern', 'Hex: #0000FF\nUse: Calm, Stability'),
-                  _buildColorPatternBox(context, Colors.green, 'Green Pattern', 'Hex: #00FF00\nUse: Growth, Harmony'),
-                  _buildColorPatternBox(context, Colors.yellow, 'Yellow Pattern', 'Hex: #FFFF00\nUse: Happiness, Energy'),
-                  _buildColorPatternBox(context, Colors.orange, 'Orange Pattern', 'Hex: #FFA500\nUse: Enthusiasm, Creativity'),
-                  _buildColorPatternBox(context, Colors.purple, 'Purple Pattern', 'Hex: #800080\nUse: Royalty, Luxury'),
-                  _buildColorPatternBox(context, Colors.brown, 'Brown Pattern', 'Hex: #A52A2A\nUse: Stability, Reliability'),
-                  _buildColorPatternBox(context, Colors.grey, 'Grey Pattern', 'Hex: #808080\nUse: Neutrality, Balance'),
-                  _buildColorPatternBox(context, Colors.pink, 'Pink Pattern', 'Hex: #FFC0CB\nUse: Love, Kindness'),
-                  _buildColorPatternBox(context, Colors.cyan, 'Cyan Pattern', 'Hex: #00FFFF\nUse: Fresh, Energetic'),
-                  _buildColorPatternBox(context, Colors.lime, 'Lime Pattern', 'Hex: #00FF00\nUse: Lively, Dynamic'),
-                  _buildColorPatternBox(context, Colors.teal, 'Teal Pattern', 'Hex: #008080\nUse: Sophisticated, Modern'),
-                  _buildColorPatternBox(context, Colors.indigo, 'Indigo Pattern', 'Hex: #4B0082\nUse: Deep Thought, Wisdom'),
-                  _buildColorPatternBox(context, Colors.amber, 'Amber Pattern', 'Hex: #FFBF00\nUse: Bright, Cheerful'),
-                  _buildColorPatternBox(context, const Color(0xFFFF7F50), 'Coral Pattern', 'Hex: #FF7F50\nUse: Warm, Inviting'), // Manually defined coral color
-                  _buildColorPatternBox(context, Colors.black, 'Deep Black', 'Hex: #000000\nUse: Elegant, Formal'),
-                  _buildColorPatternBox(context, const Color(0xFF8B0000), 'Blood Red', 'Hex: #8B0000\nUse: Intense, Passionate'),
-                  _buildColorPatternBox(context, const Color(0xFFC8A2C8), 'Lilac', 'Hex: #C8A2C8\nUse: Youthful, Soft'),
-                  _buildColorPatternBox(context, const Color(0xFF006400), 'Dark Green', 'Hex: #006400\nUse: Rich, Natural'),
-                  _buildColorPatternBox(context, const Color(0xFFFFE135), 'Banana', 'Hex: #FFE135\nUse: Fun, Energetic'),
-                  _buildColorPatternBox(context, const Color(0xFFDF73FF), 'Candy Stripe', 'Hex: #DF73FF\nUse: Playful, Sweet'),
-                  _buildColorPatternBox(context, const Color(0xFF1A1A1A), 'Licorice', 'Hex: #1A1A1A\nUse: Bold, Intense'),
+                  _buildColorPatternBox(context, Colors.red, 'Red Pattern',
+                      'Hex: #FF0000\nUse: Passion, Energy'),
+                  _buildColorPatternBox(context, Colors.blue, 'Blue Pattern',
+                      'Hex: #0000FF\nUse: Calm, Stability'),
+                  _buildColorPatternBox(context, Colors.green, 'Green Pattern',
+                      'Hex: #00FF00\nUse: Growth, Harmony'),
+                  _buildColorPatternBox(context, Colors.yellow,
+                      'Yellow Pattern', 'Hex: #FFFF00\nUse: Happiness, Energy'),
+                  _buildColorPatternBox(
+                      context,
+                      Colors.orange,
+                      'Orange Pattern',
+                      'Hex: #FFA500\nUse: Enthusiasm, Creativity'),
+                  _buildColorPatternBox(context, Colors.purple,
+                      'Purple Pattern', 'Hex: #800080\nUse: Royalty, Luxury'),
+                  _buildColorPatternBox(context, Colors.brown, 'Brown Pattern',
+                      'Hex: #A52A2A\nUse: Stability, Reliability'),
+                  _buildColorPatternBox(context, Colors.grey, 'Grey Pattern',
+                      'Hex: #808080\nUse: Neutrality, Balance'),
+                  _buildColorPatternBox(context, Colors.pink, 'Pink Pattern',
+                      'Hex: #FFC0CB\nUse: Love, Kindness'),
+                  _buildColorPatternBox(context, Colors.cyan, 'Cyan Pattern',
+                      'Hex: #00FFFF\nUse: Fresh, Energetic'),
+                  _buildColorPatternBox(context, Colors.lime, 'Lime Pattern',
+                      'Hex: #00FF00\nUse: Lively, Dynamic'),
+                  _buildColorPatternBox(context, Colors.teal, 'Teal Pattern',
+                      'Hex: #008080\nUse: Sophisticated, Modern'),
+                  _buildColorPatternBox(
+                      context,
+                      Colors.indigo,
+                      'Indigo Pattern',
+                      'Hex: #4B0082\nUse: Deep Thought, Wisdom'),
+                  _buildColorPatternBox(context, Colors.amber, 'Amber Pattern',
+                      'Hex: #FFBF00\nUse: Bright, Cheerful'),
+                  _buildColorPatternBox(
+                      context,
+                      const Color(0xFFFF7F50),
+                      'Coral Pattern',
+                      'Hex: #FF7F50\nUse: Warm, Inviting'), // Manually defined coral color
+                  _buildColorPatternBox(context, Colors.black, 'Deep Black',
+                      'Hex: #000000\nUse: Elegant, Formal'),
+                  _buildColorPatternBox(context, const Color(0xFF8B0000),
+                      'Blood Red', 'Hex: #8B0000\nUse: Intense, Passionate'),
+                  _buildColorPatternBox(context, const Color(0xFFC8A2C8),
+                      'Lilac', 'Hex: #C8A2C8\nUse: Youthful, Soft'),
+                  _buildColorPatternBox(context, const Color(0xFF006400),
+                      'Dark Green', 'Hex: #006400\nUse: Rich, Natural'),
+                  _buildColorPatternBox(context, const Color(0xFFFFE135),
+                      'Banana', 'Hex: #FFE135\nUse: Fun, Energetic'),
+                  _buildColorPatternBox(context, const Color(0xFFDF73FF),
+                      'Candy Stripe', 'Hex: #DF73FF\nUse: Playful, Sweet'),
+                  _buildColorPatternBox(context, const Color(0xFF1A1A1A),
+                      'Licorice', 'Hex: #1A1A1A\nUse: Bold, Intense'),
                 ],
               ),
             ),
@@ -198,9 +222,8 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
         },
       ),
     );
-  }
-
-  Widget _buildColorPatternBox(BuildContext context, Color color, String description, String metaData) {
+  }  Widget _buildColorPatternBox(
+      BuildContext context, Color color, String description, String metaData) {
     return Tooltip(
       message: description,
       child: GestureDetector(
@@ -220,15 +243,17 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
               ),
             ],
           ),
-          margin: const EdgeInsets.all(4.0), // Reduced margin for smaller swatches
-          width: 30, // Smaller width for swatches
-          height: 30, // Smaller height for swatches
+          margin:
+              const EdgeInsets.all(4.0), // Reduced margin for smaller swatches
+          width: 40,
+          height: 40,
         ),
       ),
     );
   }
 
-  void _showColorVariations(BuildContext context, Color color, String description, String metaData) {
+  void _showColorVariations(
+      BuildContext context, Color color, String description, String metaData) {
     List<Color> colorVariations = _getColorVariations(color);
 
     showModalBottomSheet(
@@ -260,7 +285,9 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
               Wrap(
                 spacing: 5.0,
                 runSpacing: 5.0,
-                children: colorVariations.map((color) => _buildVariationBox(color)).toList(),
+                children: colorVariations
+                    .map((color) => _buildVariationBox(color))
+                    .toList(),
               ),
             ],
           ),
@@ -271,33 +298,103 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
 
   List<Color> _getColorVariations(Color color) {
     if (color == Colors.red) {
-      return [Colors.red.shade300, Colors.red.shade500, Colors.red.shade700, Colors.red.shade900];
+      return [
+        Colors.red.shade300,
+        Colors.red.shade500,
+        Colors.red.shade700,
+        Colors.red.shade900
+      ];
     } else if (color == Colors.blue) {
-      return [Colors.blue.shade300, Colors.blue.shade500, Colors.blue.shade700, Colors.blue.shade900];
+      return [
+        Colors.blue.shade300,
+        Colors.blue.shade500,
+        Colors.blue.shade700,
+        Colors.blue.shade900
+      ];
     } else if (color == Colors.green) {
-      return [Colors.green.shade300, Colors.green.shade500, Colors.green.shade700, Colors.green.shade900];
+      return [
+        Colors.green.shade300,
+        Colors.green.shade500,
+        Colors.green.shade700,
+        Colors.green.shade900
+      ];
     } else if (color == Colors.yellow) {
-      return [Colors.yellow.shade300, Colors.yellow.shade500, Colors.yellow.shade700, Colors.yellow.shade900];
+      return [
+        Colors.yellow.shade300,
+        Colors.yellow.shade500,
+        Colors.yellow.shade700,
+        Colors.yellow.shade900
+      ];
     } else if (color == Colors.orange) {
-      return [Colors.orange.shade300, Colors.orange.shade500, Colors.orange.shade700, Colors.orange.shade900];
+      return [
+        Colors.orange.shade300,
+        Colors.orange.shade500,
+        Colors.orange.shade700,
+        Colors.orange.shade900
+      ];
     } else if (color == Colors.purple) {
-      return [Colors.purple.shade300, Colors.purple.shade500, Colors.purple.shade700, Colors.purple.shade900];
+      return [
+        Colors.purple.shade300,
+        Colors.purple.shade500,
+        Colors.purple.shade700,
+        Colors.purple.shade900
+      ];
     } else if (color == Colors.brown) {
-      return [Colors.brown.shade300, Colors.brown.shade500, Colors.brown.shade700, Colors.brown.shade900];
+      return [
+        Colors.brown.shade300,
+        Colors.brown.shade500,
+        Colors.brown.shade700,
+        Colors.brown.shade900
+      ];
     } else if (color == Colors.grey) {
-      return [Colors.grey.shade300, Colors.grey.shade500, Colors.grey.shade700, Colors.grey.shade900];
+      return [
+        Colors.grey.shade300,
+        Colors.grey.shade500,
+        Colors.grey.shade700,
+        Colors.grey.shade900
+      ];
     } else if (color == Colors.pink) {
-      return [Colors.pink.shade300, Colors.pink.shade500, Colors.pink.shade700, Colors.pink.shade900];
+      return [
+        Colors.pink.shade300,
+        Colors.pink.shade500,
+        Colors.pink.shade700,
+        Colors.pink.shade900
+      ];
     } else if (color == Colors.cyan) {
-      return [Colors.cyan.shade300, Colors.cyan.shade500, Colors.cyan.shade700, Colors.cyan.shade900];
+      return [
+        Colors.cyan.shade300,
+        Colors.cyan.shade500,
+        Colors.cyan.shade700,
+        Colors.cyan.shade900
+      ];
     } else if (color == Colors.lime) {
-      return [Colors.lime.shade300, Colors.lime.shade500, Colors.lime.shade700, Colors.lime.shade900];
+      return [
+        Colors.lime.shade300,
+        Colors.lime.shade500,
+        Colors.lime.shade700,
+        Colors.lime.shade900
+      ];
     } else if (color == Colors.teal) {
-      return [Colors.teal.shade300, Colors.teal.shade500, Colors.teal.shade700, Colors.teal.shade900];
+      return [
+        Colors.teal.shade300,
+        Colors.teal.shade500,
+        Colors.teal.shade700,
+        Colors.teal.shade900
+      ];
     } else if (color == Colors.indigo) {
-      return [Colors.indigo.shade300, Colors.indigo.shade500, Colors.indigo.shade700, Colors.indigo.shade900];
+      return [
+        Colors.indigo.shade300,
+        Colors.indigo.shade500,
+        Colors.indigo.shade700,
+        Colors.indigo.shade900
+      ];
     } else if (color == Colors.amber) {
-      return [Colors.amber.shade300, Colors.amber.shade500, Colors.amber.shade700, Colors.amber.shade900];
+      return [
+        Colors.amber.shade300,
+        Colors.amber.shade500,
+        Colors.amber.shade700,
+        Colors.amber.shade900
+      ];
     } else if (color == const Color(0xFFFF7F50)) {
       return [
         const Color(0xFFFF7F50).withOpacity(0.8),
@@ -354,8 +451,8 @@ class _DetailedPaintScreenState extends State<DetailedPaintScreen> {
 
   Widget _buildVariationBox(Color color) {
     return Container(
-      width: 25, // Smaller width for swatches
-      height: 25, // Smaller height for swatches
+      width: 30, // Reduced width for smaller swatches
+      height: 30, // Reduced height for smaller swatches
       color: color,
     );
   }

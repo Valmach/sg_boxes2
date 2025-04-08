@@ -107,7 +107,16 @@ class YourSkoBoxesScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: CommonTheme.backgroundDecoration,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.black,
+              Colors.grey[900]!,
+            ],
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
@@ -124,15 +133,15 @@ class YourSkoBoxesScreen extends StatelessWidget {
                   width: 100,
                   height: 100,
                   decoration: CommonTheme.buttonDecoration,
-                  child: const Center(
+                  child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.add, size: 30, color: CommonTheme.secondaryColor),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
                           'Add Boxie',
-                          style: CommonTheme.buttonTextStyle,
+                          style: Theme.of(context).textTheme.labelLarge,
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -145,10 +154,8 @@ class YourSkoBoxesScreen extends StatelessWidget {
         ),
       ),
     );
-  }
 
-  Widget buildBoxieCard(BuildContext context, String boxieName, String imagePath, String connectionStatus) {
-    return Card(
+  }  Widget buildBoxieCard(BuildContext context, String boxieName, String imagePath, String connectionStatus) {    return Card(
       color: Colors.black, // Black color for cards
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
@@ -194,4 +201,5 @@ class YourSkoBoxesScreen extends StatelessWidget {
       ),
     );
   }
+
 }
