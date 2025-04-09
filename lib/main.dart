@@ -7,32 +7,19 @@ import 'package:sg_boxes/screens/image_screen.dart';
 import 'package:sg_boxes/screens/omg_page.dart';
 import 'package:sg_boxes/screens/shoe_category.dart';
 import 'package:sg_boxes/screens/shopping/shopping_page.dart';
+import 'package:sg_boxes/screens/skoMiDora_experience_screen.dart';
 import 'package:sg_boxes/screens/sneakers_details_screen.dart';
 import 'package:sg_boxes/screens/splash/splash_screen.dart';
 import 'package:sg_boxes/screens/heels_details_screen.dart';
 import 'package:sg_boxes/screens/trending_page.dart';
 import 'package:sg_boxes/screens/home_screen.dart' as home;
-<<<<<<< HEAD
 import 'package:sg_boxes/screens/welcome_screen.dart'; // Correct import
-=======
-import 'package:sg_boxes/screens/welcome_screen.dart';
->>>>>>> feature-BLE
 import 'package:sg_boxes/screens/login_page.dart';
 import 'package:sg_boxes/screens/needful_things_screen.dart';
 import 'package:sg_boxes/screens/earth_screen.dart';
 import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
 import 'package:sg_boxes/screens/account_screen.dart';
-<<<<<<< HEAD
-
-=======
-import 'package:sg_boxes/screens/skomidora_experience_screen.dart'; // Correct import
-import 'package:sg_boxes/widget/chat_widget.dart'; // Import the SkoMiDoraExperienceScreen
->>>>>>> feature-BLE
-
-void main() {
-  runApp(const MyApp());
-}
-
+import 'package:sg_boxes/widget/chat_widget.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -58,34 +45,18 @@ class MyApp extends StatelessWidget {
       routes: {
         '/splash': (context) => const SplashScreen(title: 'Splash Screen'),
         '/home': (context) => const home.HomeScreen(title: 'Home Screen'),
-        '/shoe_category': (context) =>
-            const ShoeCategory(title: 'Shoe Categories'),
-        '/sneakers_details': (context) =>
-            const SneakersDetailsScreen(title: 'Sneakers Details'),
-        '/boots_details': (context) =>
-            const BootsDetailsScreen(title: 'Boots Details'),
-        '/heels_details': (context) =>
-            const HeelsDetailsScreen(title: 'Heels Details'),
-        '/sandals_details': (context) =>
-            const SandalsDetailsScreen(title: 'Sandals Details'),
+        '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
+        '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
+        '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
+        '/heels_details': (context) =>  const HeelsDetailsScreen(title: 'Heels Details'),
+        '/sandals_details': (context) => const SandalsDetailsScreen(title: 'Sandals Details'),
         '/image': (context) => ImageScreen(),
-        '/chat': (context) => const ChatScreen(
-            title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
-        '/customize_paint': (context) =>
-            const CustomizablePaintScreen(title: 'Customize Paint'),
+        '/chat': (context) => const ChatScreen(title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
+        '/customize_paint': (context) => const CustomizablePaintScreen(title: 'Customize Paint'),
         '/shopping': (context) => const ShoppingPage(title: 'Shopping Page'),
         '/box_drops': (context) => const BoxDropsScreen(),
         '/omg': (context) => const OMGPage(title: 'OMG Page'),
         '/trending': (context) => const TrendingPage(title: 'Trending Page'),
-<<<<<<< HEAD
-        '/needful_things': (context) =>
-            const NeedfulThingsScreen(title: 'Needful Things'),
-        '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
-        '/bluetooth_connection': (context) => const BluetoothConnectionScreen(),
-        '/account': (context) => const AccountScreen(),
-        '/welcome': (context) => const WelcomeScreen(title: 'Welcome Screen'), 
-        '/login': (context) => const LoginPage(),
-=======
         '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
         '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
         '/bluetooth_connection': (context) => const BluetoothConnectionScreen(),
@@ -93,18 +64,7 @@ class MyApp extends StatelessWidget {
         '/welcome': (context) => const WelcomeScreen(),
         '/login': (context) => const LoginPage(),
         '/skomidora_experience': (context) => const SkoMiDoraExperienceScreen(), // Correct route
->>>>>>> feature-BLE
       },
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
