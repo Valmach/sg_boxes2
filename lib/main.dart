@@ -20,6 +20,11 @@ import 'package:sg_boxes/screens/earth_screen.dart';
 import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
 import 'package:sg_boxes/screens/account_screen.dart';
 import 'package:sg_boxes/widget/chat_widget.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -48,7 +53,7 @@ class MyApp extends StatelessWidget {
         '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
         '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
         '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
-        '/heels_details': (context) =>  const HeelsDetailsScreen(title: 'Heels Details'),
+        '/heels_details': (context) =>   const HeelsDetailsScreen(title: 'Heels Details'),
         '/sandals_details': (context) => const SandalsDetailsScreen(title: 'Sandals Details'),
         '/image': (context) => ImageScreen(),
         '/chat': (context) => const ChatScreen(title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
