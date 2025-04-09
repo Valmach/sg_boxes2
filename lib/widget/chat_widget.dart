@@ -92,57 +92,85 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
+              const Text(
+                'Recommended Outfits',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 100,
                 child: ListView.builder(
                   controller: _recommendationsScrollController,
+                  scrollDirection: Axis.horizontal,
                   itemCount: _recommendations.length,
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title: Text(
-                        _recommendations[index],
-                        style: const TextStyle(
-                          color: Color(0xFFFFFFFF), // White color
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                    return Container(
+                      width: 150,
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Center(
+                        child: Text(
+                          _recommendations[index],
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     );
                   },
                 ),
               ),
-              if (_apiKey.isNotEmpty)
-                Expanded(
-                  child: _chat.history.isEmpty
-                      ? const Center(
-                          child: Text(
-                            'Lets get you dressed!',
-                            style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 20,
-                            ),
-                          ),
-                        )
-                      : ListView.builder(
-                          controller: _chatScrollController,
-                          itemCount: _chat.history.length,
-                          itemBuilder: (context, idx) {
-                            var content = _chat.history.toList()[idx];
-                            var text = content.parts
-                                .whereType<TextPart>()
-                                .map<String>((e) => e.text?.trim() ?? '')
-                                .join('');
-                            return MessageWidget(
-                              text: text,
-                              isFromUser: content.role == 'user',
-                            );
-                          },
-                        ),
+              const SizedBox(height: 20),
+              const Text(
+                'Chat with Stylist',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
+              ),
+              const SizedBox(height: 10),
+              Expanded(
+                child: _chat.history.isEmpty
+                    ? const Center(
+                        child: Text(
+                          'Let\'s get you dressed!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        controller: _chatScrollController,
+                        itemCount: _chat.history.length,
+                        itemBuilder: (context, idx) {
+                          var content = _chat.history.toList()[idx];
+                          var text = content.parts
+                              .whereType<TextPart>()
+                              .map<String>((e) => e.text?.trim() ?? '')
+                              .join('');
+                          return MessageWidget(
+                            text: text,
+                            isFromUser: content.role == 'user',
+                          );
+                        },
+                      ),
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 15),
+                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: Row(
                   children: [
                     Expanded(
@@ -159,7 +187,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         },
                       ),
                     ),
-                    const SizedBox.square(dimension: 15),
+                    const SizedBox(width: 10),
                     if (!_loading)
                       IconButton(
                         onPressed: () async {
@@ -167,7 +195,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         },
                         icon: const Icon(
                           Icons.send,
-                          color: Color(0xFF8B0000), // Accent color for send icon
+                          color: Colors.redAccent, // Accent color for send icon
                         ),
                       )
                     else

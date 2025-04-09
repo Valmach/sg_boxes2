@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your Boxie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main container */
+        .customizer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        /* Top Menu */
+        .customizer-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-bottom: 1px solid #e3e4e5;
+            padding: 10px;
+        }
+
+        .customizer-menu a:hover {
+            color: #E57373;
+        }
+
+        /* Image and Viewer Section */
+        .viewer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .viewer-section img {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+        }
+
+        .image-thumbnails {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .image-thumbnails img {
+            width: 100px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .image-thumbnails img:hover {
+            border: 2px solid #E57373;
+        }
+
+        .open-360 {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #E57373;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Sidebar: Color Options */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+
+        .color-options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border: 1px solid #000;
+        }
+
+        /* Bottom bar with options */
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .bottom-bar button {
+            background-color: #E57373;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #d64a4a;
+        }
+
+        /* Box and Color Palette Section */
+        .box-container {
+            width: 60%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #ffffff;
+            /* Default box color */
+            border: 1px solid #333;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .color-palette {
+            width: 35%;
+            padding: 20px;
+        }
+
+        .color {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .color:hover {
+            transform: scale(1.1);
+        }
+
+        .color-label {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .color-container {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .reset-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="customizer-container">
+        <!-- Top Menu -->
+        <div class="customizer-menu">
+            <a href="#">Exterior Colors</a>
+            <a href="#">Upgrades</a>
+            <a href="#">Interior Colors & Materials</a>
+            <a href="#">Options</a>
+            <a href="#">Packages</a>
+            <a href="#">Summary</a>
+        </div>
+
+        <!-- Viewer Section -->
+        <div class="viewer-section">
+            <img id="main-image" src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_trenung_noir1_8.png?alt=media"
+                alt="Main Skobox Image">
+            <button class="open-360">Open 360° View</button>
+
+            <!-- Thumbnails -->
+            <div class="image-thumbnails">
+                <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_trenung_noir1_8.png?alt=media"
+                    alt="Thumbnail 1" onclick="changeImage(this)">
+                <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/skobox-360%2Fadidas_sporty_arbe3.png?alt=media"
+                    alt="Thumbnail 2" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- Sidebar with Color Options -->
+        <div class="sidebar">
+            <h3>Exterior Colors</h3>
+            <div class="color-options">
+                <div class="color-box">
+                    <div class="color-swatch" style="background-color: #fff;"></div>
+                    <span>White</span>
+                </div>
+                <div class="color-box">
+                    <div class="color-swatch" style="background-color: #000;"></div>
+                    <span>Black</span>
+                </div>
+                <div class="color-box">
+                    <div class="color-swatch" style="background-color: #333;"></div>
+                    <span>Jet Black Metallic</span>
+                </div>
+                <div class="color-box">
+                    <div class="color-swatch" style="background-color: #c0c0c0;"></div>
+                    <span>Ice Grey Metallic</span>
+                </div>
+                <div class="color-box">
+                    <div class="color-swatch" style="background-color: #4a4a4a;"></div>
+                    <span>Volcano Grey Metallic</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            <button>Save</button>
+            <button>Print Build</button>
+            <button>Change Model</button>
+        </div>
+
+        <!-- Box Image Section -->
+        <div class="box-container">
+            <div class="box" id="box">Choose a color</div>
+        </div>
+
+        <!-- Color Palette Section -->
+        <div class="color-palette">
+            <h3>Choose a Color:</h3>
+            <div class="color-container">
+                <div class="color" style="background-color: #FF0000;" data-color="#FF0000"></div>
+                <div class="color-label">Red</div>
+            </div>
+            <div class="color-container">
+                <div class="color" style="background-color: #00FF00;" data-color="#00FF00"></div>
+                <div class="color-label">Green</div>
+            </div>
+            <div class="color-container">
+                <div class="color" style="background-color: #0000FF;" data-color="#0000FF"></div>
+                <div class="color-label">Blue</div>
+            </div>
+            <div class="color-container">
+                <div class="color" style="background-color: #FFFF00;" data-color="#FFFF00"></div>
+                <div class="color-label">Yellow</div>
+            </div>
+            <div class="color-container">
+                <div class="color" style="background-color: #FFA500;" data-color="#FFA500"></div>
+                <div class="color-label">Orange</div>
+            </div>
+            <div class="color-container">
+                <div class="color" style="background-color: #800080;" data-color="#800080"></div>
+                <div class="color-label">Purple</div>
+            </div>
+        </div>
+
+        <!-- JavaScript for Color Change -->
+        <script>
+            const colors = document.querySelectorAll('.color');
+            const box = document.getElementById('box');
+            const resetBtn = document.getElementById('reset-btn');
+
+            colors.forEach(color => {
+                color.addEventListener('click', function () {
+                    const selectedColor = this.getAttribute('data-color');
+                    box.style.backgroundColor = selectedColor;
+                    box.textContent = ''; 
+                });
+            });
+
+            resetBtn.addEventListener('click', function () {
+                box.style.backgroundColor = '#ffffff';
+                box.textContent = 'Choose a color';
+            });
+        </script>
+
+        <div class="build-option" id="customize-colors-btn">
+            <h3>Customise Colours</h3>
+            <p>Choose from a range of color options for your boxie.</p>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('customize-colors-btn').addEventListener('click', function () {
+                    window.location.href = 'customize-colors.html';
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -13,7 +13,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: CommonTheme.appBarTheme.titleTextStyle,
+          style: CommonTheme.appBarTheme.titleTextStyle?.copyWith(
+            fontWeight: FontWeight.normal,
+            fontSize: 28,
+          ),
         ),
         backgroundColor: CommonTheme.appBarTheme.backgroundColor,
         elevation: 0,
@@ -33,13 +36,13 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: Wrap(
-              spacing: 20.0, // Space between buttons horizontally
-              runSpacing: 20.0, // Space between buttons vertically
+              spacing: 20.0,
+              runSpacing: 20.0,
               alignment: WrapAlignment.center,
               children: [
                 _buildCircularButton(
                   context,
-                  'Shoe Categories',
+                  'Shoe\nCategory',
                   '/shoe_category',
                   Icons.category,
                 ),
@@ -51,13 +54,13 @@ class HomeScreen extends StatelessWidget {
                 ),
                 _buildCircularButton(
                   context,
-                  'Fash Advisor',
+                  'Fash\nAdvisor',
                   '/chat',
                   Icons.chat,
                 ),
                 _buildCircularButton(
                   context,
-                  'Custom Paint',
+                  'Custom\nPaint',
                   '/customize_paint',
                   Icons.brush,
                 ),
@@ -81,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 _buildCircularButton(
                   context,
-                  'AIoT Things',
+                  'AIoT\nThings',
                   '/needful_things',
                   Icons.build,
                 ),
@@ -91,8 +94,8 @@ class HomeScreen extends StatelessWidget {
                   '/earth',
                   Icons.public,
                   textStyle: const TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF32CD32), // Vibrant earth green color
+                    fontSize: 16,
+                    color: Color(0xFF32CD32),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -102,22 +105,26 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor:
-            Colors.black, // Set the bottom navigation bar color to black
+        backgroundColor: Colors.black,
         selectedItemColor: CommonTheme.bottomNavBarTheme.selectedItemColor,
         unselectedItemColor: CommonTheme.bottomNavBarTheme.unselectedItemColor,
-        selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle,
-        unselectedLabelStyle:
-            CommonTheme.bottomNavBarTheme.unselectedLabelStyle,
+        selectedLabelStyle: CommonTheme.bottomNavBarTheme.selectedLabelStyle?.copyWith(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+        ),
+        unselectedLabelStyle: CommonTheme.bottomNavBarTheme.unselectedLabelStyle?.copyWith(
+          fontWeight: FontWeight.normal,
+          fontSize: 12,
+        ),
         showSelectedLabels: true,
         showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.inventory, size: 28), // Changed to shoebox icon
+            icon: Icon(Icons.inventory, size: 28),
             label: 'Boxies',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bluetooth, size: 28, color: Colors.blue),
+            icon: Icon(Icons.bluetooth, size: 28, color: Color.fromARGB(255, 29, 152, 253)),
             label: 'Bluetooth',
           ),
           BottomNavigationBarItem(
@@ -136,8 +143,7 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(
-                  context, '/welcome'); // Changed to navigate to WelcomeScreen
+              Navigator.pushNamed(context, '/welcome');
               break;
             case 1:
               Navigator.pushNamed(context, '/bluetooth_connection');
@@ -156,7 +162,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildCircularButton(
       BuildContext context, String text, String route, IconData icon,
       {TextStyle? textStyle}) {
@@ -172,7 +177,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 30, color: CommonTheme.secondaryColor),
+              Icon(icon, size: 30, color: Theme.of(context).primaryColor),
               const SizedBox(height: 5),
               Text(
                 text,

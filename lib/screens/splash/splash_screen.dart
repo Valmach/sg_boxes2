@@ -46,7 +46,7 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF000000), Color(0xFF8B0000)], // Black to blood-red gradient
+                colors: [Color(0xFF000000), Color(0xFF2D0000)], // Darker black to deeper blood-red gradient
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -67,10 +67,10 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
                         child: Container(
                           width: MediaQuery.of(context).size.width / 2,
                           decoration: BoxDecoration(
-                            color: Color(0xFF8B0000).withOpacity(0.5), // Blood-red with opacity
+                            color: Color(0xFF660000).withOpacity(0.6), // Richer blood-red with opacity
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFF0F0F0F).withOpacity(0.2),
+                                color: const Color(0xFF0A0A0A).withOpacity(0.3),
                                 spreadRadius: 10,
                                 blurRadius: 20,
                                 offset: const Offset(0, 10),
@@ -88,10 +88,10 @@ class SplashScreenState extends State<SplashScreen> with SingleTickerProviderSta
                         child: Container(
                           width: MediaQuery.of(context).size.width / 2,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF8B0000).withOpacity(0.5), // Blood-red with opacity
+                            color: const Color(0xFF660000).withOpacity(0.6), // Richer blood-red with opacity
                             boxShadow: [
                               BoxShadow(
-                                color: const Color(0xFFD5D8DA).withOpacity(0.2),
+                                color: const Color(0xFF262626).withOpacity(0.3),
                                 spreadRadius: 10,
                                 blurRadius: 20,
                                 offset: const Offset(0, 10),

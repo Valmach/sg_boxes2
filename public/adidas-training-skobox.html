@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adidas Training Box - SkoMiDora</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+
+    <!-- Elegant, Rich, and Tasteful Colors for Wealthy Audience -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #2C3E50, #4CA1AF); /* Deep blue and teal gradient for a luxurious feel */
+            color: #FFFFFF; /* Elegant white text */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar {
+            background-color: #1C1C1C; /* Rich black for the menu bar */
+            padding: 10px 0;
+            text-align: left;
+        }
+
+        .menu-container .logo {
+            color: #E5C100; /* Sophisticated gold */
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: normal;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #E5C100; /* Elegant gold for title */
+            font-size: 28px;
+            border: 3px solid #B8860B; /* Golden border */
+            padding: 15px;
+            border-radius: 12px;
+            background-color: #2C3E50; /* Deep blue background */
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+            width: fit-content;
+            margin: 30px auto;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Shoebox images and details */
+        .shoebox-images img {
+            border: 4px solid #FFFFFF;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .shoebox-photo-container img {
+            margin: 5px;
+            border-radius: 10px;
+            border: 3px solid #E5C100; /* Gold border */
+        }
+
+        .shoebox-details p {
+            color: #F8F8FF; /* Soft white */
+            font-size: 14px; /* Reduced font size for description */
+            margin: 10px 0;
+        }
+
+        .shoebox-details strong {
+            color: #E5C100; /* Gold for highlights */
+        }
+
+        /* Button styling */
+        a.button {
+            background-color: #27AE60; /* Rich green */
+            color: #FFFFFF;
+            padding: 10px 20px; /* Smaller padding for a smaller button */
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+            font-size: 14px; /* Smaller font size for the button */
+        }
+
+        a.button:hover {
+            background-color: #E5C100; /* Gold hover effect */
+        }
+
+        footer {
+            background-color: #1C1C1C; /* Deep black footer */
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="menu-bar">
+        <div class="menu-container">
+            <a href="index.html" class="logo">SkoMiDora</a>
+        </div>
+    </header>
+
+    <!-- Shoebox Details Content -->
+    <main>
+        <div class="content">
+            <h1 class="skobox-header">Adidas Sporty Boxies</h1>
+    
+            <!-- Updated Image Section -->
+            <div class="shoebox-images">
+                <img class="shoebox-image" 
+                     aria-hidden="true" 
+                     alt="Adidas Training Shoebox" 
+                     src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas-training-shoebox1.png?alt=media" 
+                     style="object-fit: cover; width: 100%; height: auto; max-width: 500px; margin: 0 auto; display: block;">
+            </div>
+        </div>
+    </main>
+    
+    <!-- Shoebox Photo Gallery -->
+    <div class="shoebox-photo-container" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin: 30px auto;">
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_training1.png?alt=media" 
+             alt="Adidas Training Shoebox - View 1" class="photo-large hover-zoom" 
+             style="width: 100%; max-width: 280px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_training2.png?alt=media" 
+             alt="Adidas Training Shoebox - View 2" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_training3.png?alt=media" 
+             alt="Adidas Training Shoebox - View 3" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+    
+        <img src="https://firebasestorage.googleapis.com/v0/b/esp32boxies.appspot.com/o/adidas_training4.png?alt=media" 
+             alt="Adidas Training Shoebox - View 4" class="photo-medium hover-zoom" 
+             style="width: 100%; max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
+    </div>
+    
+<!-- Hover Zoom Effect -->
+<style>
+.hover-zoom {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.hover-zoom:hover {
+    transform: scale(1.5); /* Zoom effect */
+}
+</style>
+
+    <!-- Shoebox Details -->
+    <div class="shoebox-details">
+        <p><strong>Paint:</strong> Sleek Adidas Black and Blue Design</p>
+        <p><strong>Cost:</strong> $150</p>
+        <p><strong>Customization Possibilities:</strong> Add personalized logos, names, and performance metrics.</p>
+        <p><strong>Turnaround Time for Custom Design:</strong> 2-3 weeks</p>
+        <p><strong>Description:</strong> Specifically designed for high-performance footwear, this box is perfect for storing and showcasing your Adidas training shoes. Durable, sleek, and fitted with smart technology to monitor conditions.</p>
+        <p><strong>Technology:</strong> Features temperature and humidity control to keep your training shoes in optimal condition.</p>
+    </div>
+
+    <a href="order.html" class="button">Order Now</a>
+
+    <footer>
+        &copy; 2024 SkoMiDora. A SHOURAiGen.io company by V.M. All rights reserved.
+    </footer>
+</body>
+</html>

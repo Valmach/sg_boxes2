@@ -11,14 +11,14 @@ final List<BoxModel> availableBoxes = [
     model: "AIR-MAX",
     price: 130.00,
     imgAddress: "assets/images/nike_kids_multcolour-120_box1.png",
-    modelColor: CommonTheme.accentColor,
+    modelColor: CommonTheme.accentColor, url: '', description: '',
   ),
   BoxModel(
     name: "ADIDAS",
     model: "SAMBA",
     price: 190.00,
     imgAddress: "assets/images/adidas_box1.jpg",
-    modelColor: CommonTheme.secondaryColor,
+    modelColor: CommonTheme.secondaryColor, url: '', description: '',
   ),
   // New box models added
   BoxModel(
@@ -26,23 +26,39 @@ final List<BoxModel> availableBoxes = [
     model: "SUEDE CLASSIC",
     price: 80.00,
     imgAddress: "assets/images/puma_suede_classic.png",
-    modelColor: CommonTheme.primaryColor,
+    modelColor: CommonTheme.primaryColor, url: '', description: '',
   ),
   BoxModel(
     name: "SOPHIA",
     model: "SOPHIA WEBSTER 1",
     price: 150.00,
     imgAddress: "assets/images/sophia_webster_1.png",
-    modelColor: CommonTheme.accentColor,
+    modelColor: CommonTheme.accentColor, url: '', description: '',
   ),
   BoxModel(
     name: "GUCCI",
     model: "ACE SNEAKER",
     price: 600.00,
     imgAddress: "assets/images/gucci_ace_sneaker.png",
-    modelColor: CommonTheme.secondaryColor,
-  ),
+    modelColor: CommonTheme.secondaryColor, url: '', description: '',
+  ), 
+  
+   BoxModel(
+    name: "PRADA",
+    model: "SLIPPER_HOMME",
+    price: 1500.00,
+    imgAddress: "assets/images/prada_homme_slippers.png",
+    modelColor: CommonTheme.secondaryColor, url: '', description: '',
+   ),
+    BoxModel(
+    name: "TAFT",
+    model: "TROY",
+    price: 269.00,
+    imgAddress: "assets/images/taft-The_Troy_Boot_in_Navy.jpg",
+    modelColor: CommonTheme.secondaryColor, url: '', description: '',
+   ),
 ];
+
 
 // List of user statuses
 final List<UserStatus> userStatus = [

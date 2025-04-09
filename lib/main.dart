@@ -12,14 +12,22 @@ import 'package:sg_boxes/screens/splash/splash_screen.dart';
 import 'package:sg_boxes/screens/heels_details_screen.dart';
 import 'package:sg_boxes/screens/trending_page.dart';
 import 'package:sg_boxes/screens/home_screen.dart' as home;
+<<<<<<< HEAD
 import 'package:sg_boxes/screens/welcome_screen.dart'; // Correct import
+=======
+import 'package:sg_boxes/screens/welcome_screen.dart';
+>>>>>>> feature-BLE
 import 'package:sg_boxes/screens/login_page.dart';
-import 'package:sg_boxes/widget/chat_widget.dart';
 import 'package:sg_boxes/screens/needful_things_screen.dart';
 import 'package:sg_boxes/screens/earth_screen.dart';
 import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
 import 'package:sg_boxes/screens/account_screen.dart';
+<<<<<<< HEAD
 
+=======
+import 'package:sg_boxes/screens/skomidora_experience_screen.dart'; // Correct import
+import 'package:sg_boxes/widget/chat_widget.dart'; // Import the SkoMiDoraExperienceScreen
+>>>>>>> feature-BLE
 
 void main() {
   runApp(const MyApp());
@@ -69,6 +77,7 @@ class MyApp extends StatelessWidget {
         '/box_drops': (context) => const BoxDropsScreen(),
         '/omg': (context) => const OMGPage(title: 'OMG Page'),
         '/trending': (context) => const TrendingPage(title: 'Trending Page'),
+<<<<<<< HEAD
         '/needful_things': (context) =>
             const NeedfulThingsScreen(title: 'Needful Things'),
         '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
@@ -76,6 +85,15 @@ class MyApp extends StatelessWidget {
         '/account': (context) => const AccountScreen(),
         '/welcome': (context) => const WelcomeScreen(title: 'Welcome Screen'), 
         '/login': (context) => const LoginPage(),
+=======
+        '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
+        '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
+        '/bluetooth_connection': (context) => const BluetoothConnectionScreen(),
+        '/account': (context) => const AccountScreen(),
+        '/welcome': (context) => const WelcomeScreen(),
+        '/login': (context) => const LoginPage(),
+        '/skomidora_experience': (context) => const SkoMiDoraExperienceScreen(), // Correct route
+>>>>>>> feature-BLE
       },
     );
   }
