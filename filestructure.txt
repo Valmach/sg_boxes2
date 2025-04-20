@@ -1,6 +1,193 @@
 |-- .dart_tool
+    |-- chrome-device
+        |-- Default
+            |-- Affiliation Database
+            |-- Affiliation Database-journal
+            |-- AutofillStrikeDatabase
+                |-- LOCK
+                |-- LOG
+            |-- blob_storage
+                |-- 178a82b1-b11a-43e5-89d3-c32f73992410
+            |-- BrowsingTopicsSiteData
+            |-- BrowsingTopicsSiteData-journal
+            |-- BrowsingTopicsState
+            |-- BudgetDatabase
+                |-- LOCK
+                |-- LOG
+            |-- chrome_cart_db
+                |-- LOCK
+                |-- LOG
+            |-- ClientCertificates
+                |-- LOCK
+                |-- LOG
+            |-- commerce_subscription_db
+                |-- LOCK
+                |-- LOG
+            |-- DIPS
+            |-- discounts_db
+                |-- LOCK
+                |-- LOG
+            |-- Download Service
+                |-- EntryDB
+                    |-- LOCK
+                    |-- LOG
+                |-- Files
+            |-- Extension Rules
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+            |-- Extension Scripts
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+            |-- Extension State
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+            |-- Favicons
+            |-- Favicons-journal
+            |-- Feature Engagement Tracker
+                |-- AvailabilityDB
+                    |-- LOCK
+                    |-- LOG
+                |-- EventDB
+                    |-- LOCK
+                    |-- LOG
+            |-- GCM Store
+                |-- Encryption
+                    |-- 000003.log
+                    |-- CURRENT
+                    |-- LOCK
+                    |-- LOG
+                    |-- MANIFEST-000001
+            |-- heavy_ad_intervention_opt_out.db
+            |-- heavy_ad_intervention_opt_out.db-journal
+            |-- History
+            |-- History-journal
+            |-- Local Storage
+                |-- leveldb
+                    |-- 000003.log
+                    |-- CURRENT
+                    |-- LOCK
+                    |-- LOG
+                    |-- MANIFEST-000001
+            |-- LOCK
+            |-- LOG
+            |-- Login Data
+            |-- Login Data For Account
+            |-- Login Data For Account-journal
+            |-- Login Data-journal
+            |-- Network
+                |-- Cookies
+                |-- Cookies-journal
+                |-- Network Persistent State
+                |-- NetworkDataMigrated
+                |-- Reporting and NEL
+                |-- Reporting and NEL-journal
+                |-- TransportSecurity
+                |-- Trust Tokens
+                |-- Trust Tokens-journal
+            |-- Network Action Predictor
+            |-- Network Action Predictor-journal
+            |-- optimization_guide_hint_cache_store
+                |-- LOCK
+                |-- LOG
+            |-- parcel_tracking_db
+                |-- LOCK
+                |-- LOG
+            |-- passkey_enclave_state
+            |-- PersistentOriginTrials
+                |-- LOCK
+                |-- LOG
+            |-- Preferences
+            |-- PreferredApps
+            |-- README
+            |-- Safe Browsing Network
+                |-- NetworkDataMigrated
+                |-- Safe Browsing Cookies
+                |-- Safe Browsing Cookies-journal
+            |-- Secure Preferences
+            |-- Segmentation Platform
+                |-- SegmentInfoDB
+                    |-- LOCK
+                    |-- LOG
+                |-- SignalDB
+                    |-- LOCK
+                    |-- LOG
+                |-- SignalStorageConfigDB
+                    |-- LOCK
+                    |-- LOG
+            |-- Service Worker
+                |-- Database
+                    |-- 000003.log
+                    |-- CURRENT
+                    |-- LOCK
+                    |-- LOG
+                    |-- MANIFEST-000001
+                |-- ScriptCache
+                    |-- 2cc80dabc69f58b6_0
+                    |-- index
+                    |-- index-dir
+                        |-- the-real-index
+            |-- Session Storage
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+            |-- Sessions
+                |-- Session_13388705256911156
+                |-- Tabs_13388802226774806
+            |-- Shared Dictionary
+                |-- db
+                |-- db-journal
+            |-- SharedStorage
+            |-- shared_proto_db
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+                |-- metadata
+                    |-- 000003.log
+                    |-- CURRENT
+                    |-- LOCK
+                    |-- LOG
+                    |-- MANIFEST-000001
+            |-- Shortcuts
+            |-- Shortcuts-journal
+            |-- Site Characteristics Database
+                |-- 000003.log
+                |-- CURRENT
+                |-- LOCK
+                |-- LOG
+                |-- MANIFEST-000001
+            |-- Sync Data
+                |-- LevelDB
+                    |-- 000003.log
+                    |-- CURRENT
+                    |-- LOCK
+                    |-- LOG
+                    |-- MANIFEST-000001
+            |-- Top Sites
+            |-- Top Sites-journal
+            |-- trusted_vault.pb
+            |-- Visited Links
+            |-- Web Data
+            |-- Web Data-journal
+            |-- WebStorage
+                |-- QuotaManager
+                |-- QuotaManager-journal
     |-- dartpad
         |-- web_plugin_registrant.dart
+    |-- extension_discovery
+        |-- vs_code.json
     |-- package_config.json
     |-- package_config_subset
     |-- version
