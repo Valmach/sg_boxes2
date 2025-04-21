@@ -6,7 +6,9 @@
             |-- AutofillStrikeDatabase
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- blob_storage
+                |-- 0573a685-6176-4131-8e3c-84c8ba60e9f0
                 |-- 178a82b1-b11a-43e5-89d3-c32f73992410
             |-- BrowsingTopicsSiteData
             |-- BrowsingTopicsSiteData-journal
@@ -14,23 +16,29 @@
             |-- BudgetDatabase
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- chrome_cart_db
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- ClientCertificates
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- commerce_subscription_db
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- DIPS
             |-- discounts_db
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- Download Service
                 |-- EntryDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                 |-- Files
             |-- Extension Rules
                 |-- 000003.log
@@ -49,6 +57,7 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Favicons
             |-- Favicons-journal
@@ -56,15 +65,18 @@
                 |-- AvailabilityDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                 |-- EventDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
             |-- GCM Store
                 |-- Encryption
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- heavy_ad_intervention_opt_out.db
             |-- heavy_ad_intervention_opt_out.db-journal
@@ -76,9 +88,11 @@
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- LOCK
             |-- LOG
+            |-- LOG.old
             |-- Login Data
             |-- Login Data For Account
             |-- Login Data For Account-journal
@@ -98,13 +112,16 @@
             |-- optimization_guide_hint_cache_store
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- parcel_tracking_db
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- passkey_enclave_state
             |-- PersistentOriginTrials
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
             |-- Preferences
             |-- PreferredApps
             |-- README
@@ -117,21 +134,26 @@
                 |-- SegmentInfoDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                 |-- SignalDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                 |-- SignalStorageConfigDB
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
             |-- Service Worker
                 |-- Database
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                     |-- MANIFEST-000001
                 |-- ScriptCache
                     |-- 2cc80dabc69f58b6_0
+                    |-- 4cb013792b196a35_0
                     |-- index
                     |-- index-dir
                         |-- the-real-index
@@ -140,10 +162,13 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Sessions
                 |-- Session_13388705256911156
+                |-- Session_13389666675778725
                 |-- Tabs_13388802226774806
+                |-- Tabs_13389666676051214
             |-- Shared Dictionary
                 |-- db
                 |-- db-journal
@@ -153,12 +178,14 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
                 |-- MANIFEST-000001
                 |-- metadata
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- Shortcuts
             |-- Shortcuts-journal
@@ -167,6 +194,7 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
+                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Sync Data
                 |-- LevelDB
@@ -174,6 +202,7 @@
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
+                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- Top Sites
             |-- Top Sites-journal
