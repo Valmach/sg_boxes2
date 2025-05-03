@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sg_boxes/screens/chat_screen.dart';
 import 'package:sg_boxes/widget/chat_widget.dart';
 
 class ImageScreen extends StatelessWidget {

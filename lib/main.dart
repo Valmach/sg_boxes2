@@ -1,3 +1,4 @@
+import 'package:sg_boxes/screens/fashion_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/screens/sandals_details_screen.dart';
 import 'package:sg_boxes/screens/boots_details_screen.dart';
@@ -19,7 +20,6 @@ import 'package:sg_boxes/screens/needful_things_screen.dart';
 import 'package:sg_boxes/screens/earth_screen.dart';
 import 'package:sg_boxes/screens/bluetooth_connection_screen.dart';
 import 'package:sg_boxes/screens/account_screen.dart';
-import 'package:sg_boxes/widget/chat_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,26 +49,37 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => const SplashScreen(title: 'Splash Screen'),
+        '/chat': (context) => const FashionChatScreen(
+            title: 'Fashion Chat'), // Define the /chat route here
         '/home': (context) => const home.HomeScreen(title: 'Home Screen'),
-        '/shoe_category': (context) => const ShoeCategory(title: 'Shoe Categories'),
-        '/sneakers_details': (context) => const SneakersDetailsScreen(title: 'Sneakers Details'),
-        '/boots_details': (context) => const BootsDetailsScreen(title: 'Boots Details'),
-        '/heels_details': (context) =>   const HeelsDetailsScreen(title: 'Heels Details'),
-        '/sandals_details': (context) => const SandalsDetailsScreen(title: 'Sandals Details'),
+        '/shoe_category': (context) =>
+            const ShoeCategory(title: 'Shoe Categories'),
+        '/sneakers_details': (context) =>
+            const SneakersDetailsScreen(title: 'Sneakers Details'),
+        '/boots_details': (context) =>
+            const BootsDetailsScreen(title: 'Boots Details'),
+        '/heels_details': (context) =>
+            const HeelsDetailsScreen(title: 'Heels Details'),
+        '/sandals_details': (context) =>
+            const SandalsDetailsScreen(title: 'Sandals Details'),
         '/image': (context) => ImageScreen(),
-        '/chat': (context) => const ChatScreen(title: 'Fashion Chat', selectedShoe: 'defaultShoe'),
-        '/customize_paint': (context) => const CustomizablePaintScreen(title: 'Customize Paint'),
+        '/customize_paint': (context) =>
+            const CustomizablePaintScreen(title: 'Customize Paint'),
         '/shopping': (context) => const ShoppingPage(title: 'Shopping Page'),
         '/box_drops': (context) => const BoxDropsScreen(),
         '/omg': (context) => const OMGPage(title: 'OMG Page'),
         '/trending': (context) => const TrendingPage(title: 'Trending Page'),
-        '/needful_things': (context) => const NeedfulThingsScreen(title: 'Needful Things'),
+        '/fashion_chat': (context) =>
+            const FashionChatScreen(title: 'Fashion Advisor'),
+        '/needful_things': (context) =>
+            const NeedfulThingsScreen(title: 'Needful Things'),
         '/earth': (context) => const EarthScreen(title: 'Earth Screen'),
         '/bluetooth_connection': (context) => const BluetoothConnectionScreen(),
         '/account': (context) => const AccountScreen(),
         '/welcome': (context) => const WelcomeScreen(),
         '/login': (context) => const LoginPage(),
-        '/skomidora_experience': (context) => const SkoMiDoraExperienceScreen(), // Correct route
+        '/skomidora_experience': (context) =>
+            const SkoMiDoraExperienceScreen(), // Correct route
       },
     );
   }

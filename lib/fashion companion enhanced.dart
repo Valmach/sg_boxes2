@@ -30,6 +30,8 @@ class MyApp extends StatelessWidget {
 }
 
 class FashionCompanionPage extends StatefulWidget {
+  const FashionCompanionPage({super.key});
+
   @override
   _FashionCompanionPageState createState() => _FashionCompanionPageState();
 }

@@ -1,0 +1,51 @@
+|-- 360_viewer_screen.dart
+|-- account_screen.dart
+|-- ai_recommendations.dart
+|-- ai_recommendations_screen.dart
+|-- bluetooth_connection_screen.dart
+|-- boots_details_screen.dart
+|-- boxie_details_screen.dart
+|-- box_details_screen.dart
+|-- box_drops_screen.dart
+|-- box_model.dart
+|-- chat_screen.dart
+|-- common_theme.dart
+|-- customization_paint_screen.dart
+|-- customization_screen.dart
+|-- customize_paint_screen.dart
+|-- data
+    |-- dummy_data.dart
+|-- earth_screen.dart
+|-- fashion_chat.dart
+|-- fashion_chat_screen.dart
+|-- heels_details_screen.dart
+|-- home_screen.dart
+|-- image_screen.dart
+|-- intro_screen.dart
+|-- login_page.dart
+|-- needful_things_screen.dart
+|-- omg.dart
+|-- omg_page.dart
+|-- product_detail_screen.dart
+|-- sandals_details_screen.dart
+|-- services
+    |-- chat_gpt_service.dart
+|-- shoe_category.dart
+|-- shoe_type_categories.dart
+|-- shopping
+    |-- common_theme.dart
+    |-- enhanced_shopping_screen.dart
+    |-- shopping_page.dart
+|-- skoMiDora_experience_screen.dart
+|-- skomidora_style_screen.dart
+|-- sneakers_details_screen.dart
+|-- splash
+    |-- intro_screen.dart
+    |-- splash_screen.dart
+|-- splash_screen.dart
+|-- trending_page.dart
+|-- uiux_enhancements.dart
+|-- vr_customization_screen.dart
+|-- webview_page.dart
+|-- webview_screen.dart
+|-- welcome_screen.dart

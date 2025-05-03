@@ -1,12 +1,17 @@
-/* import 'package:flutter/material.dart';
-import 'package:smart_chatgpt_shoebox/services/chat_gpt_service.dart';  
-// Ensure this path is correct
+import 'package:flutter/material.dart';
+import 'package:sg_boxes/services/chat_gpt_service.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key, required String title, required String selectedShoe});
+  final String title;
+  final String selectedShoe;
+
+  const ChatScreen({
+    super.key,
+    required this.title,
+    required this.selectedShoe,
+  });
 
   @override
-  // ignore: library_private_types_in_public_api
   _ChatScreenState createState() => _ChatScreenState();
 }
 
@@ -37,13 +42,14 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Fashion Chat')),
+      appBar: AppBar(title: Text(widget.title)),
       body: Column(
         children: [
           Expanded(
             child: ListView.builder(
               itemCount: _messages.length,
-              itemBuilder: (context, index) => ListTile(title: Text(_messages[index])),
+              itemBuilder: (context, index) =>
+                  ListTile(title: Text(_messages[index])),
             ),
           ),
           Container(
@@ -53,7 +59,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 Expanded(
                   child: TextField(
                     controller: _textController,
-                    decoration: const InputDecoration(hintText: 'Send a message'),
+                    decoration:
+                        const InputDecoration(hintText: 'Send a message'),
                   ),
                 ),
                 FloatingActionButton(
@@ -68,4 +75,3 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 }
- */

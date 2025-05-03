@@ -6,39 +6,33 @@
             |-- AutofillStrikeDatabase
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- blob_storage
-                |-- 0573a685-6176-4131-8e3c-84c8ba60e9f0
-                |-- 178a82b1-b11a-43e5-89d3-c32f73992410
+                |-- f259f0c5-b916-4109-b4fa-e37b3d10eb74
             |-- BrowsingTopicsSiteData
             |-- BrowsingTopicsSiteData-journal
             |-- BrowsingTopicsState
             |-- BudgetDatabase
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- chrome_cart_db
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- ClientCertificates
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- commerce_subscription_db
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- DIPS
+            |-- DIPS-shm
+            |-- DIPS-wal
             |-- discounts_db
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- Download Service
                 |-- EntryDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                 |-- Files
             |-- Extension Rules
                 |-- 000003.log
@@ -57,7 +51,6 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Favicons
             |-- Favicons-journal
@@ -65,18 +58,15 @@
                 |-- AvailabilityDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                 |-- EventDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
             |-- GCM Store
                 |-- Encryption
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- heavy_ad_intervention_opt_out.db
             |-- heavy_ad_intervention_opt_out.db-journal
@@ -88,11 +78,9 @@
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- LOCK
             |-- LOG
-            |-- LOG.old
             |-- Login Data
             |-- Login Data For Account
             |-- Login Data For Account-journal
@@ -104,7 +92,6 @@
                 |-- NetworkDataMigrated
                 |-- Reporting and NEL
                 |-- Reporting and NEL-journal
-                |-- TransportSecurity
                 |-- Trust Tokens
                 |-- Trust Tokens-journal
             |-- Network Action Predictor
@@ -112,16 +99,12 @@
             |-- optimization_guide_hint_cache_store
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- parcel_tracking_db
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
-            |-- passkey_enclave_state
             |-- PersistentOriginTrials
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
             |-- Preferences
             |-- PreferredApps
             |-- README
@@ -134,26 +117,21 @@
                 |-- SegmentInfoDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                 |-- SignalDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                 |-- SignalStorageConfigDB
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
             |-- Service Worker
                 |-- Database
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                     |-- MANIFEST-000001
                 |-- ScriptCache
                     |-- 2cc80dabc69f58b6_0
-                    |-- 4cb013792b196a35_0
                     |-- index
                     |-- index-dir
                         |-- the-real-index
@@ -162,30 +140,26 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Sessions
-                |-- Session_13388705256911156
-                |-- Session_13389666675778725
-                |-- Tabs_13388802226774806
-                |-- Tabs_13389666676051214
+                |-- Session_13390659824100987
+                |-- Tabs_13390659845089259
             |-- Shared Dictionary
                 |-- db
                 |-- db-journal
             |-- SharedStorage
+            |-- SharedStorage-wal
             |-- shared_proto_db
                 |-- 000003.log
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
                 |-- MANIFEST-000001
                 |-- metadata
                     |-- 000003.log
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- Shortcuts
             |-- Shortcuts-journal
@@ -194,7 +168,6 @@
                 |-- CURRENT
                 |-- LOCK
                 |-- LOG
-                |-- LOG.old
                 |-- MANIFEST-000001
             |-- Sync Data
                 |-- LevelDB
@@ -202,7 +175,6 @@
                     |-- CURRENT
                     |-- LOCK
                     |-- LOG
-                    |-- LOG.old
                     |-- MANIFEST-000001
             |-- Top Sites
             |-- Top Sites-journal
@@ -215,8 +187,6 @@
                 |-- QuotaManager-journal
     |-- dartpad
         |-- web_plugin_registrant.dart
-    |-- extension_discovery
-        |-- vs_code.json
     |-- package_config.json
     |-- package_config_subset
     |-- version
@@ -523,6 +493,8 @@
                 |-- system.js
 |-- firebase-debug.log
 |-- firebase.json
+|-- index
+    |-- index.html
 |-- ios
     |-- .gitignore
     |-- Flutter
@@ -592,12 +564,16 @@
     |-- data
         |-- dummy_data.dart
     |-- detailed_paint_screen.dart
+    |-- fashion companion enhanced.dart
+    |-- fashion_companion.dart
     |-- main.dart
     |-- models
         |-- box_model.dart
         |-- models.dart
         |-- shoe_model.dart
         |-- user_status.dart
+    |-- resultsscreen.dart
+    |-- results_screen.dart
     |-- screens
         |-- 360_viewer_screen.dart
         |-- account_screen.dart
@@ -617,7 +593,8 @@
         |-- data
             |-- dummy_data.dart
         |-- earth_screen.dart
-        |-- fashion_screen.dart
+        |-- fashion_chat.dart
+        |-- fashion_chat_screen.dart
         |-- heels_details_screen.dart
         |-- home_screen.dart
         |-- image_screen.dart
@@ -680,6 +657,7 @@
         |-- boxie_details_screen.dart
         |-- boxlist_widget.dart
         |-- chat_widget.dart
+        |-- fashion_screen.dart
 |-- linux
     |-- .gitignore
     |-- CMakeLists.txt
@@ -1406,6 +1384,300 @@
                             |-- test_main.cpp
                             |-- test_utils.cpp
                             |-- test_utils.h
+                |-- firebase_auth
+                    |-- android
+                        |-- build.gradle
+                        |-- gradle
+                            |-- wrapper
+                                |-- gradle-wrapper.properties
+                        |-- gradle.properties
+                        |-- settings.gradle
+                        |-- src
+                            |-- main
+                                |-- AndroidManifest.xml
+                                |-- java
+                                    |-- io
+                                        |-- flutter
+                                            |-- plugins
+                                                |-- firebase
+                                                    |-- auth
+                                                        |-- AuthStateChannelStreamHandler.java
+                                                        |-- Constants.java
+                                                        |-- FlutterFirebaseAuthPlugin.java
+                                                        |-- FlutterFirebaseAuthPluginException.java
+                                                        |-- FlutterFirebaseAuthRegistrar.java
+                                                        |-- FlutterFirebaseAuthUser.java
+                                                        |-- FlutterFirebaseMultiFactor.java
+                                                        |-- FlutterFirebaseTotpMultiFactor.java
+                                                        |-- FlutterFirebaseTotpSecret.java
+                                                        |-- GeneratedAndroidFirebaseAuth.java
+                                                        |-- IdTokenChannelStreamHandler.java
+                                                        |-- PhoneNumberVerificationStreamHandler.java
+                                                        |-- PigeonParser.java
+                        |-- user-agent.gradle
+                    |-- CHANGELOG.md
+                    |-- example
+                        |-- analysis_options.yaml
+                        |-- android
+                            |-- app
+                                |-- build.gradle
+                                |-- google-services.json
+                                |-- src
+                                    |-- debug
+                                        |-- AndroidManifest.xml
+                                    |-- main
+                                        |-- AndroidManifest.xml
+                                        |-- java
+                                            |-- io
+                                                |-- flutter
+                                                    |-- plugins
+                                        |-- kotlin
+                                            |-- io
+                                                |-- flutter
+                                                    |-- plugins
+                                                        |-- firebase
+                                                            |-- auth
+                                                                |-- example
+                                                                    |-- MainActivity.kt
+                                        |-- res
+                                            |-- drawable
+                                                |-- launch_background.xml
+                                            |-- drawable-v21
+                                                |-- launch_background.xml
+                                            |-- mipmap-hdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-mdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxhdpi
+                                                |-- ic_launcher.png
+                                            |-- mipmap-xxxhdpi
+                                                |-- ic_launcher.png
+                                            |-- values
+                                                |-- styles.xml
+                                            |-- values-night
+                                                |-- styles.xml
+                                    |-- profile
+                                        |-- AndroidManifest.xml
+                            |-- build.gradle
+                            |-- gradle
+                                |-- wrapper
+                                    |-- gradle-wrapper.properties
+                            |-- gradle.properties
+                            |-- settings.gradle
+                        |-- ios
+                            |-- firebase_app_id_file.json
+                            |-- Flutter
+                                |-- AppFrameworkInfo.plist
+                                |-- Debug.xcconfig
+                                |-- Release.xcconfig
+                            |-- Podfile
+                            |-- Runner
+                                |-- AppDelegate.h
+                                |-- AppDelegate.m
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- Contents.json
+                                        |-- Icon-App-1024x1024@1x.png
+                                        |-- Icon-App-20x20@1x.png
+                                        |-- Icon-App-20x20@2x.png
+                                        |-- Icon-App-20x20@3x.png
+                                        |-- Icon-App-29x29@1x.png
+                                        |-- Icon-App-29x29@2x.png
+                                        |-- Icon-App-29x29@3x.png
+                                        |-- Icon-App-40x40@1x.png
+                                        |-- Icon-App-40x40@2x.png
+                                        |-- Icon-App-40x40@3x.png
+                                        |-- Icon-App-60x60@2x.png
+                                        |-- Icon-App-60x60@3x.png
+                                        |-- Icon-App-76x76@1x.png
+                                        |-- Icon-App-76x76@2x.png
+                                        |-- Icon-App-83.5x83.5@2x.png
+                                    |-- LaunchImage.imageset
+                                        |-- Contents.json
+                                        |-- LaunchImage.png
+                                        |-- LaunchImage@2x.png
+                                        |-- LaunchImage@3x.png
+                                        |-- README.md
+                                |-- Base.lproj
+                                    |-- LaunchScreen.storyboard
+                                    |-- Main.storyboard
+                                |-- GoogleService-Info.plist
+                                |-- Info.plist
+                                |-- main.m
+                                |-- Runner-Bridging-Header.h
+                                |-- Runner.entitlements
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- contents.xcworkspacedata
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                        |-- WorkspaceSettings.xcsettings
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                                    |-- WorkspaceSettings.xcsettings
+                        |-- lib
+                            |-- auth.dart
+                            |-- firebase_options.dart
+                            |-- main.dart
+                            |-- profile.dart
+                        |-- macos
+                            |-- firebase_app_id_file.json
+                            |-- Flutter
+                                |-- Flutter-Debug.xcconfig
+                                |-- Flutter-Release.xcconfig
+                            |-- Podfile
+                            |-- Runner
+                                |-- AppDelegate.swift
+                                |-- Assets.xcassets
+                                    |-- AppIcon.appiconset
+                                        |-- app_icon_1024.png
+                                        |-- app_icon_128.png
+                                        |-- app_icon_16.png
+                                        |-- app_icon_256.png
+                                        |-- app_icon_32.png
+                                        |-- app_icon_512.png
+                                        |-- app_icon_64.png
+                                        |-- Contents.json
+                                |-- Base.lproj
+                                    |-- MainMenu.xib
+                                |-- Configs
+                                    |-- AppInfo.xcconfig
+                                    |-- Debug.xcconfig
+                                    |-- Release.xcconfig
+                                    |-- Warnings.xcconfig
+                                |-- DebugProfile.entitlements
+                                |-- GoogleService-Info.plist
+                                |-- Info.plist
+                                |-- MainFlutterWindow.swift
+                                |-- Release.entitlements
+                            |-- Runner.xcodeproj
+                                |-- project.pbxproj
+                                |-- project.xcworkspace
+                                    |-- contents.xcworkspacedata
+                                    |-- xcshareddata
+                                        |-- IDEWorkspaceChecks.plist
+                                |-- xcshareddata
+                                    |-- xcschemes
+                                        |-- Runner.xcscheme
+                            |-- Runner.xcworkspace
+                                |-- contents.xcworkspacedata
+                                |-- xcshareddata
+                                    |-- IDEWorkspaceChecks.plist
+                                    |-- WorkspaceSettings.xcsettings
+                        |-- pubspec.yaml
+                        |-- README.md
+                        |-- web
+                            |-- favicon.png
+                            |-- icons
+                                |-- Icon-192.png
+                                |-- Icon-512.png
+                                |-- Icon-maskable-192.png
+                                |-- Icon-maskable-512.png
+                            |-- index.html
+                            |-- manifest.json
+                        |-- windows
+                            |-- CMakeLists.txt
+                            |-- flutter
+                                |-- CMakeLists.txt
+                            |-- runner
+                                |-- CMakeLists.txt
+                                |-- flutter_window.cpp
+                                |-- flutter_window.h
+                                |-- main.cpp
+                                |-- resource.h
+                                |-- resources
+                                    |-- app_icon.ico
+                                |-- runner.exe.manifest
+                                |-- Runner.rc
+                                |-- utils.cpp
+                                |-- utils.h
+                                |-- win32_window.cpp
+                                |-- win32_window.h
+                    |-- ios
+                        |-- firebase_auth
+                            |-- Package.swift
+                            |-- Sources
+                                |-- firebase_auth
+                                    |-- firebase_auth_messages.g.m
+                                    |-- FLTAuthStateChannelStreamHandler.m
+                                    |-- FLTFirebaseAuthPlugin.m
+                                    |-- FLTIdTokenChannelStreamHandler.m
+                                    |-- FLTPhoneNumberVerificationStreamHandler.m
+                                    |-- include
+                                        |-- Private
+                                            |-- FLTAuthStateChannelStreamHandler.h
+                                            |-- FLTIdTokenChannelStreamHandler.h
+                                            |-- FLTPhoneNumberVerificationStreamHandler.h
+                                            |-- PigeonParser.h
+                                        |-- Public
+                                            |-- CustomPigeonHeader.h
+                                            |-- firebase_auth_messages.g.h
+                                            |-- FLTFirebaseAuthPlugin.h
+                                    |-- PigeonParser.m
+                                    |-- Resources
+                        |-- firebase_auth.podspec
+                        |-- generated_firebase_sdk_version.txt
+                    |-- lib
+                        |-- firebase_auth.dart
+                        |-- src
+                            |-- confirmation_result.dart
+                            |-- firebase_auth.dart
+                            |-- multi_factor.dart
+                            |-- recaptcha_verifier.dart
+                            |-- user.dart
+                            |-- user_credential.dart
+                    |-- LICENSE
+                    |-- macos
+                        |-- firebase_auth
+                            |-- Package.swift
+                            |-- Sources
+                                |-- firebase_auth
+                                    |-- firebase_auth_messages.g.m
+                                    |-- FLTAuthStateChannelStreamHandler.m
+                                    |-- FLTFirebaseAuthPlugin.m
+                                    |-- FLTIdTokenChannelStreamHandler.m
+                                    |-- FLTPhoneNumberVerificationStreamHandler.m
+                                    |-- include
+                                        |-- Private
+                                            |-- FLTAuthStateChannelStreamHandler.h
+                                            |-- FLTIdTokenChannelStreamHandler.h
+                                            |-- FLTPhoneNumberVerificationStreamHandler.h
+                                            |-- PigeonParser.h
+                                        |-- Public
+                                            |-- CustomPigeonHeader.h
+                                            |-- firebase_auth_messages.g.h
+                                            |-- FLTFirebaseAuthPlugin.h
+                                    |-- PigeonParser.m
+                                    |-- Resource
+                        |-- firebase_auth.podspec
+                    |-- pubspec.yaml
+                    |-- README.md
+                    |-- test
+                        |-- firebase_auth_test.dart
+                        |-- mock.dart
+                        |-- user_test.dart
+                    |-- windows
+                        |-- CMakeLists.txt
+                        |-- firebase_auth_plugin.cpp
+                        |-- firebase_auth_plugin.h
+                        |-- firebase_auth_plugin_c_api.cpp
+                        |-- include
+                            |-- firebase_auth
+                                |-- firebase_auth_plugin_c_api.h
+                        |-- messages.g.cpp
+                        |-- messages.g.h
+                        |-- plugin_version.h.in
+                        |-- test
+                            |-- firebase_auth_plugin_test.cpp
                 |-- firebase_core
                     |-- android
                         |-- build.gradle
@@ -2258,8 +2530,6 @@
         |-- utils.h
         |-- win32_window.cpp
         |-- win32_window.h
-|-- y
-    |-- index.html
 |-- __
     |-- firebase
         |-- 10.13.0

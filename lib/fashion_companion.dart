@@ -3,15 +3,19 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:google_generative_ai/google_generative_ai.dart'; // Import for Gemini
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:geolocator/geolocator.dart';
 
 // Replace with your Firebase and AccuWeather API keys
-const String firebaseDatabaseUrl = 'https://esp32boxies-default-rtdb.firebaseio.com/';
-const String geminiApiKey = 'AIzaSyDiL_FGDMxUakUf0CopnweP0LUTeM1JH2o';
+const String firebaseDatabaseUrl =
+    'https://esp32boxies-default-rtdb.firebaseio.com/';
 const String accuWeatherApiKey = 'dE5pUmfUeAzQUNKGXVUlI63cjlobZl9s';
+const String generativeApIKey = "AIzaSyDiL_FGDMxUakUf0CopnweP0LUTeM1JH2o\\";
+// Replace with your Google Cloud API Key
+const String googleCloudApiKey = 'AIzaSyAjj8ogxE8UBsnqdooDdIl-rw5anSstliE';
+
 void main() {
   runApp(MyApp());
 }
@@ -30,6 +34,8 @@ class MyApp extends StatelessWidget {
 }
 
 class FashionCompanionPage extends StatefulWidget {
+  const FashionCompanionPage({super.key});
+
   @override
   _FashionCompanionPageState createState() => _FashionCompanionPageState();
 }
@@ -40,14 +46,14 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       FirebaseDatabase.instance.refFromURL(firebaseDatabaseUrl);
 
   File? _image;
-  String? _clothingMetadata;
+  // Removing unused field _clothingMetadata
   bool _isLoading = false;
   String _userInput = '';
   String? _recommendation;
   Map<String, dynamic>? _weatherData;
 
   static const String noImageSelectedMessage = 'No image selected.';
-  static const String errorMessagePrefix = 'Error: ';
+  // Removing unused constant
 
   @override
   void initState() {
@@ -124,14 +130,32 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       if (image != null) {
         setState(() {
           _image = File(image.path);
-          _clothingMetadata = null;
+          _recommendation = null;
           _isLoading = true;
         });
 
-        await _processImage();
+        // For now, we'll just navigate to the FashionScreen with a placeholder
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FashionScreen(
+                item: 'some clothing details', title: 'Fashion Suggestions'),
+          ),
+        ).then((value) {
+          setState(() {
+            _isLoading = false;
+          });
+        });
+      } else {
+        setState(() {
+          _isLoading = false;
+        });
       }
     } catch (e) {
       _showError('Error selecting image: $e');
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -154,10 +178,10 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       }
 
       // Generate recommendation based on rules
-      final recommendation = _generateRecommendation(shoeboxData, _userInput, _weatherData!);
+      final recommendation =
+          _generateRecommendation(shoeboxData, _userInput, _weatherData!);
 
       setState(() {
-        _clothingMetadata = recommendation;
         _recommendation = recommendation;
       });
     } catch (e) {
@@ -169,10 +193,11 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
     }
   }
 
-  String _generateRecommendation(
-      Map<dynamic, dynamic> shoeboxData, String userInput, Map<String, dynamic> weatherData) {
+  String _generateRecommendation(Map<dynamic, dynamic> shoeboxData,
+      String userInput, Map<String, dynamic> weatherData) {
     // Example rule-based recommendation logic
-    final temperature = weatherData['Temperature']?['Metric']?['Value'] ?? 20.0; // Default to 20°C
+    final temperature = weatherData['Temperature']?['Metric']?['Value'] ??
+        20.0; // Default to 20°C
     final weatherText = weatherData['WeatherText'] ?? 'Clear';
 
     String recommendation = '';
@@ -185,8 +210,9 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
       recommendation = 'It\'s warm. Sandals or light shoes are perfect.';
     }
 
-    // Add user input to the recommendation
-    recommendation += '\n\nUser request: $userInput';
+    // Add weather condition and user input to the recommendation
+    recommendation += '\n\nWeather condition: $weatherText';
+    recommendation += '\nUser request: $userInput';
 
     return recommendation;
   }
@@ -220,8 +246,8 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
         child: Column(
           children: <Widget>[
             TextField(
-              decoration:
-                  const InputDecoration(labelText: 'Ask your fashion companion'),
+              decoration: const InputDecoration(
+                  labelText: 'Ask your fashion companion'),
               onChanged: (value) => _userInput = value,
             ),
             const SizedBox(height: 20),
@@ -251,5 +277,131 @@ class _FashionCompanionPageState extends State<FashionCompanionPage> {
         ),
       ),
     );
+  }
+}
+
+class FashionScreen extends StatefulWidget {
+  const FashionScreen({super.key, required this.item, required String title});
+
+  final String item;
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _FashionScreenState createState() => _FashionScreenState();
+}
+
+class _FashionScreenState extends State<FashionScreen> {
+  final TextEditingController _shoeboxController = TextEditingController();
+  String _suggestions = '';
+  late GenerativeModel _geminiModel; // Declare the Gemini model
+
+  @override
+  void initState() {
+    super.initState();
+    _geminiModel = GenerativeModel(
+        model: 'gemini-pro', apiKey: googleCloudApiKey); // Initialize Gemini
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Fashion Suggestions'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Enter details about the shoeboxes in your closet:',
+              style: TextStyle(fontSize: 18),
+            ),
+            TextField(
+              controller: _shoeboxController,
+              decoration: const InputDecoration(labelText: 'Shoebox Details'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () async {
+                await _generateFashionSuggestions();
+              },
+              child: const Text('Get Fashion Suggestions'),
+            ),
+            const SizedBox(height: 20),
+            _suggestions.isNotEmpty
+                ? Text(
+                    _suggestions,
+                    style: const TextStyle(fontSize: 16),
+                  )
+                : Container(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _generateFashionSuggestions() async {
+    String shoeboxDetails = _shoeboxController.text;
+
+    String suggestions = await generateFashionSuggestions(shoeboxDetails);
+    setState(() {
+      _suggestions = suggestions;
+    });
+  }
+
+  Future<String> generateFashionSuggestions(String shoeboxDetails) async {
+    String prompt =
+        'Based on my shoeboxes, suggest fashion clothing for today: $shoeboxDetails';
+    String openAISuggestion = '';
+    String geminiSuggestion = '';
+
+    // Call OpenAI
+    try {
+      final openAIResponse = await http.post(
+        Uri.parse('https://api.openai.com/v1/chat/completions'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization':
+              "Bearer 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", // Ensure this is still valid
+        },
+        body: jsonEncode({
+          'messages': [
+            // Use 'messages' for the chat completions API
+            {'role': 'user', 'content': prompt},
+          ],
+          'max_tokens': 50,
+          'model': 'gpt-3.5-turbo',
+        }),
+      );
+
+      if (openAIResponse.statusCode == 200) {
+        Map<String, dynamic> data = jsonDecode(openAIResponse.body);
+        openAISuggestion = data['choices'][0]['message']['content'] ??
+            ''; // Extract content from message
+      } else if (openAIResponse.statusCode == 401) {
+        print('OpenAI Unauthorized error: Check your API key');
+        openAISuggestion = 'Error: OpenAI Unauthorized - Check API Key';
+      } else {
+        print('Failed to get OpenAI suggestion: ${openAIResponse.statusCode}');
+        print('OpenAI Response body: ${openAIResponse.body}');
+        openAISuggestion = 'Error getting OpenAI suggestion.';
+      }
+    } catch (e) {
+      print('OpenAI Exception occurred: $e');
+      openAISuggestion = 'Error communicating with OpenAI.';
+    }
+
+    // Call Gemini
+    try {
+      final content = [Content.text(prompt)];
+      final geminiResponse = await _geminiModel.generateContent(content);
+      geminiSuggestion = geminiResponse.text ?? '';
+    } catch (e) {
+      print('Gemini Exception occurred: $e');
+      geminiSuggestion = 'Error communicating with Gemini.';
+    }
+
+    return 'OpenAI says: $openAISuggestion\n\nGemini says: $geminiSuggestion';
   }
 }

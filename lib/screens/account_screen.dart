@@ -1,10 +1,88 @@
 import 'package:flutter/material.dart';
 import 'package:sg_boxes/common%20theme/common_theme.dart';
-import 'package:sg_boxes/screens/welcome_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:google_sign_in/google_sign_in.dart'; // Import for Google Sign-In
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
+
+  @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  bool _isCalendarConnected = false; // Example state
+
+  Future<void> _connectGoogleCalendar(BuildContext context) async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser != null) {
+        final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+        final String? accessToken = googleAuth.accessToken;
+        // Send this accessToken to your backend to exchange for Google Calendar API tokens
+        print('Google Access Token: $accessToken');
+        // Update UI to reflect connection
+        setState(() {
+          _isCalendarConnected = true;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Google Calendar connected!')),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to connect to Google Calendar.')),
+        );
+      }
+    } catch (error) {
+      print('Error connecting to Google Calendar: $error');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error connecting: $error')),
+      );
+    }
+  }
+
+  Future<void> _disconnectGoogleCalendar(BuildContext context) async {
+    // Implement your backend logic to revoke tokens and disconnect
+    setState(() {
+      _isCalendarConnected = false;
+    });
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Google Calendar disconnected.')),
+    );
+  }
+
+  Widget _buildCalendarConnectionCard(BuildContext context) {
+    return Card(
+      color: CommonTheme.primaryColor,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          children: [
+            const Icon(Icons.calendar_today, color: Colors.redAccent, size: 40),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Text(
+                'Events Calendar',
+                style: CommonTheme.headingTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.normal),
+              ),
+            ),
+            if (_isCalendarConnected)
+              ElevatedButton(
+                onPressed: () => _disconnectGoogleCalendar(context),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
+                child: const Text('Disconnect'),
+              )
+            else
+              ElevatedButton(
+                onPressed: () => _connectGoogleCalendar(context),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                child: const Text('Connect'),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +142,10 @@ class AccountScreen extends StatelessWidget {
               Icons.settings,
               Colors.grey,
               () {
-                // Handle Settings navigation
+                // Handle Settings navigation (if you have other settings here)
+                // For now, we'll keep the Calendar option on this screen
+                // If you plan more settings, you might navigate to a new screen later
+                print('Navigating to Settings (if any)');
               },
             ),
             const SizedBox(height: 10),
@@ -77,6 +158,8 @@ class AccountScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/welcome');
               },
             ),
+            const SizedBox(height: 20), // Add some spacing
+            _buildCalendarConnectionCard(context), // Add the calendar card here
           ],
         ),
       ),
@@ -135,7 +218,9 @@ class AccountScreen extends StatelessWidget {
         ),
       ),
     );
-  }  Widget _buildAccountCard(BuildContext context, String title, IconData icon, Color iconColor, VoidCallback onTap) {
+  }
+
+  Widget _buildAccountCard(BuildContext context, String title, IconData icon, Color iconColor, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Card(
@@ -204,11 +289,10 @@ class AccountScreen extends StatelessWidget {
             'assets/images/twitter.png',
             'https://www.twitter.com',
           ),
-         
           _buildSocialMediaButton(
             context,
             'Pinterest',
-            'assets/images/pinterest.png', // Make sure you have the Pinterest image in your assets
+            'assets/images/pinterest.png', // Make sure you have the Pinterest image
             'https://www.pinterest.com',
           ),
         ],
